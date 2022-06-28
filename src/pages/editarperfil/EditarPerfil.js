@@ -1,11 +1,11 @@
 import Formperfil from "../../components/formperfil/Formperfil";
+import TextPerfil from "../../components/textperfil/TextPerfil";
 
 let EditarPerfil=()=>{
     return(
         <>
         <main>
-            <h1>Perfil</h1>
-            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+            <TextPerfil/>
             <Formperfil/>
         </main>
         </>

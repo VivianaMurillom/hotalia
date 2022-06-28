@@ -19,10 +19,10 @@ let Formperfil=()=>{
                     <label>Tipo de documento de identidad</label>
                     <select>
                         <option value="" selected>Elija su documento</option>
-                        <option value="Registro Civil" selected>Registro Civil</option>
-                        <option value="Tarjeta de Identidad" selected>Tarjeta de Identidad</option>
-                        <option value="Cédula de ciudadanía" selected>Cédula de ciudadanía</option>
-                        <option value="Cédula de extranjería" selected>Cédula de extranjería</option>
+                        <option value="Registro Civil">Registro Civil</option>
+                        <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                        <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
+                        <option value="Cédula de extranjería">Cédula de extranjería</option>
                     </select>
                 </div>
                 <div>

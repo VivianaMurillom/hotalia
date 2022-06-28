@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
+import TextPerfil from "../../components/textperfil/TextPerfil";
 
 let Perfil=()=>{
     return(
         <>
         <h1>Página de perfil de usuario</h1>
         <main>
-            <h1>Perfil</h1>
-            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+
+            <TextPerfil/>
 
             <section>
                 <img src="none" alt="imagen perfil"/>
