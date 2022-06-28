@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from "../../components/footer/Footer";
 import TextPerfil from "../../components/textperfil/TextPerfil";
 
 let Perfil=()=>{
@@ -66,6 +67,7 @@ let Perfil=()=>{
                 </div>
             </section>
         </main>
+        <Footer/>
         </>
     )
 }
