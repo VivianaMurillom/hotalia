@@ -15,7 +15,7 @@ let Perfil=()=>{
                 
                 <section className="image-profile">
                     <img src={noImagen} alt="imagen perfil"/>
-                    <Link to="/editar-perfil">Cambiar foto</Link>
+                    <Link to="#">Cambiar foto</Link>
                 </section>
 
             
@@ -57,7 +57,7 @@ let Perfil=()=>{
                         <p>Colombia</p>
                     </div>
                     <div className="container-button">
-                        <button className="general-button">Realizar cambios</button>
+                        <button className="general-button"><Link to="/editar-perfil">Realizar cambios</Link></button>
                     </div>
                 </section>
 

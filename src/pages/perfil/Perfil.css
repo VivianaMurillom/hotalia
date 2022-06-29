@@ -68,6 +68,7 @@
 
 .general-button{
     background-color: var(--azul-rey);
+    border: none;
     border-radius: 5px;
     color: white;
     cursor: pointer;
@@ -81,6 +82,11 @@
 
 .general-button:hover{
     background-color: var(--naranja);
+}
+
+.general-button a{
+    color: white;
+    text-decoration: none;
 }
 
 /*Resolución de tablet*/
