@@ -67,7 +67,7 @@ let Perfil=()=>{
                         <p>*****************</p>
                     </div>
                     <div>
-                        <button className="general-button">Cambiar contraseña</button>
+                        <button className="general-button"><Link to="/editar-contrasena">Cambiar contraseña</Link></button>
                     </div>
                 </section>
             </div>
