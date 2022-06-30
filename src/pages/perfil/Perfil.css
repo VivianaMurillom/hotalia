@@ -1,7 +1,18 @@
+.all-content-profile{
+    display: grid;
+    grid-template: 
+    "foto" 250px
+    "datos" auto
+    "contrasena" 250px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
 .image-profile{
     align-items: center;
     display: flex;
     flex-direction: column;
+    grid-area: foto;
 }
 
 .image-profile img{
@@ -25,6 +36,9 @@
 .user-data-profile{
     border: 1px solid var(--negro);
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    grid-area: datos;
     margin: 0 1rem;
     padding: 1.5rem;
 }
@@ -39,6 +53,18 @@
     color: var(--negro);
 }
 
+.user-data-section{
+    display: flex;
+    flex-direction: row;
+    margin: .5rem;
+}
+
+.data-content{
+    margin: .5rem;
+    padding-left: 1rem;
+    width: 250px;
+}
+
 .profile-password{
     align-items: center;
     background-color: var(--gris);
@@ -46,6 +72,7 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    grid-area: contrasena;
     margin: 1rem;
     padding: 1rem;
 }
@@ -92,7 +119,7 @@
 /*Resolución de tablet*/
 @media screen and (min-width: 768px) {
     .user-data-profile{
-        margin: 0 5rem;
+        margin: 0 2rem;
     }
 
     .profile-password{
@@ -103,15 +130,19 @@
 
 /*Resolución de medias (equipos de escritorio)*/
 @media screen and (min-width: 1024px) {
+
     .all-content-profile{
         align-items: center;
-        display: flex;
+        grid-template-areas: 
+        "foto datos"
+        "contrasena datos";
+        grid-template-columns: auto auto;
         justify-content: center;
-        margin: 3rem 2rem;
+        grid-template-rows: 350px auto;
     }
 
     .image-profile{
-        margin: 1rem 2rem;
+        margin: 1rem 1rem;
     }
 
     .image-profile img{
@@ -120,7 +151,7 @@
     }
 
     .user-data-profile{
-        width: 350px;
+        width: 600px;
     }
 
     .profile-password{
