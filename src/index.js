@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Perfil from './pages/perfil/Perfil';
 import EditarPerfil from './pages/editarperfil/EditarPerfil';
 import EditarContrasena from './pages/editarcont/EditarContrasena';
+import CambiarFoto from './pages/cambiarfoto/CambiarFoto';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +16,7 @@ root.render(
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/editar-perfil" element={<EditarPerfil />} />
         <Route path="/editar-contrasena" element={<EditarContrasena />} />
+        <Route path="/cambiar-foto" element={<CambiarFoto />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
