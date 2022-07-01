@@ -29,6 +29,7 @@ footer h3,  p{
     align-items: center;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .social-media{
@@ -55,5 +56,9 @@ footer h3,  p{
 
     .img-logo img{
         width: 100px;
+    }
+
+    .footer-data, .footer-social{
+        justify-content: space-around;
     }
 }

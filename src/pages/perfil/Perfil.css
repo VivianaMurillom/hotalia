@@ -3,7 +3,7 @@
     grid-template: 
     "foto" 250px
     "datos" auto
-    "contrasena" 250px;
+    "contrasena" 200px;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
@@ -13,6 +13,9 @@
     display: flex;
     flex-direction: column;
     grid-area: foto;
+    margin: .5rem auto;
+    max-width: 300px;
+    width: 100%;
 }
 
 .image-profile img{
@@ -39,8 +42,9 @@
     display: flex;
     flex-direction: column;
     grid-area: datos;
-    margin: 0 1rem;
-    padding: 1.5rem;
+    margin: 0 auto;
+    max-width: 300px;
+    width: 100%;
 }
 
 .user-data-profile h3{
@@ -55,13 +59,12 @@
 
 .user-data-section{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: .5rem;
 }
 
 .data-content{
     margin: .5rem;
-    padding-left: 1rem;
     width: 250px;
 }
 
@@ -73,8 +76,10 @@
     display: flex;
     flex-direction: column;
     grid-area: contrasena;
-    margin: 1rem;
+    margin: 1rem auto;
+    max-width: 300px;
     padding: 1rem;
+    width: 100%;
 }
 
 .profile-password h3{
@@ -91,6 +96,7 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .general-button{
@@ -156,7 +162,11 @@
 /*Resolución de tablet*/
 @media screen and (min-width: 768px) {
     .user-data-profile{
-        margin: 0 2rem;
+        max-width: 450px;
+    }
+
+    .user-data-section{
+        flex-direction: row;
     }
 
     .profile-password{
@@ -188,6 +198,7 @@
     }
 
     .user-data-profile{
+        margin-left: 3rem;
         width: 600px;
     }
 
