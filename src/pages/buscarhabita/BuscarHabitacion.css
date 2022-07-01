@@ -1,0 +1,24 @@
+.section-search-room{
+    background-color: aqua;
+}
+
+.section-search-room h1{
+    color: var(--azul-petroleo);
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-search-room p{
+    color: var(--negro);
+    padding: 0 1rem;
+}
+
+/*Resolución de tablet*/
+@media screen and (min-width: 768px) {
+    .section-search-room p{
+        color: var(--negro);
+        padding: 0 2rem;
+        text-align: center;
+    }
+}
