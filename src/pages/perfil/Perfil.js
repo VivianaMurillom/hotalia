@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import TextPerfil from "../../components/textperfil/TextPerfil";
 import "./Perfil.css";
-import noImagen from "./img/Foto-sin-imagen.svg";
+import cambiarImagen from "./img/cambiar-imagen.svg";
 
 let Perfil=()=>{
     return(
@@ -14,7 +14,7 @@ let Perfil=()=>{
             <div className="all-content-profile">
                 
                 <section className="image-profile">
-                    <img src={noImagen} alt="imagen perfil"/>
+                    <img src={cambiarImagen} alt="imagen perfil"/>
                     <Link to="/cambiar-foto">Cambiar foto</Link>
                 </section>
 
