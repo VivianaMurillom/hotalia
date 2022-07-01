@@ -15,5 +15,6 @@
     .textPerfil-section p{
         color: var(--negro);
         padding: 0 2rem;
+        text-align: center;
     }
 }
