@@ -1,6 +1,18 @@
 import "./Formperfil.css";
+import Swal from "sweetalert2";
 
 let Formperfil=()=>{
+
+    const sendFormProfile=(e)=>{
+      e.preventDefault();  
+
+      Swal.fire(
+        'Información actualizada',
+        'Su información de perfil ha sido actualizada correctamente!',
+        'success'
+      )
+    }
+
     return(
         <>
         <section className="form-modify-profile">
@@ -68,7 +80,7 @@ let Formperfil=()=>{
                     </div>
                 </div>
                 <div className="form-profile-button">
-                    <button type="submit" className="general-button">Guardar cambios</button>
+                    <button type="submit" className="general-button" onClick={sendFormProfile}>Guardar cambios</button>
                 </div>
             </form>
         </section>

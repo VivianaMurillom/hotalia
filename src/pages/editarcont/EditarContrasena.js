@@ -1,8 +1,20 @@
 import TextPerfil from "../../components/textperfil/TextPerfil";
 import Footer from "../../components/footer/Footer";
 import "./Editarcontraseña.css";
+import Swal from "sweetalert2";
 
 let EditarContrasena=()=>{
+
+    const changePassword=(e)=>{
+        e.preventDefault();
+
+        Swal.fire(
+            'Contraseña actualizada',
+            'Su contraseña ha sido actualizada correctamente!',
+            'success'
+        )
+    }
+
     return(
         <>
         <TextPerfil/>
@@ -27,7 +39,7 @@ let EditarContrasena=()=>{
                     type="password"/>
                 </div>
                 <div className="form-password-button">
-                    <button type="submit" className="general-button">Guardar cambios</button>
+                    <button type="submit" className="general-button" onClick={changePassword}>Guardar cambios</button>
                 </div>
             </form>
         </section>

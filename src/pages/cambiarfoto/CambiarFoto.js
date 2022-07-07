@@ -2,9 +2,19 @@ import TextPerfil from "../../components/textperfil/TextPerfil";
 import Footer from "../../components/footer/Footer";
 import "./Cambiarfoto.css";
 import cambiarImagen from "../perfil/img/cambiar-imagen.svg";
+import Swal from "sweetalert2";
 
 let CambiarFoto=()=>{
 
+    const cargarFoto=(e)=>{
+      e.preventDefault();
+
+      Swal.fire(
+        'Foto actualizada',
+        'Ha cambiado su foto de perfil correctamente!',
+        'success'
+      )
+    }
 
     return(
         <>
@@ -22,7 +32,7 @@ let CambiarFoto=()=>{
                 <input type="file"/>
               </div>
               <div className="container-button">
-                <button className="general-button">Subir foto</button>
+                <button className="general-button" onClick={cargarFoto}>Subir foto</button>
               </div>
             </form>
 
