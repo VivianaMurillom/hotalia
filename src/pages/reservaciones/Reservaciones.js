@@ -2,9 +2,33 @@ import './Reservaciones.css';
 import {Card} from 'react-bootstrap';
 import Footer from '../../components/footer/Footer';
 import room1 from './img/room1.jpg';
-
+import Swal from "sweetalert2";
 
 let Reservaciones=()=>{
+
+    let alertaCancelacion=()=>{
+         
+        Swal.fire({
+            title: '¿Desea cancelar su reservación?',
+            text: "Recuerde que la cancelación no se puede revertir.",
+            icon: 'warning',
+            iconColor: '#FF820D',
+            showCancelButton: true,
+            confirmButtonColor: '#FF820D',
+            cancelButtonColor: '#337AB7',
+            confirmButtonText: 'Confirmar',
+            cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                Swal.fire(
+                'Cancelado!',
+                'Su reservación ha sido cancelada correctamente.',
+                'success'
+            )
+            }
+        })
+    }
+
     return(
         <>
         <section className='section-reservations'>
@@ -56,7 +80,7 @@ let Reservaciones=()=>{
                             </div>
                         </Card.Text>
                         <div className='button-card-reserva'>
-                            <button className="secundary-button">Cancelar</button>
+                            <button className="secundary-button" onClick={alertaCancelacion}>Cancelar</button>
                         </div>
                     </Card.Body>
                 </Card>
