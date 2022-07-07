@@ -1,0 +1,28 @@
+.cards-rooms-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+}
+
+.cards-rooms-general{
+    margin: 1rem .5rem;
+}
+
+.cards-img-rooms{
+    max-height: 190px;
+}
+
+.cards-room-general-title{
+    color: var(--azul-rey);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.buttons-cards-rooms{
+    display: flex;
+}
+
+.buttons-cards-rooms .general-button, .buttons-cards-rooms .secundary-button{
+    max-width: 100px;
+}

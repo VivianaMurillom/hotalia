@@ -1,3 +1,4 @@
+import CardsHabitaciones from "../../components/cardhabitacion/CardsHabitaciones";
 import Footer from "../../components/footer/Footer";
 import FBHabitacion from "../../components/formbushabita/FBHabitacion";
 import "./BuscarHabitacion.css";
@@ -9,6 +10,7 @@ let BuscarHabitacion=()=>{
             <h1>Búsqueda de habitación</h1>
             <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
             <FBHabitacion/>
+            <CardsHabitaciones/>
             <Footer/>
         </section>
         </>
