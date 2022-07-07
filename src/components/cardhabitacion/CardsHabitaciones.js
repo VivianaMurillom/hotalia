@@ -1,6 +1,7 @@
 import {getAllHabitaciones} from "./HabitacionesDB.js";
 import {Card} from "react-bootstrap";
 import "./CardsHabitaciones.css";
+import ModalHabitaciones from "../modalhabitaciones/ModalHabitaciones.js";
 
 let CardsHabitaciones=()=>{
 
@@ -20,13 +21,16 @@ let CardsHabitaciones=()=>{
                                     {habi.descripcion}
                                 </Card.Text>
                                 <div className="buttons-cards-rooms">
-                                    <button className="general-button">Ver más</button>
+                                    <button className="general-button" data-bs-toggle="modal" data-bs-target={`#id${habi.id}`}>Ver más</button>
                                     <button className="secundary-button">Reservar ahora</button>
                                 </div>
                             </Card.Body>
                         </Card>
                     ))
                 }
+                {/* <ModalHabitaciones
+                habitacion1={`id${habi.id}`}
+                /> */}
             </div>
         </>
     )

@@ -26,3 +26,22 @@
 .buttons-cards-rooms .general-button, .buttons-cards-rooms .secundary-button{
     max-width: 100px;
 }
+
+/*Resolución de tablet*/
+@media screen and (min-width: 768px) {
+    .cards-rooms-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/*Resolución de medias (equipos de escritorio)*/
+@media screen and (min-width: 1024px) {
+    .cards-rooms-container{
+        margin: 0 2rem;
+    }
+    .cards-rooms-general{
+        margin: 1rem 2rem;
+    }
+}
