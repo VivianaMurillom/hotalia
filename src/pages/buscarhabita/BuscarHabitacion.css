@@ -1,0 +1,36 @@
+.section-search-room{
+    margin: 1rem 0;
+}
+
+.section-search-room h1{
+    color: var(--azul-petroleo);
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-search-room p{
+    color: var(--negro);
+    padding: 0 1rem;
+}
+
+.section-container-rooms{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Resolución de tablet*/
+@media screen and (min-width: 768px) {
+    .section-search-room p{
+        color: var(--negro);
+        padding: 0 2rem;
+        text-align: center;
+    }
+
+    .section-container-rooms{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
