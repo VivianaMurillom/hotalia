@@ -19,7 +19,7 @@ let Formperfil=()=>{
             <h2>Editar datos</h2>
 
             <form>
-                <div className="form-sections">
+                <div className="form-sections-profile">
                     <div className="form-divisions">
                         <label>Nombres</label>
                         <input
@@ -31,7 +31,7 @@ let Formperfil=()=>{
                         type="text"/>
                     </div>
                 </div>
-                <div className="form-sections">
+                <div className="form-sections-profile">
                     <div className="form-divisions">
                         <label>Tipo de documento de identidad</label>
                         <select>
@@ -48,7 +48,7 @@ let Formperfil=()=>{
                         type="number"/>
                     </div>
                 </div>
-                <div className="form-sections">
+                <div className="form-sections-profile">
                     <div className="form-divisions">
                         <label>Fecha de nacimiento</label>
                         <input
@@ -60,7 +60,7 @@ let Formperfil=()=>{
                         type="text"/>
                     </div>
                 </div>
-                <div className="form-sections">
+                <div className="form-sections-profile">
                     <div className="form-divisions">
                         <label>Correo</label>
                         <input
@@ -72,7 +72,7 @@ let Formperfil=()=>{
                         type="number"/>
                     </div>
                 </div>
-                <div className="form-sections">
+                <div className="form-sections-profile">
                     <div className="form-divisions">
                         <label>País de origen</label>
                         <input

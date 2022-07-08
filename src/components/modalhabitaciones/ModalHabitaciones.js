@@ -16,13 +16,13 @@ let ModalHabitaciones=(props)=>{
                     <div className="modal-body">
                         <img src={cargarImgModal(`./${props.roomImg}.jpg`)} alt={props.roomNombre}/>
                         <h3>Descripción de la habitación</h3>
-                        <p>{props.roomDescripcion}</p>
+                        <p className="text-start">{props.roomDescripcion}</p>
                         <h3>Número de habitación</h3>
-                        <p>{props.roomNumero}</p>
+                        <p className="text-start">{props.roomNumero}</p>
                         <h3>Cantidad de camas</h3>
-                        <p>{props.roomCantidadCamas}</p>
+                        <p className="text-start">{props.roomCantidadCamas}</p>
                         <h3>Capacidad de personas</h3>
-                        <p>{props.roomCapacidadPersonas}</p>
+                        <p className="text-start">{props.roomCapacidadPersonas}</p>
                         <div className="modal-aditionals-container">
                             <h3>En esta habitación usted tiene la posibilidad de solicitar:</h3>
                             <div className="aditionals-options">

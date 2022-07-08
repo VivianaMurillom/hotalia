@@ -36,7 +36,14 @@
 /*Resolución de medias (equipos de escritorio)*/
 @media screen and (min-width: 1024px) {
     .password-section form{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
         margin: 2rem auto;
         max-width: 540px;
+    }
+
+    .passw input{
+        margin: 1rem 0;
     }
 }

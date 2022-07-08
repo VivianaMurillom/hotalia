@@ -17,14 +17,14 @@
 }
 
 .form-divisions label{
-    color: var(--azul-rey);
+    color: var(--negro);
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 600;
 }
 
 .form-divisions input, .form-divisions select{
-    border: 1px solid var(--naranja);
+    border: 1px solid var(--negro);
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: 'Raleway', sans-serif;
@@ -44,8 +44,11 @@
         margin: 0 2rem;
     }
 
-    .form-sections{
+    .form-sections-profile{
         display: flex;
+        justify-content: space-between;
+        margin: 1rem;
+        min-width: 600px;
     }
 
     .form-divisions{
