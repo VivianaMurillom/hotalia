@@ -11,7 +11,8 @@ let Habitaciones=[
         "wifi": true,
         "tv": true,
         "nevera": false,
-        "cajaFuerte": false
+        "cajaFuerte": false,
+        "baño":true
     },
     {
         "id":2,
@@ -25,7 +26,8 @@ let Habitaciones=[
         "wifi": true,
         "tv": true,
         "nevera": false,
-        "cajaFuerte": false
+        "cajaFuerte": false,
+        "baño":true
     },
     {
         "id":3,
@@ -39,7 +41,8 @@ let Habitaciones=[
         "wifi": true,
         "tv": true,
         "nevera": true,
-        "cajaFuerte": false
+        "cajaFuerte": false,
+        "baño":true
     },
     {
         "id":4,
@@ -53,7 +56,8 @@ let Habitaciones=[
         "wifi": true,
         "tv": true,
         "nevera": false,
-        "cajaFuerte": false
+        "cajaFuerte": false,
+        "baño":true
     },
     {
         "id":5,
@@ -67,7 +71,8 @@ let Habitaciones=[
         "wifi": true,
         "tv": true,
         "nevera": true,
-        "cajaFuerte": false
+        "cajaFuerte": false,
+        "baño":true
     }
 ]
 

@@ -1,7 +1,7 @@
 .cards-rooms-container{
-    align-items: center;
+    /* align-items: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; */
     margin: 1rem auto;
 }
 
@@ -29,11 +29,12 @@
 
 /*Resolución de tablet*/
 @media screen and (min-width: 768px) {
-    .cards-rooms-container{
+    /* .cards-rooms-container{
+        background-color: blue;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-    }
+    } */
 }
 
 /*Resolución de medias (equipos de escritorio)*/
