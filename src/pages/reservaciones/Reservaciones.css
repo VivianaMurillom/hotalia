@@ -79,8 +79,25 @@
 
 /*Resolución de medias (equipos de escritorio)*/
 @media screen and (min-width: 1024px) {
+
+    .section-reservations{
+        background-color: red;
+    }
+
+    .reservations-cards{
+        background-color: black;
+        margin: 2rem auto;
+        min-width: 100px;
+        width: 90%;
+    }
+
     .card-reservation-content{
-        width: 26rem;
+        background-color: blueviolet;
+        display: flex;
+    }
+
+    .card-reservation-content img{
+        max-width: 400px;
     }
 
     .card-division{

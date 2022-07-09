@@ -84,6 +84,17 @@ let Reservaciones=()=>{
                         </div>
                     </Card.Body>
                 </Card>
+
+                <Card>
+                    <Card.Img src={room1} />
+                        <Card.Body>
+                            <Card.Title className='title-card-reserv'>Reservación 1</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the bulk
+                                of the card's content.
+                            </Card.Text>
+                        </Card.Body>
+                </Card>
             </div>
 
             <div className='contact-reservations-button'>
