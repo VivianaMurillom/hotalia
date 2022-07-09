@@ -20,7 +20,7 @@ let EditarContrasena=()=>{
         <TextPerfil/>
 
         <section className="password-section">
-            <h2>Cambiar contraseña</h2>
+            <h3>Cambiar contraseña</h3>
 
             <form>
                 <div className="form-divisions passw">

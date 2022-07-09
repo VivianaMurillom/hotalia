@@ -1,6 +1,9 @@
+.textPerfil-section{
+    margin-top: 2rem;
+}
+
 .textPerfil-section h1{
     color: var(--azul-petroleo);
-    font-size: 30px;
     font-weight: bold;
     text-align: center;
 }

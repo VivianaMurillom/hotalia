@@ -21,59 +21,55 @@ let Perfil=()=>{
             
                 <section className="user-data-profile">
                     <div className="user-data-section">
-                        <div className="data-content">
-                            <h3>Nombres</h3>
-                            <p>Pepito Andres</p>
-                        </div>
-                        <div className="data-content">
-                            <h3>Apellido</h3>
-                            <p>Perez Valvuena</p>
+                        <div className="data-content nombres">
+                            <h6>Datos de</h6>
+                            <p>Pepito Andrés Perez Valvuena</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
-                            <h3>Tipo de documento de identidad</h3>
+                            <h6>Tipo de documento de identidad</h6>
                             <p>Cédula de ciudadanía</p>
                         </div>
                         <div className="data-content">
-                            <h3>Número de documento de identidad</h3>
+                            <h6>Número de documento de identidad</h6>
                             <p>1234567890</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
-                            <h3>Fecha de nacimiento</h3>
+                            <h6>Fecha de nacimiento</h6>
                             <p>24/06/1996</p>
                         </div>
                         <div className="data-content">
-                            <h3>Género</h3>
+                            <h6>Género</h6>
                             <p>Masculino</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
-                            <h3>Correo</h3>
+                            <h6>Correo</h6>
                             <p>pepito@mail.com</p>
                         </div>
                         <div className="data-content">
-                            <h3>Teléfono de contacto</h3>
+                            <h6>Teléfono de contacto</h6>
                             <p>315 369 3659</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
-                            <h3>País de origen</h3>
+                            <h6>País de origen</h6>
                             <p>Colombia</p>
                         </div>
                     </div>
                     <div className="container-button">
-                        <button className="general-button"><Link to="/editar-perfil">Realizar cambios</Link></button>
+                        <button className="general-button"><Link to="/editar-perfil">Realizar cambios de contacto</Link></button>
                     </div>
                 </section>
 
                 <section className="profile-password">
                     <div>
-                        <h3>Contraseña</h3>
+                        <h5>Contraseña</h5>
                         <p>*****************</p>
                     </div>
                     <div>

@@ -27,10 +27,35 @@ code {
   --rosado:#F96C91;
 }
 
-h1, h2, h3, h4, h5{
+h1, h2, h3, h4, h5, h6{
   font-family: 'Poppins', sans-serif;
 }
 
+/* h1{
+  font-size: calc(6em + 1vw);
+}
+
+h2{
+  font-size: calc(5em + 1vw);
+}
+
+h3{
+  font-size: calc(4em + 1vw);
+}
+
+h4{
+  font-size: calc(3em + 1vw);
+}
+
+h5{
+  font-size: calc(2em + 1vw);
+}
+
+h6{
+  font-size: calc(1em + 1vw);
+} */
+
 p{
   font-family: 'Raleway', sans-serif;
+  /* font-size: calc(.5em + 1vw); */
 }

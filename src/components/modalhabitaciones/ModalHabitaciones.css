@@ -1,7 +1,6 @@
 
 .modal-title{
     color: var(--azul-rey);
-    font-size: 25px;
 }
 
 .modal-body img{
@@ -13,7 +12,6 @@
 
 .modal-body h3{
     color: var(--azul-rey);
-    font-size: 20px;
 }
 
 .modal-body p{

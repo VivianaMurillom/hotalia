@@ -5,7 +5,6 @@
 
 .reservations-text h1{
     color: var(--azul-petroleo);
-    font-size: 30px;
     font-weight: bold;
     text-align: center;
 }
@@ -25,7 +24,6 @@
 
 .title-card-reserv{
     color: var(--azul-rey);
-    font-size: 20px;
     font-weight: bold;
     margin-bottom: 1rem;
     text-align: center;
@@ -34,7 +32,6 @@
 .card-subtitle-reserv{
     color: var(--azul-rey);
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
     font-weight: 600;
 }
 
@@ -45,7 +42,6 @@
 .card-subtitle-price{
     color: var(--azul-rey);
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
     font-weight: 600;
     text-align: center;
 }
