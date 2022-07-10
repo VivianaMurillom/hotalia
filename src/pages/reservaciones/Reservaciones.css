@@ -1,6 +1,7 @@
 .section-reservations{
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
 }
 
 .reservations-text h1{
@@ -12,14 +13,6 @@
 .reservations-text p{
     color: var(--negro);
     padding: 0 1rem;
-}
-
-.reservations-cards{
-    margin: .5rem auto;
-}
-
-.card-reservation-content{
-    width: 18rem;
 }
 
 .title-card-reserv{
@@ -47,6 +40,7 @@
 }
 
 .card-text-price{
+    font-size: 1.2em;
     font-weight: bold;  
     text-align: center;
 }
@@ -66,46 +60,41 @@
 
 /*Resolución de tablet*/
 @media screen and (min-width: 768px) {
+
     .reservations-text p{
-        color: var(--negro);
-        padding: 0 2rem;
-        text-align: center;
+        margin: 1rem 2rem;
     }
 
-    .card-reservation-content{
-        width: 24rem;
+    .card-division{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .reservations-cards{
+        margin: 1rem 2rem;
+    }
+
+    .card-division-part{
+        padding: 2rem;
+        width: 100%;
+    }
+
+    .nombre-room{
+        text-align: center;
     }
 }
 
 /*Resolución de medias (equipos de escritorio)*/
 @media screen and (min-width: 1024px) {
 
-    .section-reservations{
-        background-color: red;
-    }
 
-    .reservations-cards{
-        background-color: black;
-        margin: 2rem auto;
-        min-width: 100px;
-        width: 90%;
-    }
-
-    .card-reservation-content{
-        background-color: blueviolet;
+    .horizontal-card-reservations{
         display: flex;
+        flex-direction: row;
     }
 
-    .card-reservation-content img{
-        max-width: 400px;
-    }
-
-    .card-division{
-        display: flex;
-    }
-
-    .card-division-part{
-        margin-left: 1rem;
-        margin-bottom: 1rem;
+    .horizontal-card-reservations img{
+        max-width: 500px;
     }
 }

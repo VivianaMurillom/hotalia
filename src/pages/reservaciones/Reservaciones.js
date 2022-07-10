@@ -39,11 +39,12 @@ let Reservaciones=()=>{
             </div>
 
             <div className='reservations-cards'>
-                <Card className="card-reservation-content">
-                    <Card.Img variant="top" src={room1} />
-                    <Card.Body>
-                        <Card.Title className='title-card-reserv'>Reservación 1</Card.Title>
-                        <Card.Text>
+
+                <Card className="horizontal-card-reservations d-flex">
+                    <Card.Img src={room1} />
+                        <Card.Body className='horizontal-background-card'>
+                            <Card.Title className='title-card-reserv'>Reservación 1</Card.Title>
+                            <Card.Text>
                             <div className='card-division'>
                                 <div className='card-division-part'>
                                     <div>
@@ -66,33 +67,26 @@ let Reservaciones=()=>{
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <p className='card-subtitle-reserv'>Nombre de la habitación</p>
-                                <p className='card-text-reserv'>Habitación 1A</p>
+                            <div className='card-division'>
+                                <div className='card-division-part'>
+                                    <div>
+                                        <p className='card-subtitle-reserv nombre-room'>Nombre de la habitación</p>
+                                        <p className='card-text-reserv nombre-room'>Habitación 1A</p>
+                                    </div>
+                                    <div>
+                                        <p className='card-subtitle-reserv'>Descripción de habitación</p>
+                                        <p className='card-text-reserv'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                    </div>
+                                    <div>
+                                        <p className='card-subtitle-price'>Valor total con impuestos:</p>
+                                        <p className='card-text-price'>$324.999 </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <p className='card-subtitle-reserv'>Descripción de habitación</p>
-                                <p className='card-text-reserv'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            </div>
-                            <div>
-                                <p className='card-subtitle-price'>Valor total con impuestos:</p>
-                                <p className='card-text-price'>$324.999 </p>
-                            </div>
-                        </Card.Text>
-                        <div className='button-card-reserva'>
-                            <button className="secundary-button" onClick={alertaCancelacion}>Cancelar</button>
-                        </div>
-                    </Card.Body>
-                </Card>
-
-                <Card>
-                    <Card.Img src={room1} />
-                        <Card.Body>
-                            <Card.Title className='title-card-reserv'>Reservación 1</Card.Title>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk
-                                of the card's content.
                             </Card.Text>
+                            <div className='button-card-reserva'>
+                                <button className="secundary-button" onClick={alertaCancelacion}>Cancelar</button>
+                            </div>
                         </Card.Body>
                 </Card>
             </div>
