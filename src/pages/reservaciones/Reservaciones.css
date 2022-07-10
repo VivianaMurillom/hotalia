@@ -63,6 +63,7 @@
 
     .reservations-text p{
         margin: 1rem 2rem;
+        text-align: center;
     }
 
     .card-division{
@@ -88,6 +89,10 @@
 /*Resolución de medias (equipos de escritorio)*/
 @media screen and (min-width: 1024px) {
 
+    .reservations-cards{
+        display: flex;
+        justify-content: center;
+    }
 
     .horizontal-card-reservations{
         display: flex;
@@ -96,5 +101,9 @@
 
     .horizontal-card-reservations img{
         max-width: 500px;
+    }
+
+    .card-text-reservations{
+        display: flex;
     }
 }

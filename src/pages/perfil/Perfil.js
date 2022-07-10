@@ -63,7 +63,7 @@ let Perfil=()=>{
                         </div>
                     </div>
                     <div className="container-button">
-                        <button className="general-button"><Link to="/editar-perfil">Realizar cambios de contacto</Link></button>
+                        <button className="general-button"><Link to="/editar-perfil">Realizar cambios contacto</Link></button>
                     </div>
                 </section>
 

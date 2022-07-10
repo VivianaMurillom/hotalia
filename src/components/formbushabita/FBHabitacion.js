@@ -49,8 +49,6 @@ let FBHabitacion=()=>{
                             </select>
                         </div>
                     </div>
-                </div>
-                <div className="form-rooms-button">
                     <button type="submit" className="general-button">Búsqueda</button>
                 </div>
             </form>

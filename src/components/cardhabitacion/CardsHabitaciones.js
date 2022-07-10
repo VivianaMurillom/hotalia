@@ -9,11 +9,15 @@ let CardsHabitaciones=(props)=>{
     return(
         <>
             <div class="cards-rooms-container">
-                <Card style={{ width: '18rem' }} className="cards-rooms-general">
+                <Card className="cards-rooms-general">
                     <Card.Img variant="top" src={cargarImagen(`./${props.room8}.jpg`)} className="cards-img-rooms"/>
                     <Card.Body>
                         <Card.Title className="cards-room-general-title">{props.room2}</Card.Title>
                         <Card.Text>
+                            <div className="card-price-content">
+                                <h6>Precio noche</h6>
+                                <p>{props.room6}</p>
+                            </div>
                             {props.room4}
                         </Card.Text>
                         <div className="buttons-cards-rooms">

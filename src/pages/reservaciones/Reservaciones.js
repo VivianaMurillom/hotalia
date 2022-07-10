@@ -44,7 +44,7 @@ let Reservaciones=()=>{
                     <Card.Img src={room1} />
                         <Card.Body className='horizontal-background-card'>
                             <Card.Title className='title-card-reserv'>Reservación 1</Card.Title>
-                            <Card.Text>
+                            <Card.Text className='card-text-reservations'>
                             <div className='card-division'>
                                 <div className='card-division-part'>
                                     <div>

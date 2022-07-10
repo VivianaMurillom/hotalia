@@ -10,49 +10,49 @@ let ModalHabitaciones=(props)=>{
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLabel">{props.roomNombre}</h5>
+                        <h3 className="modal-title" id="exampleModalLabel">{props.roomNombre}</h3>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
                         <img src={cargarImgModal(`./${props.roomImg}.jpg`)} alt={props.roomNombre}/>
-                        <h3>Descripción de la habitación</h3>
+                        <h5>Descripción de la habitación</h5>
                         <p className="text-start">{props.roomDescripcion}</p>
-                        <h3>Número de habitación</h3>
+                        <h5>Número de habitación</h5>
                         <p className="text-start">{props.roomNumero}</p>
-                        <h3>Cantidad de camas</h3>
+                        <h5>Cantidad de camas</h5>
                         <p className="text-start">{props.roomCantidadCamas}</p>
-                        <h3>Capacidad de personas</h3>
+                        <h5>Capacidad de personas</h5>
                         <p className="text-start">{props.roomCapacidadPersonas}</p>
                         <div className="modal-aditionals-container">
-                            <h3>En esta habitación usted tiene la posibilidad de solicitar:</h3>
+                            <h5>En esta habitación usted tiene la posibilidad de solicitar:</h5>
                             <div className="aditionals-options">
-                                <i class="fa-solid fa-wifi"></i>
+                                <i class="fa-solid fa-wifi fa-3x"></i>
                                 <p>Wifi</p>
-                                <i class="fa-solid fa-toggle-on"></i>
+                                <i class="fa-solid fa-toggle-on fa-3x"></i>
                             </div>
                             <div className="aditionals-options">
-                                <i class="fa-solid fa-tv"></i>
+                                <i class="fa-solid fa-tv fa-3x"></i>
                                 <p>Tv</p>
-                                <i class="fa-solid fa-toggle-on"></i>
+                                <i class="fa-solid fa-toggle-on fa-3x"></i>
                             </div>
                             <div className="aditionals-options">
-                                <i class="fa-solid fa-toilet"></i>
+                                <i class="fa-solid fa-toilet fa-3x"></i>
                                 <p>Baño</p>
-                                <i class="fa-solid fa-toggle-on"></i>
+                                <i class="fa-solid fa-toggle-on fa-3x"></i>
                             </div>
                             <div className="aditionals-options">
-                                <i class="fa-solid fa-martini-glass-citrus"></i>
+                                <i class="fa-solid fa-martini-glass-citrus fa-3x"></i>
                                 <p>Refrigerador</p>
-                                <i class="fa-solid fa-toggle-off"></i>
+                                <i class="fa-solid fa-toggle-off fa-3x"></i>
                             </div>
                             <div className="aditionals-options">
-                                <i class="fa-solid fa-key"></i>
+                                <i class="fa-solid fa-key fa-3x"></i>
                                 <p>Caja fuerte</p>
-                                <i class="fa-solid fa-toggle-off"></i>
+                                <i class="fa-solid fa-toggle-off fa-3x"></i>
                             </div>
                         </div>
                         <div className="modal-price-content">
-                            <h3>Precio noche</h3>
+                            <h5>Precio noche</h5>
                             <p>{props.roomPrecioNoche}</p>
                         </div>
                     </div>
