@@ -1,0 +1,25 @@
+{
+    "huespedes": [
+      {
+        "id": 1,
+        "tipodoc": "Cédula de ciudadanía",
+        "numdoc": 1234567890,
+        "nombre": "Pepito Andrés",
+        "apellido": "Perez Valvuena",
+        "fnacimiento": "1996-06-24",
+        "genero": "Masculino",
+        "email": "pepito@mail.com",
+        "telefono": 3153693659,
+        "paisorigen": "Colombia",
+        "password": "",
+        "tipouser": "Huésped"
+      }
+    ],
+
+    "imagenes": [
+        {
+            "id": 1,
+            "img": ""
+        }
+    ]
+  }
