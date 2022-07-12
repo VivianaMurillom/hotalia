@@ -35,3 +35,17 @@
 .container-image-file{
     margin-bottom: 1rem;
 }
+
+.mensaje-error-imgFile{
+    margin-top: 1rem;
+    display: none;
+}
+
+.mensaje-error-imgFile-active{
+    display: initial;
+}
+
+.mensaje-error-imgFile-active p{
+    margin-top: 1rem;
+    color: var(--rosado);
+}

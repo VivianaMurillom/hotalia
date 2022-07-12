@@ -19,6 +19,7 @@
     "imagenes": [
         {
             "id": 1,
+            "tipobase": "huespedes",
             "img": ""
         }
     ]
