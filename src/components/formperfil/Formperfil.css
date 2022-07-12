@@ -50,7 +50,7 @@
 }
 
 .mensaje-error-contact{
-    display: none;
+    color: var(--rosado);
     margin-top: .5rem;
     padding: .5rem;
 }
