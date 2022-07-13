@@ -49,7 +49,7 @@ let Formperfil=()=>{
                 <Form>
                 <div className="form-sections-profile">
                     <div className="form-divisions">
-                        <label>Correo</label>
+                        <label htmlFor="correo">Correo</label>
                         <Field
                         className=""
                         type="email"
@@ -61,7 +61,7 @@ let Formperfil=()=>{
                         )}/>
                     </div>
                     <div className="form-divisions">
-                        <label>Telefono de contacto</label>
+                        <label htmlFor="telefono">Telefono de contacto</label>
                         <Field
                         className=""
                         type="number"
