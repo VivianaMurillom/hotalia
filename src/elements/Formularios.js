@@ -53,10 +53,12 @@ const Input = styled.input`
 
 	${props => props.valido === 'true' && css`
 		border: 3px solid transparent;
+		color: ${colores.exito};
 	`}
 
 	${props => props.valido === 'false' && css`
 		border: 3px solid ${colores.error} !important;
+		color: ${colores.error};
 	`}
 `;
 
@@ -82,6 +84,11 @@ const IconoValidacion = styled(FontAwesomeIcon)`
 	z-index: 100;
 	font-size: 16px;
 	opacity: 0;
+
+	/*Resolución de tablet*/
+	@media screen and (min-width: 768px) {
+		right: 20px;
+	}
 
 	${props => props.valido === 'false' && css`
 		opacity: 1;
@@ -140,14 +147,16 @@ const MensajeExito = styled.p`
 `;
 
 const MensajeError = styled.div`
-	height: 45px;
 	line-height: 45px;
-	background: #F66060;
+	background-color: white;
+	border: 1px solid ${colores.error};
 	padding: 0px 15px;
 	border-radius: 3px;
 	grid-column: span 2;
+	margin: 1rem;
 	p {
-		margin: 0;
+		color: ${colores.error};
+		margin: 1rem;
 	} 
 	b {
 		margin-left: 10px;

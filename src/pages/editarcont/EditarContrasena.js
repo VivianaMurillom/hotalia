@@ -64,7 +64,7 @@ let EditarContrasena=()=>{
         <section className="password-section">
             <h3>Cambiar contraseña</h3>
 
-            <form action="" onSubmit={changePassword}>
+            <form action="" onSubmit={changePassword} className="form-change-password">
                 <div className="passw">
                     <Input
                     label="Contraseña actual"

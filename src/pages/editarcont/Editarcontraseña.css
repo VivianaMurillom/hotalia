@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+.form-change-password{
+    margin:.5rem;
+}
+
 .form-password-button{
     display: flex;
     margin: 2rem auto;
@@ -48,5 +52,9 @@
         flex-direction: column;
         margin: 2rem auto;
         max-width: 540px;
+    }
+
+    .passw{
+        max-width: 230px;
     }
 }
