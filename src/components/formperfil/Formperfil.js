@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 
-let Formperfil=(estado)=>{
+let Formperfil=(cambiarEstado)=>{
 
     const url="http://localhost:4000/huespedes";
 
@@ -30,7 +30,10 @@ let Formperfil=(estado)=>{
     const actualizarDatos=async(e)=>{
         e.preventDefault();
 
-        const response=await axios.put(`${url}/${estado.id}`,estado);
+        const response=await axios.put(`${url}/1`,{
+            email:email.campo,
+            telefono:telefono.campo
+        });
 
         if (
             email.valido === 'true' &&
