@@ -1,14 +1,24 @@
 import "./Formperfil.css";
 import Swal from "sweetalert2";
 import Input from "../../components/inputsforms/Input";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {MensajeError} from "../../elements/Formularios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
+import axios from "axios";
 
-let Formperfil=()=>{
+let Formperfil=(estado)=>{
 
-    const [correo, cambiarCorreo] = useState({campo: '', valido: null});
+    const url="http://localhost:4000/huespedes";
+
+    const getData=async()=>{
+        const response=axios.get(url);
+        return response;
+    }
+
+    const [list,setList]=useState([]);
+    const [upList, setUpList]=useState(false);
+    const [email, cambiarEmail] = useState({campo: '', valido: null});
     const [telefono, cambiarTelefono] = useState({campo: '', valido: null});
     const [formularioValido,cambiarFormularioValido]= useState(null);
 
@@ -17,14 +27,17 @@ let Formperfil=()=>{
 		telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 	}
 
-    const actualizarDatos=(e)=>{
+    const actualizarDatos=async(e)=>{
         e.preventDefault();
 
-        if (
-            correo.valido === 'true' &&
-		    telefono.valido === 'true') {
+        const response=await axios.put(`${url}/${estado.id}`,estado);
 
-            cambiarCorreo({campo: '', valido: null});
+        if (
+            email.valido === 'true' &&
+		    telefono.valido === 'true'&&
+            response.status===200) {
+
+            cambiarEmail({campo: '', valido: null});
             cambiarTelefono({campo: '', valido: null});
             cambiarFormularioValido(true);
 
@@ -34,25 +47,35 @@ let Formperfil=()=>{
             'success'
             )
 
+            setUpList(!upList);
+
         } else{
             cambiarFormularioValido(false);
         }
     }
+
+    useEffect(()=>{
+        getData().then((response)=>{
+            setList(response.data);
+        })
+    },[upList]);
+
+    console.log(list);
     
     return(
         <>
         <section className="form-modify-profile">
             <h3>Editar datos de contacto</h3>
 
-                <form action="" onSubmit={actualizarDatos}>
+                <form action="put" onSubmit={actualizarDatos}>
                 <div className="form-sections-profile">
                     <div className="form-sections-profile">
                         <Input
                         label="Correo electrónico"
                         tipo="email"
-                        name="correo"
-                        estado={correo}
-                        cambiarEstado={cambiarCorreo}
+                        name="email"
+                        estado={email}
+                        cambiarEstado={cambiarEmail}
                         expresionRegular={expresiones.correo}
                         leyendaError="El correo debe cumplir las características requeridas, ej: mail@mail.com"/>
                     </div>
