@@ -1,0 +1,147 @@
+header {
+    width: 100vw;
+  }
+  
+  nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #157A8A;
+    position: block;
+    top: 0;
+    z-index: 100;
+  }
+  
+ 
+  
+  .logo-nav {
+    width: 35%;
+    margin-right: 20px;
+  }
+  
+
+  
+  .bar-btn {
+    font-size: 25px;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  
+  .nav_menu-items {
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 80px;
+    background: #157a8ab9;
+    backdrop-filter: blur(15px);
+    text-align: center;
+    transition: all 0.5s;
+    text-decoration: none;
+  }
+  
+  .nav_menu-items li {
+    display: none;
+    line-height: 3rem;
+    margin: 50px 0;
+    transition: all 0.5s;
+  }
+  
+  .nav_menu-items li a {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .nav_menu-items i{
+    margin-right: 8px;
+    color: #ffffff;
+  }
+
+
+  
+
+  .nav_menu-items li a.active,
+  .nav_menu-items li  a:hover {
+    color:#157A8A;
+    border: 3px solid #157A8A;
+    background-color: white;
+    padding: 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+    text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.22);
+  }
+
+  .nav_menu-items .signup{
+    font-size: 13px;
+  }
+  
+  .navLink-select {
+    border-bottom: 2px solid #fff;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  #check:checked ~ .nav_menu-items {
+    height: 100vh;
+  }
+  
+  #check:checked ~ .nav_menu-items li {
+    display: block;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    /*responsive Pc navbar*/
+    nav {
+      height: 100px;
+      flex-direction: row;
+      background-color: var(--gris);
+      border-bottom: 2px solid #157A8A;
+    }
+  
+    .logo-nav {
+      margin-left: 50px;
+    }
+  
+    .bar-btn {
+      display: none;
+    }
+  
+    .nav_menu-items {
+      position: relative;
+      height: 100px;
+      top: 0;
+      background: none;
+      transition: none;
+      text-align: right;
+      margin-right: 1rem;
+      backdrop-filter: blur(0px);
+    }
+
+    .nav_menu-items i{
+        margin-right: 8px;
+        color: #337AB7;
+    }
+
+  
+    .nav_menu-items li {
+      display: inline-block;
+      line-height: 100px;
+      margin: 0 20px;
+      transition: none;
+    }
+  
+    .nav_menu-items li a {
+      text-decoration: none;
+      font-size: 1.03rem;
+      padding: 10px;
+      color: black;
+    }
+  }
