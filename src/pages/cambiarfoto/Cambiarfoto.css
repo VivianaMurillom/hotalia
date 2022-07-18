@@ -1,0 +1,51 @@
+.change-picture{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: .5rem 1rem;
+}
+
+.change-picture h2{
+    color: var(--azul-petroleo);
+    font-weight: 800;
+    margin-top: .5rem;
+    text-align: center;
+}
+
+.change-picture img{
+    margin: 1rem 0;
+}
+
+.change-picture p{
+    color: var(--negro);
+}
+
+.change-picture form{
+    margin: 1rem;
+    max-width: 300px;
+}
+
+.change-picture form input{
+    display: flex;
+    flex-direction: column;
+    max-width: 290px;
+}
+
+.container-image-file{
+    margin-bottom: 1rem;
+}
+
+.mensaje-error-imgFile{
+    margin-top: 1rem;
+    display: none;
+}
+
+.mensaje-error-imgFile-active{
+    display: initial;
+}
+
+.mensaje-error-imgFile-active p{
+    margin-top: 1rem;
+    color: var(--rosado);
+}

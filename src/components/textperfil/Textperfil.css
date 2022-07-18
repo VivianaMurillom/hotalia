@@ -1,0 +1,23 @@
+.textPerfil-section{
+    margin-top: 2rem;
+}
+
+.textPerfil-section h1{
+    color: var(--azul-petroleo);
+    font-weight: bold;
+    text-align: center;
+}
+
+.textPerfil-section p{
+    color: var(--negro);
+    padding: 0 1rem;
+}
+
+/*Resolución de tablet*/
+@media screen and (min-width: 768px) {
+    .textPerfil-section p{
+        color: var(--negro);
+        padding: 0 2rem;
+        text-align: center;
+    }
+}

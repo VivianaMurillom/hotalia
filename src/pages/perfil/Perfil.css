@@ -1,0 +1,225 @@
+.all-content-profile{
+    display: grid;
+    grid-template: 
+    "foto" 250px
+    "datos" auto
+    "contrasena" 200px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.image-profile{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    grid-area: foto;
+    margin: .5rem auto;
+    max-width: 300px;
+    width: 100%;
+}
+
+.image-profile img{
+    margin: 1rem 0;
+    width: 150px;
+}
+
+.image-profile a{
+    color: var(--azul-petroleo);
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.image-profile a:hover{
+    color: var(--naranja);
+}
+
+.user-data-profile{
+    border: 1px solid var(--negro);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    grid-area: datos;
+    margin: 0 auto;
+    max-width: 300px;
+    width: 100%;
+}
+
+.user-data-profile h6{
+    color: var(--azul-rey);
+    font-weight:600;
+}
+
+.user-data-profile p{
+    color: var(--negro);
+}
+
+.user-data-section{
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+}
+
+.nombres{
+    background-color:var(--gris);
+    margin: 0;
+    padding: 1rem;
+}
+
+.nombres h6{
+    color: var(--azul-rey);
+    font-weight:600;
+}
+
+.nombres p{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.data-content{
+    margin: .5rem;
+    width: 250px;
+}
+
+.profile-password{
+    align-items: center;
+    background-color: var(--gris);
+    border: 1px solid var(--negro);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    grid-area: contrasena;
+    margin: 1rem auto;
+    max-width: 300px;
+    padding: 1rem;
+    width: 100%;
+}
+
+.profile-password h5{
+    color: var(--azul-rey);
+    font-weight:600;
+}
+
+.profile-password p{
+    color: white;
+}
+
+.container-button{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.general-button{
+    background-color: var(--azul-rey);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    height: 50px;
+    margin: .2rem auto;
+    padding: .5rem;
+    width: 250px;
+}
+
+.general-button:hover{
+    color: var(--azul-rey);
+    background-color: white;
+    border: 1px solid var(--azul-rey);
+}
+
+.general-button a{
+    color: white;
+    text-decoration: none;
+}
+
+.general-button a:hover{
+    color: var(--azul-rey);
+}
+
+.secundary-button{
+    background-color: var(--naranja);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    height: 52px;
+    margin: .2rem auto;
+    width: 192px;
+}
+
+.secundary-button:hover{
+    color: var(--naranja);
+    background-color: white;
+    border: 1px solid var(--naranja);
+}
+
+.secundary-button a{
+    color: white;
+    text-decoration: none;
+}
+
+.secundary-button a:hover{
+    color: var(--naranja);
+}
+
+/*Resolución de tablet*/
+@media screen and (min-width: 768px) {
+    .user-data-profile{
+        max-width: 450px;
+    }
+
+    .user-data-section{
+        flex-direction: row;
+    }
+
+    .nombres{
+        width: 100%;
+    }
+
+    .profile-password{
+        margin: 1rem auto;
+        max-width: 270px;
+    }
+}
+
+/*Resolución de medias (equipos de escritorio)*/
+@media screen and (min-width: 1024px) {
+
+    .all-content-profile{
+        align-items: center;
+        grid-template-areas: 
+        "foto datos"
+        "contrasena datos";
+        grid-template-columns: auto auto;
+        justify-content: center;
+        grid-template-rows: 350px auto;
+    }
+
+    .image-profile{
+        margin: 1rem 1rem;
+    }
+
+    .image-profile img{
+        margin: 1rem 0;
+        width: 250px;
+    }
+
+    .user-data-profile{
+        margin-left: 3rem;
+        width: 600px;
+    }
+
+    .profile-password{
+        margin: 1rem 2rem;
+    }
+}

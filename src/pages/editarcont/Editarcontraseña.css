@@ -1,0 +1,60 @@
+.password-section h3{
+    color: var(--azul-petroleo);
+    font-weight: 600;
+    margin-top: .5rem;
+    text-align: center;
+}
+
+.form-change-password{
+    margin:.5rem;
+}
+
+.form-password-button{
+    display: flex;
+    margin: 2rem auto;
+}
+
+.passw label{
+    color: var(--azul-petroleo);
+}
+
+.form-password-button .general-button{
+    max-width: 180px;
+}
+
+/*Resolución de tablet*/
+@media screen and (min-width: 768px) {
+    .password-section{
+        margin: 0 2rem;
+    }
+
+    .password-section form{
+        background-color: var(--gris);
+        margin: 1rem 0;
+        padding: 2rem 0;
+    }
+
+    .passw{
+        margin: 1rem auto;
+        max-width: 300px;
+    }
+
+    .passw input{
+        max-width: 290px;
+    }
+}
+
+/*Resolución de medias (equipos de escritorio)*/
+@media screen and (min-width: 1024px) {
+    .password-section form{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 2rem auto;
+        max-width: 540px;
+    }
+
+    .passw{
+        max-width: 230px;
+    }
+}

@@ -1,0 +1,64 @@
+.cards-rooms-container{
+    /* align-items: center;
+    display: flex;
+    flex-direction: column; */
+    margin: 1rem auto;
+    width: 18rem;
+}
+
+.cards-rooms-general{
+    margin: 1rem .5rem;
+}
+
+.cards-img-rooms{
+    max-height: 190px;
+}
+
+.cards-room-general-title{
+    color: var(--azul-rey);
+    font-weight: bold;
+}
+
+.card-price-content h6{
+    color: var(--azul-rey); 
+}
+
+.card-price-content p{
+    font-size: 1.2em;
+    font-weight: 800;
+    text-align: left;
+}
+
+.card-price-content h6, .card-price-content p{
+    text-align: left;
+}
+
+.buttons-cards-rooms{
+    display: flex;
+}
+
+.buttons-cards-rooms .general-button, .buttons-cards-rooms .secundary-button{
+    max-width: 100px;
+}
+
+/*Resolución de tablet*/
+@media screen and (min-width: 768px) {
+    /* .cards-rooms-container{
+        background-color: blue;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    } */
+}
+
+/*Resolución de medias (equipos de escritorio)*/
+@media screen and (min-width: 1024px) {
+    .cards-rooms-container{
+        margin: 0 2rem;
+        width: 28rem;
+    }
+    .cards-rooms-general{
+        margin: 1rem 2rem;
+        width: 22rem;
+    }
+}
