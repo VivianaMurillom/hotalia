@@ -9,6 +9,7 @@ import CambiarFoto from './pages/cambiarfoto/CambiarFoto';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BuscarHabitacion from './pages/buscarhabita/BuscarHabitacion';
 import Reservaciones from './pages/reservaciones/Reservaciones';
+import TemporalLogin from './pages/temporalLogin/TemporalLogin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,7 @@ root.render(
         <Route path="/cambiar-foto" element={<CambiarFoto />} />
         <Route path="/reservaciones" element={<Reservaciones />} />
         <Route path="/buscar-habitacion" element={<BuscarHabitacion />} />
+        <Route path="/Login-pruebas" element={<TemporalLogin />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

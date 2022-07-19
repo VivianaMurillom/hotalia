@@ -11,9 +11,9 @@
       "email": "pepito@mail.com",
       "telefono": 3153693659,
       "paisorigen": "Colombia",
-      "password": "",
+      "password": "Pruebas123*",
       "tipouser": "Huésped",
-      "imagen":""
+      "img":""
     },
     {
       "id": 2,

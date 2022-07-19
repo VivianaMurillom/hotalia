@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 
-let Formperfil=(cambiarEstado)=>{
+let Formperfil=()=>{
 
     const url="http://localhost:4000/huespedes";
 
@@ -70,7 +70,7 @@ let Formperfil=(cambiarEstado)=>{
         <section className="form-modify-profile">
             <h3>Editar datos de contacto</h3>
 
-                <form action="put" onSubmit={actualizarDatos}>
+                <form action="" onSubmit={actualizarDatos}>
                 <div className="form-sections-profile">
                     <div className="form-sections-profile">
                         <Input
@@ -92,7 +92,6 @@ let Formperfil=(cambiarEstado)=>{
                         expresionRegular={expresiones.telefono}
                         leyendaError="El telefono solo puede contener numeros entre 7 y 14 dígitos."
                         />
-
                     </div>
                 </div>
                 {formularioValido===false && <MensajeError>
