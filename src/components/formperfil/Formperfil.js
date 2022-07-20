@@ -7,12 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 
-let Formperfil=()=>{
+let Formperfil=(userId)=>{
 
-    const url="http://localhost:4000/huespedes";
+    const url="http://localhost:4000/huespedes/id";
 
     const getData=async()=>{
-        const response=axios.get(url);
+        const response=axios.get(`${url}/${('id')}`);
         return response;
     }
 
@@ -30,7 +30,7 @@ let Formperfil=()=>{
     const actualizarDatos=async(e)=>{
         e.preventDefault();
 
-        const response=await axios.put(`${url}/1`,{
+        const response=await axios.put(`${url}/${userId}`,{
             email:email.campo,
             telefono:telefono.campo
         });
@@ -67,6 +67,11 @@ let Formperfil=()=>{
     
     return(
         <>
+{/* 
+        {list.map(usuario)}
+        <div>
+        </div> */}
+
         <section className="form-modify-profile">
             <h3>Editar datos de contacto</h3>
 

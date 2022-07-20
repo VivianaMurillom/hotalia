@@ -4,23 +4,37 @@ import TextPerfil from "../../components/textperfil/TextPerfil";
 import "./Perfil.css";
 import cambiarImagen from "./img/cambiar-imagen.svg";
 import Cookies from 'universal-cookie';
+import axios from "axios";
 
 let Perfil=()=>{
 
     const cookies = new Cookies();
 
+    userId=cookies.get('id');
+    
+    // const usuarioLoggeado = window.localStorage.getItem(cookies.get('id'));
+    
+    const url="http://localhost:4000/huespedes/id";
+
+    const getData=async()=>{
+        const response=axios.get(`${url}/${userId}`);
+        return response
+    }
+
+    // const [list,setList]=useState([]);
+    // const [upList, setUpList]=useState(false);
+
+    // useEffect(()=>{
+    //     getData().then((response)=>{
+    //         setList(response.data);
+    //     })
+    // },[upList]);
+
+    // console.log(list);
+
     console.log('id: '+ cookies.get('id'));
-    console.log('tipodoc: '+cookies.get('tipodoc'));
-    console.log('numdoc: '+cookies.get('numdoc'));
     console.log('nombre: '+cookies.get('nombre'));
     console.log('apellido: '+cookies.get('apellido'));
-    console.log('fnacimiento: '+cookies.get('fnacimiento'));
-    console.log('genero: '+cookies.get('genero'));
-    console.log('email: '+cookies.get('email'));
-    console.log('telefono: '+cookies.get('telefono'));
-    console.log('paisorigen: '+cookies.get('paisorigen'));
-    console.log('tipouser: '+cookies.get('tipouser'));
-    console.log('img: '+cookies.get('img'));
 
     return(
         <>
@@ -40,7 +54,7 @@ let Perfil=()=>{
                     <div className="user-data-section">
                         <div className="data-content nombres">
                             <h6>Datos de</h6>
-                            <p>{cookies.get('nombre')}</p><p>{cookies.get('apellido')}</p>
+                            <p>{cookies.get('apellido')}</p><p>{cookies.get('apellido')}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
