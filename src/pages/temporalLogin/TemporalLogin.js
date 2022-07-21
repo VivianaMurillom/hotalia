@@ -41,11 +41,11 @@ let TemporalLogin=()=>{
                 response.length>0){
 
                 var respuesta=response[0];
-                cookies.set('id', respuesta.id, {path: ("/perfil", "/editar-perfil")});
+                cookies.set('id', respuesta.id, {path: "/perfil"});
                 cookies.set('tipodoc', respuesta.tipodoc, {path: "/perfil"});
                 cookies.set('numdoc', respuesta.numdoc, {path: "/perfil"});
-                cookies.set('nombre', respuesta.nombre, {path: ("/perfil", "/editar-perfil")});
-                cookies.set('apellido', respuesta.apellido, {path: ("/perfil", "/editar-perfil")});
+                cookies.set('nombre', respuesta.nombre, {path: "/perfil"});
+                cookies.set('apellido', respuesta.apellido, {path: "/perfil"});
                 cookies.set('fnacimiento', respuesta.fnacimiento, {path: "/perfil"});
                 cookies.set('genero', respuesta.genero, {path: "/perfil"});
                 cookies.set('email', respuesta.email, {path: "/perfil"});

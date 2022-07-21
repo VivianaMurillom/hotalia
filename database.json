@@ -3,17 +3,16 @@
     {
       "id": 1,
       "tipodoc": "Cédula de ciudadanía",
-      "numdoc": 1234567890,
+      "numdoc": "1234567890",
       "nombre": "Pepito Andrés",
       "apellido": "Perez Valvuena",
       "fnacimiento": "1996-06-24",
       "genero": "Masculino",
-      "email": "pepito@mail.com",
-      "telefono": 3153693659,
+      "email": "pruebas@mail.com",
+      "telefono": "3156983658",
       "paisorigen": "Colombia",
-      "password": "Pruebas123*",
       "tipouser": "Huésped",
-      "img":""
+      "img": ""
     },
     {
       "id": 2,

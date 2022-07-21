@@ -6,13 +6,18 @@ import {MensajeError} from "../../elements/Formularios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
+import Cookies from 'universal-cookie';
 
 let Formperfil=(userId)=>{
 
-    const url="http://localhost:4000/huespedes/id";
+    const url="http://localhost:4000/huespedes";
+    
+    const cookies = new Cookies();
+
+    userId = cookies.get('id');
 
     const getData=async()=>{
-        const response=axios.get(`${url}/${('id')}`);
+        const response=axios.get(`${url}/${userId}`);
         return response;
     }
 
@@ -31,8 +36,19 @@ let Formperfil=(userId)=>{
         e.preventDefault();
 
         const response=await axios.put(`${url}/${userId}`,{
+            id: userId,
+            tipodoc: cookies.get('tipodoc'),
+            numdoc: cookies.get('numdoc'),
+            nombre: cookies.get('nombre'),
+            apellido: cookies.get('apellido'),
+            fnacimiento: cookies.get('fnacimiento'),
+            genero: cookies.get('genero'),
             email:email.campo,
-            telefono:telefono.campo
+            telefono:telefono.campo,
+            paisorigen: cookies.get('paisorigen'),
+            password: cookies.get('password'),
+            tipouser: cookies.get('tipouser'),
+            img:cookies.get('img')
         });
 
         if (
@@ -67,10 +83,6 @@ let Formperfil=(userId)=>{
     
     return(
         <>
-{/* 
-        {list.map(usuario)}
-        <div>
-        </div> */}
 
         <section className="form-modify-profile">
             <h3>Editar datos de contacto</h3>
