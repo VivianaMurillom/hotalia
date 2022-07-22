@@ -51,6 +51,7 @@ let TemporalLogin=()=>{
                 cookies.set('email', respuesta.email, {path: "/perfil"});
                 cookies.set('telefono', respuesta.telefono, {path: "/perfil"});
                 cookies.set('paisorigen', respuesta.paisorigen, {path: "/perfil"});
+                cookies.set('password', respuesta.password, {path: "/perfil"});
                 cookies.set('tipouser', respuesta.tipouser, {path: "/perfil"});
                 cookies.set('img', respuesta.img, {path: "/perfil"});
                 alert(`Bienvenido ${respuesta.nombre} ${respuesta.apellido}`);
@@ -66,12 +67,6 @@ let TemporalLogin=()=>{
                 cambiarFormularioValido(false);
             }})
     }
-
-    // let componentDidMount=()=> {
-    //     if(cookies.get('username')){
-    //         window.location.href="./menu";
-    //     }
-    // }
 
     useEffect(()=>{
         getData().then((response)=>{

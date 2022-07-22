@@ -4,39 +4,14 @@ import TextPerfil from "../../components/textperfil/TextPerfil";
 import "./Perfil.css";
 // import cambiarImagen from "./img/cambiar-imagen.svg";
 import Cookies from 'universal-cookie';
-import {useState, useEffect} from "react";
-import axios from "axios";
 
-let Perfil=(userId)=>{
+let Perfil=()=>{
 
     const cookies = new Cookies();
-
-    userId = cookies.get('id');
 
     console.log('id: '+ cookies.get('id'));
     console.log('nombre: '+cookies.get('nombre'));
     console.log('apellido: '+cookies.get('apellido'));
-
-    const url="http://localhost:4000/huespedes";
-
-    const [info, getInfo]= useState([]);
-
-    const getPeticion=async()=>{
-        const response = await axios.get(url);
-        return response.data;
-    }
-
-    useEffect(()=>{
-        const getAllInfo = async()=>{
-            const allInfo = await getPeticion();
-            if (allInfo) getInfo(allInfo);
-        };
-
-        getAllInfo();
-    }, []);
-
-    useEffect(() => {
-      }, [info]);
 
     return(
         <>
@@ -44,11 +19,10 @@ let Perfil=(userId)=>{
 
             <TextPerfil/>
 
-            {info.map((user)=>(
                 <div className="all-content-profile">
 
                 <section className="image-profile">
-                    <img src={user.img} alt="imagen perfil" />
+                    <img src={cookies.get('img')} alt="imagen perfil" />
                     <Link to="/cambiar-foto">Cambiar foto</Link>
                 </section>
 
@@ -57,43 +31,43 @@ let Perfil=(userId)=>{
                     <div className="user-data-section">
                         <div className="data-content nombres">
                             <h6>Datos de</h6>
-                            <p>{user.nombre}</p><p>{cookies.get(user.apellido)}</p>
+                            <p>{cookies.get('nombre')}</p><p>{cookies.get('apellido')}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>Tipo de documento de identidad</h6>
-                            <p>{user.tipodoc}</p>
+                            <p>{cookies.get('tipodoc')}</p>
                         </div>
                         <div className="data-content">
                             <h6>Número de documento de identidad</h6>
-                            <p>{user.numdoc}</p>
+                            <p>{cookies.get('numdoc')}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>Fecha de nacimiento</h6>
-                            <p>{user.fnacimiento}</p>
+                            <p>{cookies.get('fnacimiento')}</p>
                         </div>
                         <div className="data-content">
                             <h6>Género</h6>
-                            <p>{user.genero}</p>
+                            <p>{cookies.get('genero')}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>Correo</h6>
-                            <p>{user.email}</p>
+                            <p>{cookies.get('correo')}</p>
                         </div>
                         <div className="data-content">
                             <h6>Teléfono de contacto</h6>
-                            <p>{user.telefono}</p>
+                            <p>{cookies.get('telefono')}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>País de origen</h6>
-                            <p>{user.paisorigen}</p>
+                            <p>{cookies.get('paisorigen')}</p>
                         </div>
                     </div>
                     <div className="container-button">
@@ -112,8 +86,6 @@ let Perfil=(userId)=>{
                     </div>
                 </section>
             </div>
-            ))
-            }
             
         </main>
         <Footer/>

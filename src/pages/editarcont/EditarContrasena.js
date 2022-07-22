@@ -3,17 +3,33 @@ import Footer from "../../components/footer/Footer";
 import "./Editarcontraseña.css";
 import Swal from "sweetalert2";
 import Input from "../../components/inputsforms/Input";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {MensajeError} from "../../elements/Formularios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
+import Cookies from 'universal-cookie';
+import axios from "axios";
 
-let EditarContrasena=()=>{
+let EditarContrasena=(userId,userPassword)=>{
+
+    const url="http://localhost:4000/huespedes";
+
+    const cookies = new Cookies();
+
+    userId = cookies.get('id');
+    userPassword= cookies.get('password');
+
+    const getData=async()=>{
+        const response=axios.get(`${url}/${userId}`);
+        return response;
+    }
 
     const [contraseniaActual, cambiarContraseniaActual] = useState({campo: '', valido: null});
 	const [contrasenianueva, cambiarContraseniaNueva] = useState({campo: '', valido: null});
     const [contraseniaNueva2, cambiarContraseniaNueva2] = useState({campo: '', valido: null});
     const [formularioValido,cambiarFormularioValido]= useState(null);
+    const [list,setList]=useState([]);
+    const [upList, setUpList]=useState(false);
 
     const expresion = {
 		password: /^.{4,12}$/, // 4 a 12 digitos.
@@ -31,31 +47,61 @@ let EditarContrasena=()=>{
               });
           }
         }
-        }
+    }
 
-    const changePassword=(e)=>{
+    const changePassword=async(e)=>{
         e.preventDefault();
 
-        if (
-            contraseniaActual.valido === 'true' &&
-		    contrasenianueva.valido === 'true' &&
-            contraseniaNueva2.valido === 'true') {
+        const response=await axios.put(`${url}/${userId}`,{
+            id: userId,
+            tipodoc: cookies.get('tipodoc'),
+            numdoc: cookies.get('numdoc'),
+            nombre: cookies.get('nombre'),
+            apellido: cookies.get('apellido'),
+            fnacimiento: cookies.get('fnacimiento'),
+            genero: cookies.get('genero'),
+            email:cookies.get('email'),
+            telefono:cookies.get('telefono'),
+            paisorigen: cookies.get('paisorigen'),
+            password: contrasenianueva.campo,
+            tipouser: cookies.get('tipouser'),
+            img:cookies.get('img')
+        });
 
-            cambiarContraseniaActual({campo: '', valido: null});
-            cambiarContraseniaNueva({campo: '', valido: null});
-            cambiarContraseniaNueva2({campo: '', valido: 'null'});
-            cambiarFormularioValido(true);
+        if (userPassword===contraseniaActual) {
 
-            Swal.fire(
-                'Contraseña actualizada',
-                'Su contraseña ha sido actualizada correctamente!',
-                'success'
-            )
+            if (
+                contraseniaActual.valido === 'true' &&
+                contrasenianueva.valido === 'true' &&
+                contraseniaNueva2.valido === 'true' && 
+                response.status===200) {
 
-        } else{
+                cambiarContraseniaActual({campo: '', valido: null});
+                cambiarContraseniaNueva({campo: '', valido: null});
+                cambiarContraseniaNueva2({campo: '', valido: 'null'});
+                cambiarFormularioValido(true);
+
+                Swal.fire(
+                    'Contraseña actualizada',
+                    'Su contraseña ha sido actualizada correctamente!',
+                    'success'
+                )
+
+                setUpList(!upList);
+            }
+        } 
+        else{
             cambiarFormularioValido(false);
         }
     }
+
+    useEffect(()=>{
+        getData().then((response)=>{
+            setList(response.data);
+        })
+    },[upList]);
+
+    console.log(list);
 
     return(
         <>
