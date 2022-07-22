@@ -19,6 +19,8 @@ let EditarContrasena=(userId,userPassword)=>{
     userId = cookies.get('id');
     userPassword= cookies.get('password');
 
+    console.log(userPassword);
+
     const getData=async()=>{
         const response=axios.get(`${url}/${userId}`);
         return response;
@@ -52,47 +54,48 @@ let EditarContrasena=(userId,userPassword)=>{
     const changePassword=async(e)=>{
         e.preventDefault();
 
-        const response=await axios.put(`${url}/${userId}`,{
-            id: userId,
-            tipodoc: cookies.get('tipodoc'),
-            numdoc: cookies.get('numdoc'),
-            nombre: cookies.get('nombre'),
-            apellido: cookies.get('apellido'),
-            fnacimiento: cookies.get('fnacimiento'),
-            genero: cookies.get('genero'),
-            email:cookies.get('email'),
-            telefono:cookies.get('telefono'),
-            paisorigen: cookies.get('paisorigen'),
-            password: contrasenianueva.campo,
-            tipouser: cookies.get('tipouser'),
-            img:cookies.get('img')
-        });
+        if (
+            userPassword===contraseniaActual.campo &&
+            contraseniaActual.valido === 'true' &&
+            contrasenianueva.valido === 'true' &&
+            contraseniaNueva2.valido === 'true') {
 
-        if (userPassword===contraseniaActual) {
+                const response=await axios.put(`${url}/${userId}`,{
+                    id: userId,
+                    tipodoc: cookies.get('tipodoc'),
+                    numdoc: cookies.get('numdoc'),
+                    nombre: cookies.get('nombre'),
+                    apellido: cookies.get('apellido'),
+                    fnacimiento: cookies.get('fnacimiento'),
+                    genero: cookies.get('genero'),
+                    email:cookies.get('email'),
+                    telefono:cookies.get('telefono'),
+                    paisorigen: cookies.get('paisorigen'),
+                    password: contrasenianueva.campo,
+                    tipouser: cookies.get('tipouser'),
+                    img:cookies.get('img')
+                });
 
-            if (
-                contraseniaActual.valido === 'true' &&
-                contrasenianueva.valido === 'true' &&
-                contraseniaNueva2.valido === 'true' && 
-                response.status===200) {
+                if (response.status===200) {
 
-                cambiarContraseniaActual({campo: '', valido: null});
-                cambiarContraseniaNueva({campo: '', valido: null});
-                cambiarContraseniaNueva2({campo: '', valido: 'null'});
-                cambiarFormularioValido(true);
+                    cambiarContraseniaActual({campo: '', valido: null});
+                    cambiarContraseniaNueva({campo: '', valido: null});
+                    cambiarContraseniaNueva2({campo: '', valido: 'null'});
+                    cambiarFormularioValido(true);
 
-                Swal.fire(
-                    'Contraseña actualizada',
-                    'Su contraseña ha sido actualizada correctamente!',
-                    'success'
-                )
+                    setUpList(!upList);
 
-                setUpList(!upList);
-            }
-        } 
-        else{
+                    Swal.fire(
+                        'Contraseña actualizada',
+                        'Su contraseña ha sido actualizada correctamente!',
+                        'success'
+                    )
+                }
+        } else{
             cambiarFormularioValido(false);
         }
+            
+        
     }
 
     useEffect(()=>{

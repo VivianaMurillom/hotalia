@@ -12,6 +12,7 @@ let Perfil=()=>{
     console.log('id: '+ cookies.get('id'));
     console.log('nombre: '+cookies.get('nombre'));
     console.log('apellido: '+cookies.get('apellido'));
+    console.log('correo '+ cookies.get('email'));
 
     return(
         <>
@@ -57,7 +58,7 @@ let Perfil=()=>{
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>Correo</h6>
-                            <p>{cookies.get('correo')}</p>
+                            <p>{cookies.get('email')}</p>
                         </div>
                         <div className="data-content">
                             <h6>Teléfono de contacto</h6>
