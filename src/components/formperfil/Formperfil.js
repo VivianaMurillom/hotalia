@@ -35,38 +35,40 @@ let Formperfil=(userId)=>{
     const actualizarDatos=async(e)=>{
         e.preventDefault();
 
-        const response=await axios.put(`${url}/${userId}`,{
-            id: userId,
-            tipodoc: cookies.get('tipodoc'),
-            numdoc: cookies.get('numdoc'),
-            nombre: cookies.get('nombre'),
-            apellido: cookies.get('apellido'),
-            fnacimiento: cookies.get('fnacimiento'),
-            genero: cookies.get('genero'),
-            email:email.campo,
-            telefono:telefono.campo,
-            paisorigen: cookies.get('paisorigen'),
-            password: cookies.get('password'),
-            tipouser: cookies.get('tipouser'),
-            img:cookies.get('img')
-        });
-
         if (
             email.valido === 'true' &&
-		    telefono.valido === 'true'&&
-            response.status===200) {
+		    telefono.valido === 'true') {
 
-            cambiarEmail({campo: '', valido: null});
-            cambiarTelefono({campo: '', valido: null});
-            cambiarFormularioValido(true);
+                const response=await axios.put(`${url}/${userId}`,{
+                    id: userId,
+                    tipodoc: cookies.get('tipodoc'),
+                    numdoc: cookies.get('numdoc'),
+                    nombre: cookies.get('nombre'),
+                    apellido: cookies.get('apellido'),
+                    fnacimiento: cookies.get('fnacimiento'),
+                    genero: cookies.get('genero'),
+                    email:email.campo,
+                    telefono:telefono.campo,
+                    paisorigen: cookies.get('paisorigen'),
+                    password: cookies.get('password'),
+                    tipouser: cookies.get('tipouser'),
+                    img:cookies.get('img')
+                });
 
-            Swal.fire(
-            'Información actualizada',
-            'Su información de perfil ha sido actualizada correctamente!',
-            'success'
-            )
+                if (response.status===200) {
 
-            setUpList(!upList);
+                    cambiarEmail({campo: '', valido: null});
+                    cambiarTelefono({campo: '', valido: null});
+                    cambiarFormularioValido(true);
+        
+                    Swal.fire(
+                    'Información actualizada',
+                    'Su información de perfil ha sido actualizada correctamente!',
+                    'success'
+                    )
+        
+                    setUpList(!upList); 
+                }
 
         } else{
             cambiarFormularioValido(false);
