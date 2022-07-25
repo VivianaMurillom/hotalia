@@ -52,7 +52,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.input-fili input{
+.input-grup label{
+    margin: 10px;
+}
+
+.input-fili {
     
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -129,6 +133,14 @@
 
   }
 
+  .error {
+    color: red;
+    text-align: center;
+    font-size: 12px;
+    margin-left: 50px;
+
+  }
+
   @media screen and (min-width: 500px){
     .btn-grup-login{
         display: flex;
@@ -142,6 +154,22 @@
         grid-template-columns: repeat(2,50%);
         height: 0vh;
     }
+
+    .input-fili {
+    
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        text-align: center;
+        width: 50%;
+        height: 2rem;
+        font-size: 1.0125rem;
+        padding-left: 1rem;
+        line-height: 147.6%;
+        font-family: 'Poppins', sans-serif;
+        background-color: none;
+    }
+    
 
     .info-login{
             background-color: #157A8A;;

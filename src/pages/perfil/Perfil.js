@@ -1,20 +1,28 @@
 import { Link } from "react-router-dom";
-import Footer from "../../components/footer/Footer";
-import TextPerfil from "../../components/textperfil/TextPerfil";
-import "./Perfil.css";
-import cambiarImagen from "./img/cambiar-imagen.svg";
 
-let Perfil=()=>{
+
+import "./Perfil.css";
+import axios from 'axios';
+
+
+
+const Perfil=({huesped,handleOpen,setDataModal})=>{
+
+    const url="http://localhost:2000/huespedes/1";
+
+    const handleEdit=()=>{
+        handleOpen();
+        setDataModal(huesped)
+    }
     return(
         <>
         <main>
 
-            <TextPerfil/>
 
             <div className="all-content-profile">
                 
                 <section className="image-profile">
-                    <img src={cambiarImagen} alt="imagen perfil"/>
+                    <img  alt="imagen perfil"/>
                     <Link to="/cambiar-foto">Cambiar foto</Link>
                 </section>
 
@@ -23,47 +31,53 @@ let Perfil=()=>{
                     <div className="user-data-section">
                         <div className="data-content nombres">
                             <h6>Datos de</h6>
-                            <p>Pepito Andrés Perez Valvuena</p>
+                            <p>{huesped.nombre}</p>
+                        </div>
+                    </div>
+                    <div className="user-data-section">
+                        <div className="data-content nombres">
+                            <h6>Datos de</h6>
+                            <p>{huesped.apellido}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>Tipo de documento de identidad</h6>
-                            <p>Cédula de ciudadanía</p>
+                            <p>{huesped.tipodoc}</p>
                         </div>
                         <div className="data-content">
                             <h6>Número de documento de identidad</h6>
-                            <p>1234567890</p>
+                            <p>{huesped.numdoc}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>Fecha de nacimiento</h6>
-                            <p>24/06/1996</p>
+                            <p>{huesped.fnacimiento}</p>
                         </div>
                         <div className="data-content">
                             <h6>Género</h6>
-                            <p>Masculino</p>
+                            <p>{huesped.genero}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>Correo</h6>
-                            <p>pepito@mail.com</p>
+                            <p>{huesped.email}</p>
                         </div>
                         <div className="data-content">
                             <h6>Teléfono de contacto</h6>
-                            <p>315 369 3659</p>
+                            <p>{huesped.telefono}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>País de origen</h6>
-                            <p>Colombia</p>
+                            <p>{huesped.pais}</p>
                         </div>
                     </div>
                     <div className="container-button">
-                        <button className="general-button"><Link to="/editar-perfil">Realizar cambios contacto</Link></button>
+                        <button className="general-button" onClick={handleEdit}><Link to="/editar-perfil">Realizar cambios contacto</Link></button>
                     </div>
                 </section>
 
@@ -78,7 +92,7 @@ let Perfil=()=>{
                 </section>
             </div>
         </main>
-        <Footer/>
+
         </>
     )
 }

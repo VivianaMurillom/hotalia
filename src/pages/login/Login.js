@@ -37,7 +37,7 @@ const Login = () => {
                     if(!valores.correo){
                         errores.correo = 'Por favor ingrese un correo'
                      } else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.correo)){
-                         errores.correo = 'El orreo sólo puede contener letras, números, puntos, guiones y guion bajo'
+                         errores.correo = 'El correo sólo puede contener letras, números, puntos, guiones y guion bajo'
                      }
 
                     return errores;
@@ -55,7 +55,8 @@ const Login = () => {
 
                             <div className='input-grup'>
                                 <label htmlFor='correo'>Correo</label>
-                                <input 
+                                <input  
+                                     className="input-fili" 
                                     type='text' 
                                     id='correo'
                                     name='correo'  
@@ -64,12 +65,13 @@ const Login = () => {
                                     onBlur={handleBlur}>
                                  </input>
 
-                                 { touched.correo && errors.correo && <div>{errors.correo}</div>}
+                                 { touched.correo && errors.correo && <div className="error">{errors.correo}</div>}
                             </div>
 
                             <div className='input-grup'>
                                 <label htmlFor='password'>Contraseña</label>
                                 <input
+                                    className="input-fili" 
                                     type='password' 
                                     id='password' 
                                     name='password' 
@@ -77,10 +79,10 @@ const Login = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}>
                                  </input>
-                                 {touched.password && errors.password && <div>{errors.password}</div>}
+                                 {touched.password && errors.password && <div className="error">{errors.password}</div>}
                             </div>
 
-                            <button type='submit'>Ingresar</button>
+                            <button className="btn-login" type='submit'>Ingresar</button>
                         </form>
                     )}
                 </Formik>

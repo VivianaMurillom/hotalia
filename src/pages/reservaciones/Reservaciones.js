@@ -1,7 +1,7 @@
 import './Reservaciones.css';
 import {Card} from 'react-bootstrap';
-import Footer from '../../components/footer/Footer';
-import room1 from './img/room1.jpg';
+
+import room1 from '../../img/aver.png';
 import Swal from "sweetalert2";
 
 let Reservaciones=()=>{
@@ -31,6 +31,7 @@ let Reservaciones=()=>{
 
     return(
         <>
+    
         <section className='section-reservations'>
 
             <div className='reservations-text'>
@@ -95,7 +96,7 @@ let Reservaciones=()=>{
                 <button className="general-button">Contactar un asesor</button>
             </div>
         </section>
-        <Footer/>
+
         </>
     )
 }

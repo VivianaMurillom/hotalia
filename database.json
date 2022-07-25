@@ -1,49 +1,32 @@
 {
-    "huespedes": [
-      {
-        "id": 1,
-        "tipodoc": "Cédula de ciudadanía",
-        "numdoc": 1234567890,
-        "nombre": "Pepito Andrés",
-        "apellido": "Perez Valvuena",
-        "fnacimiento": "1996-06-24",
-        "genero": "Masculino",
-        "email": "pepito@mail.com",
-        "telefono": 3153693659,
-        "paisorigen": "Colombia",
-        "password": "",
-        "tipouser": "Huésped",
-        "imagen":""
-      },
-      {
-        "id": 2,
-        "tipodoc": "Cédula de ciudadanía",
-        "numdoc": 1234567891,
-        "nombre": "Fulana",
-        "apellido": "Lopez",
-        "fnacimiento": "1996-09-30",
-        "genero": "Femenino",
-        "email": "fulana@mail.com",
-        "telefono": 3132693652,
-        "paisorigen": "Colombia",
-        "password": "",
-        "tipouser": "Huésped",
-        "imagen":""
-      },
-      {
-        "id": 3,
-        "tipodoc": "Cédula de ciudadanía",
-        "numdoc": 1234567893,
-        "nombre": "Sabin",
-        "apellido": "Lopez",
-        "fnacimiento": "1996-09-30",
-        "genero": "Femenino",
-        "email": "sabin@mail.com",
-        "telefono": 3173902876,
-        "paisorigen": "Colombia",
-        "password": "",
-        "tipouser": "Huésped",
-        "imagen":""
-      }
-    ]
-  }
+  "huespedes": [
+    {
+      "id": 1,
+      "nombre": "Pepa",
+      "apellido": "Gutierrez",
+      "tipodoc": "cedula",
+      "numdoc": "45555",
+      "fnacimiento": "12/14/199",
+      "genero": "femenino",
+      "email": "pepa@gpmail.com",
+      "imagen": "",
+      "telefono": "312312321",
+      "paisorigen": "Colombia",
+      "password": "nose"
+    },
+    {
+      "id": 2,
+      "nombre": "Daniela",
+      "apellido": "Ovalle",
+      "tipodoc": "cedila",
+      "numdoc": "232323",
+      "fnacimiento": "2022-07-20",
+      "genero": "femenino",
+      "email": "da@hotmail.com",
+      "imagen": "C:\\fakepath\\download-PhotoRoom (2).png",
+      "telefono": "32123122122",
+      "paisorigen": "Colombia",
+      "password": "34655555555"
+    }
+  ]
+}
