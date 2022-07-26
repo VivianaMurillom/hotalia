@@ -1,8 +1,41 @@
 import "./ModalHabitaciones.css";
+import Cookies from 'universal-cookie';
+import Swal from "sweetalert2";
 
-let ModalHabitaciones=(props)=>{
+let ModalHabitaciones=(props,userId)=>{
 
     const cargarImgModal= require.context("../cardhabitacion/img/", true);
+    const cookies = new Cookies();
+
+    userId = cookies.get('id');
+
+    console.log(userId);
+    console.log(typeof(userId))
+
+    const reservarAhora= (userId)=>{
+        switch (userId) {
+            case undefined:
+                Swal.fire({
+                    title: 'Do you want to save the changes?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Save',
+                    denyButtonText: `Don't save`,
+                  }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                      Swal.fire('Saved!', '', 'success')
+                    } else if (result.isDenied) {
+                      Swal.fire('Changes are not saved', '', 'info')
+                    }
+                  })
+                break;
+        
+            default:
+                
+                break;
+        }
+    }
 
     return(
         <>
@@ -53,11 +86,17 @@ let ModalHabitaciones=(props)=>{
                         </div>
                         <div className="modal-price-content">
                             <h5>Precio noche</h5>
-                            <p>{props.roomPrecioNoche}</p>
+                            <p>{`$ ${props.roomPrecioNoche} COP`}</p>
                         </div>
                     </div>
                     <div className="modal-footer">
-                        <button type="button" className="secundary-button" data-bs-dismiss="modal">Reservar Ahora</button>
+                        <button 
+                            type="button" 
+                            className="secundary-button" 
+                            data-bs-dismiss="modal"
+                            onClick={reservarAhora}>
+                                Reservar Ahora
+                        </button>
                         <button type="button" className="general-button">Contactar asesor</button>
                     </div>
                 </div>

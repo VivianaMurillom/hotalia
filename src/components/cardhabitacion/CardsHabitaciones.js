@@ -16,13 +16,13 @@ let CardsHabitaciones=(props)=>{
                         <Card.Text>
                             <div className="card-price-content">
                                 <h6>Precio noche</h6>
-                                <p>{props.room6}</p>
+                                <p>{`$ ${props.room6} COP`}</p>
                             </div>
                             {props.room4}
                         </Card.Text>
                         <div className="buttons-cards-rooms">
                             <button className="general-button" data-bs-toggle="modal" data-bs-target={`#id${props.room1}`}>Ver más</button>
-                            <button className="secundary-button">Reservar ahora</button>
+                            {/* <button className="secundary-button">Reservar ahora</button> */}
                         </div>
                     </Card.Body>
                 </Card>

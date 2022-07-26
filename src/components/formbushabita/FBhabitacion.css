@@ -1,3 +1,17 @@
+.form-divisions{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.section-button-form-room{
+    display: flex;
+    justify-content: center;
+}
+
+.section-button-form-room .general-button{
+    margin: .5rem auto;
+}
+
 .form-search-room label{
     color: var(--azul-rey);
     font-family: 'Poppins', sans-serif;
@@ -23,6 +37,7 @@
 @media screen and (min-width: 768px) {
     .form-sections-room{
         display: flex;
+        justify-content: center;
     }
 }
 
@@ -63,4 +78,7 @@
         max-width: 250px;
     }
 
+    .section-button-form-room{
+        align-items: center;
+    }
 }

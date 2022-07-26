@@ -49,7 +49,9 @@ let FBHabitacion=()=>{
                             </select>
                         </div>
                     </div>
-                    <button type="submit" className="general-button">Búsqueda</button>
+                    <div className="section-button-form-room">
+                        <button type="submit" className="general-button">Búsqueda</button>
+                    </div>
                 </div>
             </form>
         </>

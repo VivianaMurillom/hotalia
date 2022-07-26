@@ -12,6 +12,7 @@ import EditarPerfil from './pages/editarperfil/EditarPerfil';
 import EditarContrasena from './pages/editarcont/EditarContrasena';
 import CambiarFoto from './pages/cambiarfoto/CambiarFoto';
 import BuscarHabitacion from './pages/buscarhabita/BuscarHabitacion';
+import Inicio from './pages/inicioSugerido/InicioSugerido';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,6 +31,7 @@ root.render(
         <Route path ='/login' element ={<Login/>}/>
         <Route path='/perfil' element ={<Perfil/>}/>
         <Route path='/reservaciones' element ={<Reservaciones />}/>
+        <Route path='/inicio-sugerido' element ={<Inicio />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
