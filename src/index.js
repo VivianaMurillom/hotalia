@@ -8,8 +8,10 @@ import Login from './pages/login/Login';
 import Perfil from './pages/perfil/Perfil.js';
 import Reservaciones from './pages/reservaciones/Reservaciones';
 import TemporalLogin from './pages/temporalLogin/TemporalLogin';
-
-
+import EditarPerfil from './pages/editarperfil/EditarPerfil';
+import EditarContrasena from './pages/editarcont/EditarContrasena';
+import CambiarFoto from './pages/cambiarfoto/CambiarFoto';
+import BuscarHabitacion from './pages/buscarhabita/BuscarHabitacion';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
