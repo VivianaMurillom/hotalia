@@ -14,7 +14,7 @@ const DashUser = () => {
     cookies.remove('apellido_materno', {path: "/login"});
     cookies.remove('nombre', {path: "/login"});
     cookies.remove('username', {path: "/login"});
-    window.location.href='../../pages/login';
+    window.location.href='../login';
 }
 
   return (
@@ -30,8 +30,8 @@ const DashUser = () => {
         </label>
         <ul class="nav_menu-items">
           <li><Link to='/perfil'><i class="fa-solid fa-user"></i>Perfil</Link></li>
-          <li><Link to='/prueba'><i class="fa-solid fa-address-book"></i>Reservaciones</Link></li>
-          <li><Link to='/prueba'><i class="fa-solid fa-door-closed"></i>Habitaciones</Link></li>
+          <li><Link to='/reservaciones'><i class="fa-solid fa-address-book"></i>Reservaciones</Link></li>
+          <li><Link to='/buscar-habitacion'><i class="fa-solid fa-door-closed"></i>Habitaciones</Link></li>
           <li><button className='signup' onClick={cerrarSesion}>Cerrar sesión</button></li>
         </ul>
       </nav>

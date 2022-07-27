@@ -3,6 +3,7 @@ import Footer from "../../components/footer/Footer";
 import TextPerfil from "../../components/textperfil/TextPerfil";
 import "./Perfil.css";
 import Cookies from 'universal-cookie';
+import DashUser from '../../components/dashuser/DashUser';
 
 let Perfil=()=>{
 
@@ -16,7 +17,9 @@ let Perfil=()=>{
     return(
         <>
         <main>
-            
+
+        <DashUser/>
+
         <TextPerfil/>
 
                 <div className="all-content-profile">

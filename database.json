@@ -1,22 +1,24 @@
 {
   "huespedes": [
     {
-      "id": 1,
+      "_id": 1,
       "tipodoc": "Cédula de ciudadanía",
       "numdoc": "1234567890",
       "nombre": "Pepito Andrés",
       "apellido": "Perez Valvuena",
-      "fnacimiento": "1996-06-24",
+      "fnacimiento": "1996-06-24T00:00:00.000Z",
       "genero": "Masculino",
       "email": "pepito@mail.com",
       "telefono": "3193780293",
       "paisorigen": "Colombia",
       "password": "Nueva123",
       "tipouser": "Huésped",
-      "img": ""
+      "img": "",
+      "reservas": [],
+      "__v": 3
     },
     {
-      "id": 2,
+      "_id": 2,
       "tipodoc": "Cédula de ciudadanía",
       "numdoc": 1234567891,
       "nombre": "Fulana",
@@ -28,10 +30,12 @@
       "paisorigen": "Colombia",
       "password": "Pruebas124*",
       "tipouser": "Huésped",
-      "img": ""
+      "img": "",
+      "reservas": [],
+      "__v": 3
     },
     {
-      "id": 3,
+      "_id": 3,
       "tipodoc": "Cédula de ciudadanía",
       "numdoc": 1234567893,
       "nombre": "Sabin",
@@ -43,8 +47,26 @@
       "paisorigen": "Colombia",
       "password": "Pruebas125*",
       "tipouser": "Huésped",
-      "img": ""
-    }
+      "img": "",
+      "reservas": [],
+      "__v": 3
+    },
+    {
+      "_id": 1234567890,
+      "tipodoc": "Cédula de ciudadanía",
+      "nombre": "Mario Alberto",
+      "apellido": "Yepes Caicedo",
+      "fnacimiento": "1982-06-25T00:00:00.000Z",
+      "genero": "femenino",
+      "email": "marioyepes@gmail.com",
+      "telefono": "3123456789",
+      "paisorigen": "Colombia",
+      "password": "qwerty",
+      "tipouser": "administrador",
+      "img": "/public/1658438482570_favicon.png",
+      "reservas": [],
+      "__v": 3
+      }
   ],
 
   "habitaciones":[
