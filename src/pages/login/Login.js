@@ -21,6 +21,11 @@ const Login = () => {
 
     const cookies = new Cookies();
 
+    console.log('_id: '+ cookies.get('_id'));
+    console.log('nombre: '+cookies.get('nombre'));
+    console.log('apellido: '+cookies.get('apellido'));
+    console.log('correo '+ cookies.get('email'));
+
     const [email, cambiarEmail] = useState({campo: '', valido: null});
     const [contrasenia, cambiarContrasenia] = useState({campo: '', valido: null});
     const [list,setList]=useState([]);
@@ -45,7 +50,7 @@ const Login = () => {
                 response.length>0){
 
                 var respuesta=response[0];
-                cookies.set('id', respuesta.id, {path: "/perfil"});
+                cookies.set('_id', respuesta._id, {path: "/perfil"});
                 cookies.set('tipodoc', respuesta.tipodoc, {path: "/perfil"});
                 cookies.set('numdoc', respuesta.numdoc, {path: "/perfil"});
                 cookies.set('nombre', respuesta.nombre, {path: "/perfil"});

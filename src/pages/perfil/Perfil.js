@@ -4,19 +4,24 @@ import TextPerfil from "../../components/textperfil/TextPerfil";
 import "./Perfil.css";
 import Cookies from 'universal-cookie';
 import DashUser from '../../components/dashuser/DashUser';
+import HeaderLogueo from '../../components/headerlogueo/HeaderLogueo';
 
 let Perfil=()=>{
 
     const cookies = new Cookies();
 
-    console.log('id: '+ cookies.get('id'));
+    console.log('_id: '+ cookies.get('_id'));
     console.log('nombre: '+cookies.get('nombre'));
     console.log('apellido: '+cookies.get('apellido'));
     console.log('correo '+ cookies.get('email'));
 
+    console.log(cookies.get('fnacimiento'));
+
     return(
         <>
         <main>
+
+        <HeaderLogueo/>
 
         <DashUser/>
 
@@ -25,7 +30,7 @@ let Perfil=()=>{
                 <div className="all-content-profile">
 
                 <section className="image-profile">
-                    <img src={cookies.get('img')} alt="imagen perfil" />
+                    <img src={cookies.get('img')} class="rounded-circle" alt="imagen perfil" />
                     <Link to="/cambiar-foto">Cambiar foto</Link>
                 </section>
 

@@ -4,17 +4,27 @@ import logo from '../../img/LogoSolo.png';
 import { Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
-const DashUser = () => {
+const DashUser = (userId) => {
 
   const cookies = new Cookies();
+  userId = cookies.get('id');
 
   const cerrarSesion=()=>{
     cookies.remove('id', {path: "/login"});
-    cookies.remove('apellido_paterno', {path: "/login"});
-    cookies.remove('apellido_materno', {path: "/login"});
+    cookies.remove('tipodoc', {path: "/login"});
+    cookies.remove('numdoc', {path: "/login"});
     cookies.remove('nombre', {path: "/login"});
-    cookies.remove('username', {path: "/login"});
+    cookies.remove('apellido', {path: "/login"});
+    cookies.remove('fnacimiento', {path: "/login"});
+    cookies.remove('genero', {path: "/login"});
+    cookies.remove('email', {path: "/login"});
+    cookies.remove('telefono', {path: "/login"});
+    cookies.remove('paisorigen', {path: "/login"});
+    cookies.remove('password', {path: "/login"});
+    cookies.remove('tipouser', {path: "/login"});
+    cookies.remove('img', {path: "/login"});
     window.location.href='../login';
+    userId=null;
 }
 
   return (

@@ -41,7 +41,7 @@ let CambiarFoto=()=>{
         <section className="change-picture">
             <h2>Cambiar foto</h2>
 
-            <img src={cambiarImagen} alt="No imagen"/>
+            <img src={cambiarImagen} class="rounded-circle" alt="No imagen"/>
 
             <p>Solo se aceptan imágenes en formato jpg o png.</p>
 

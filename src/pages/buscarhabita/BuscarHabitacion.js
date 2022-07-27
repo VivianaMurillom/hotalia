@@ -3,7 +3,7 @@ import Footer from "../../components/footer/Footer";
 import FBHabitacion from "../../components/formbushabita/FBHabitacion";
 import "./BuscarHabitacion.css";
 import {getAllHabitaciones} from "../../components/cardhabitacion/HabitacionesDB";
-import Header from "../../components/header/Header";
+import DashUser from '../../components/dashuser/DashUser';
 
 let BuscarHabitacion=()=>{
 
@@ -11,7 +11,7 @@ let BuscarHabitacion=()=>{
 
     return(
         <>
-        <Header/>
+        <DashUser/>
         <section className="section-search-room">
             <h1>Búsqueda de habitación</h1>
             <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>

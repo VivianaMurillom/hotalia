@@ -3,6 +3,7 @@ import {Card} from 'react-bootstrap';
 
 import room1 from '../../img/aver.png';
 import Swal from "sweetalert2";
+import DashUser from '../../components/dashuser/DashUser';
 
 let Reservaciones=()=>{
 
@@ -31,6 +32,8 @@ let Reservaciones=()=>{
 
     return(
         <>
+
+        <DashUser/>
     
         <section className='section-reservations'>
 

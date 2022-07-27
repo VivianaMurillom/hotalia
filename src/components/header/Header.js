@@ -6,7 +6,8 @@ const Header =()=>{
         <>
         <header className='header-home'>
             <section className='logo-home'>
-                <img src={Logo2} alt=''></img>
+                <Link to='/inicio-sugerido'>
+                    <img src={Logo2} alt=''/></Link>
             </section>
             <section className='buttons-index'>
                 <Link to ='/login' className='button-login'><i class="fa-solid fa-user"></i>Iniciar Sesión</Link>

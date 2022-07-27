@@ -2,38 +2,55 @@ import "./ModalHabitaciones.css";
 import Cookies from 'universal-cookie';
 import Swal from "sweetalert2";
 
-let ModalHabitaciones=(props,userId)=>{
+let ModalHabitaciones=(props,userId,isTrue)=>{
 
     const cargarImgModal= require.context("../cardhabitacion/img/", true);
     const cookies = new Cookies();
 
-    userId = cookies.get('id');
+    console.log('_id: '+ cookies.get('_id'));
+    console.log('nombre: '+cookies.get('nombre'));
+    console.log('apellido: '+cookies.get('apellido'));
+    console.log('correo '+ cookies.get('email'));
+
+    userId = cookies.get('_id');
 
     console.log(userId);
-    console.log(typeof(userId))
 
-    const reservarAhora= (userId)=>{
-        switch (userId) {
-            case undefined:
-                Swal.fire({
-                    title: 'Do you want to save the changes?',
-                    showDenyButton: true,
-                    showCancelButton: true,
-                    confirmButtonText: 'Save',
-                    denyButtonText: `Don't save`,
-                  }).then((result) => {
-                    /* Read more about isConfirmed, isDenied below */
-                    if (result.isConfirmed) {
-                      Swal.fire('Saved!', '', 'success')
-                    } else if (result.isDenied) {
-                      Swal.fire('Changes are not saved', '', 'info')
-                    }
-                  })
-                break;
+    const reservarAhora= (userId, isTrue)=>{
+
+        userId=null;
+        console.log(userId);
+
+        let userLogged = (userId)=>{
         
-            default:
-                
-                break;
+            if (userId===undefined) {
+                isTrue=1;
+            } else if(userId===cookies.get('_id')){
+                isTrue=2;
+            }
+    
+            return isTrue;
+        }
+
+        console.log(userLogged())
+        
+        if (isTrue===1) {
+            Swal.fire({
+                title: 'Do you want to save the changes?',
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: 'Save',
+                denyButtonText: `Don't save`,
+              }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                  Swal.fire('Saved!', '', 'success')
+                } else if (result.isDenied) {
+                  Swal.fire('Changes are not saved', '', 'info')
+                }
+              })
+        }  else{
+            Swal.fire('Any fool can use a computer')
         }
     }
 
