@@ -2,9 +2,9 @@ import "./ModalHabitaciones.css";
 import Cookies from 'universal-cookie';
 import Swal from "sweetalert2";
 
-let ModalHabitaciones=(props,userId,isTrue)=>{
+let ModalHabitaciones=(props,userId)=>{
 
-    const cargarImgModal= require.context("../cardhabitacion/img/", true);
+    // const cargarImgModal= require.context("../cardhabitacion/img/", true);
     const cookies = new Cookies();
 
     console.log('_id: '+ cookies.get('_id'));
@@ -64,11 +64,9 @@ let ModalHabitaciones=(props,userId,isTrue)=>{
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        <img src={cargarImgModal(`./${props.roomImg}.jpg`)} alt={props.roomNombre}/>
+                        <img src={props.roomImg} alt={props.roomNombre}/>
                         <h5>Descripción de la habitación</h5>
                         <p className="text-start">{props.roomDescripcion}</p>
-                        <h5>Número de habitación</h5>
-                        <p className="text-start">{props.roomNumero}</p>
                         <h5>Cantidad de camas</h5>
                         <p className="text-start">{props.roomCantidadCamas}</p>
                         <h5>Capacidad de personas</h5>

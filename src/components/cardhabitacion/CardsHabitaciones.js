@@ -4,21 +4,19 @@ import ModalHabitaciones from "../modalhabitaciones/ModalHabitaciones.js";
 
 let CardsHabitaciones=(props)=>{
 
-    const cargarImagen = require.context("./img/", true);
-
     return(
         <>
             <div class="cards-rooms-container">
                 <Card className="cards-rooms-general">
-                    <Card.Img variant="top" src={cargarImagen(`./${props.room8}.jpg`)} className="cards-img-rooms"/>
+                    <Card.Img variant="top" src={props.room12} className="cards-img-rooms"/>
                     <Card.Body>
                         <Card.Title className="cards-room-general-title">{props.room2}</Card.Title>
                         <Card.Text>
                             <div className="card-price-content">
                                 <h6>Precio noche</h6>
-                                <p>{`$ ${props.room6} COP`}</p>
+                                <p>{`$ ${props.room11} COP`}</p>
                             </div>
-                            {props.room4}
+                            {props.room5}
                         </Card.Text>
                         <div className="buttons-cards-rooms">
                             <button className="general-button" data-bs-toggle="modal" data-bs-target={`#id${props.room1}`}>Ver más</button>
@@ -30,17 +28,17 @@ let CardsHabitaciones=(props)=>{
                 <ModalHabitaciones
                 roomId={`id${props.room1}`}
                 roomNombre={props.room2}
-                roomNumero={props.room3}
-                roomDescripcion={props.room4}
-                roomCantidadCamas={props.room5}
-                roomPrecioNoche={props.room6}
-                roomCapacidadPersonas={props.room7}
-                roomImg={props.room8}
-                roomWifi={props.room9}
-                roomTv={props.room10}
-                roomNevera={props.room11}
-                roomCajaFuerte={props.room12}
-                roomBanio={props.room13}
+                roomCapacidadPersonas={props.room3}
+                roomCantidadCamas={props.room4}
+                roomDescripcion={props.room5}
+                roomWifi={props.room6}
+                roomTv={props.room7}
+                roomBanio={props.room8}
+                roomCajaFuerte={props.room9}
+                roomNevera={props.room10}
+                roomPrecioNoche={props.room11}
+                roomImg={props.room12}
+                roomEstado={props.room13}
                 />
             </div>
         </>

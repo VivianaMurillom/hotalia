@@ -8,10 +8,6 @@
     justify-content: center;
 }
 
-.section-button-form-room .general-button{
-    margin: .5rem auto;
-}
-
 .form-search-room label{
     color: var(--azul-rey);
     font-family: 'Poppins', sans-serif;
@@ -46,18 +42,21 @@
     .form-search-room{
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .form-room-search{
+        align-items: space-around;
         display: flex;
         justify-content: space-around;
-        margin: 0 2rem;
+        max-width: 1024px;
+        width: 100%;
     }
 
     .form-sections-room{
         display: flex;
         justify-content: space-around;
-        margin: 0 .5rem;
+        margin: 0;
         padding: .5rem;
         width: 100%;
     }
@@ -80,5 +79,11 @@
 
     .section-button-form-room{
         align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .section-button-form-room .general-button{
+        margin: 0;
     }
 }

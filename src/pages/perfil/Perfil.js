@@ -13,9 +13,10 @@ let Perfil=()=>{
     console.log('_id: '+ cookies.get('_id'));
     console.log('nombre: '+cookies.get('nombre'));
     console.log('apellido: '+cookies.get('apellido'));
-    console.log('correo '+ cookies.get('email'));
 
-    console.log(cookies.get('fnacimiento'));
+    let fecha= new Date(cookies.get('fnacimiento'));
+
+    let nacimientoFecha=fecha.toLocaleDateString();
 
     return(
         <>
@@ -55,7 +56,7 @@ let Perfil=()=>{
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>Fecha de nacimiento</h6>
-                            <p>{cookies.get('fnacimiento')}</p>
+                            <p>{nacimientoFecha}</p>
                         </div>
                         <div className="data-content">
                             <h6>Género</h6>

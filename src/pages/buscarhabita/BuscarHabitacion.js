@@ -2,12 +2,29 @@ import CardsHabitaciones from "../../components/cardhabitacion/CardsHabitaciones
 import Footer from "../../components/footer/Footer";
 import FBHabitacion from "../../components/formbushabita/FBHabitacion";
 import "./BuscarHabitacion.css";
-import {getAllHabitaciones} from "../../components/cardhabitacion/HabitacionesDB";
 import DashUser from '../../components/dashuser/DashUser';
+import {useState, useEffect} from "react";
+import axios from "axios";
 
 let BuscarHabitacion=()=>{
 
-    const allHabitaciones=getAllHabitaciones();
+    const url="http://localhost:4000/habitaciones";
+
+    const getData=async()=>{
+        const response=axios.get(url);
+        return response;
+    }
+
+    const [list,setList]=useState([]);
+    const [upList, setUpList]=useState(false);
+
+    useEffect(()=>{
+        getData().then((response)=>{
+            setList(response.data);
+        })
+    },[upList]);
+
+    console.log(list);
 
     return(
         <>
@@ -18,21 +35,21 @@ let BuscarHabitacion=()=>{
             <FBHabitacion/>
             <div className="section-container-rooms">
                 {
-                    allHabitaciones.map(habi=>(
+                    list.map(habi=>(
                         <CardsHabitaciones
                         room1={habi.id}
-                        room2={habi.nombre}
-                        room3={habi.numero}
-                        room4={habi.descripcion}
-                        room5={habi.cantidadCamas}
-                        room6={habi.precioNoche}
-                        room7={habi.capacidadPersonas}
-                        room8={habi.img}
-                        room9={habi.wifi}
-                        room10={habi.tv}
-                        room11={habi.nevera}
-                        room12={habi.cajaFuerte}
-                        room13={habi.baño}
+                        room2={habi.nombrehab}
+                        room3={habi.capacidad}
+                        room4={habi.camas}
+                        room5={habi.descripcion}
+                        room6={habi.wifi}
+                        room7={habi.tv}
+                        room8={habi.banio}
+                        room9={habi.cajafuerte}
+                        room10={habi.nevera}
+                        room11={habi.valornoche}
+                        room12={habi.img}
+                        room13={habi.estado}
                         />
                     ))
                 }
