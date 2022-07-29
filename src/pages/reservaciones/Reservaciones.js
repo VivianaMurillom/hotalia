@@ -83,7 +83,7 @@ let Reservaciones=()=>{
                                     </div>
                                     <div>
                                         <p className='card-subtitle-price'>Valor total con impuestos:</p>
-                                        <p className='card-text-price'>$324.999 </p>
+                                        <p className='card-text-price'>$ 324.999 COP</p>
                                     </div>
                                 </div>
                             </div>

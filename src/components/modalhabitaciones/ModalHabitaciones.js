@@ -16,42 +16,24 @@ let ModalHabitaciones=(props,userId)=>{
 
     console.log(userId);
 
-    const reservarAhora= (userId, isTrue)=>{
-
-        userId=null;
-        console.log(userId);
-
-        let userLogged = (userId)=>{
-        
-            if (userId===undefined) {
-                isTrue=1;
-            } else if(userId===cookies.get('_id')){
-                isTrue=2;
-            }
-    
-            return isTrue;
-        }
-
-        console.log(userLogged())
-        
-        if (isTrue===1) {
-            Swal.fire({
-                title: 'Do you want to save the changes?',
-                showDenyButton: true,
-                showCancelButton: true,
-                confirmButtonText: 'Save',
-                denyButtonText: `Don't save`,
-              }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
-                if (result.isConfirmed) {
-                  Swal.fire('Saved!', '', 'success')
-                } else if (result.isDenied) {
-                  Swal.fire('Changes are not saved', '', 'info')
-                }
-              })
-        }  else{
-            Swal.fire('Any fool can use a computer')
-        }
+    const reservarAhora= ()=>{
+        Swal.fire({
+            title: "Por favor, confirma los datos:",
+            html:
+                '<b>Fecha de entrada: </b>'+
+                '01/07/2022'+
+                '<br><b>Fecha de salida: </b>'+
+                '03/07/2022'+
+                '<br><b>Cantidad de adultos: </b>'+
+                '2'+
+                '<br><b>Cantidad de niños: </b>'+
+                '2'+
+                '<br><b>Nombre de la habitación: </b>'+
+                'Habitación 1A'+
+                '<br><b>Valor total: </b>'+
+                '$ 324.999 COP',
+            confirmButtonText: "Aceptar"
+        })
     }
 
     return(

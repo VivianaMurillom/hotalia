@@ -1,3 +1,7 @@
+.section-search-room{
+    margin-top: 2rem;
+}
+
 .section-search-room h1{
     color: var(--azul-petroleo);
     font-weight: bold;
