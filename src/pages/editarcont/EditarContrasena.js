@@ -12,11 +12,11 @@ import axios from "axios";
 
 let EditarContrasena=(userId,userPassword)=>{
 
-    const url="http://localhost:4000/huespedes";
+    const url="https://hoteliakuepa.herokuapp.com/users";
 
     const cookies = new Cookies();
 
-    userId = cookies.get('id');
+    userId = cookies.get('_id');
     userPassword= cookies.get('password');
 
     console.log(userPassword);

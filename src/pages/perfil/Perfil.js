@@ -31,7 +31,7 @@ let Perfil=()=>{
                 <div className="all-content-profile">
 
                 <section className="image-profile">
-                    <img src={cookies.get('img')} class="rounded-circle" alt="imagen perfil" />
+                    <img src={cookies.get('img')} class="rounded-circle" alt="imagen de perfil" />
                     <Link to="/cambiar-foto">Cambiar foto</Link>
                 </section>
 
@@ -50,7 +50,7 @@ let Perfil=()=>{
                         </div>
                         <div className="data-content">
                             <h6>Número de documento de identidad</h6>
-                            <p>{cookies.get('numdoc')}</p>
+                            <p>{cookies.get('_id')}</p>
                         </div>
                     </div>
                     <div className="user-data-section">

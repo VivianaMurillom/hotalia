@@ -12,7 +12,7 @@ import {MensajeError} from "../../elements/Formularios";
 
 const Login = () => {
 
-    const url="http://localhost:4000/huespedes";
+    const url="https://hoteliakuepa.herokuapp.com/users";
 
     const getData=async()=>{
         const response=axios.get(url);
@@ -21,61 +21,116 @@ const Login = () => {
 
     const cookies = new Cookies();
 
-    console.log('_id: '+ cookies.get('_id'));
-    console.log('nombre: '+cookies.get('nombre'));
-    console.log('apellido: '+cookies.get('apellido'));
-    console.log('correo '+ cookies.get('email'));
-
-    const [email, cambiarEmail] = useState({campo: '', valido: null});
+    const [correo, cambiarCorreo] = useState({campo: '', valido: null});
     const [contrasenia, cambiarContrasenia] = useState({campo: '', valido: null});
     const [list,setList]=useState([]);
     const [upList, setUpList]=useState(false);
     const [formularioValido,cambiarFormularioValido]= useState(null);
+
+    // Espacio de pruebas
+    let iniciarSesion1 = async(e)=>{
+        e.preventDefault();
+        
+            if( correo.valido === 'true' &&
+                contrasenia.valido === 'true'
+                ){
+                    let email=correo.campo;
+                    let password=contrasenia.campo;
+
+                    // try {
+                    //     const response = await axios.get(url,
+                    //         JSON.stringify({ email, password }),
+                    //         {
+                    //             headers: { 'Content-Type': 'application/json', 'Content-Type': 'application/json' },
+                    //             withCredentials: true
+                    //         }
+                    //     );
+                    //     console.log(JSON.stringify(response?.data));
+                    // }
+                   
+                    await axios.get(url,{params: {email, password}})
+                        .then(response=>{
+                        return response.data;})
+
+                        .then(response=>{
+                            if (response.length>0) {
+
+                                var respuesta=response[0];
+                                cookies.set('_id', respuesta._id, {path: "/perfil"});
+                                cookies.set('tipodoc', respuesta.tipodoc, {path: "/perfil"});
+                                cookies.set('numdoc', respuesta.numdoc, {path: "/perfil"});
+                                cookies.set('nombre', respuesta.nombre, {path: "/perfil"});
+                                cookies.set('apellido', respuesta.apellido, {path: "/perfil"});
+                                cookies.set('fnacimiento', respuesta.fnacimiento, {path: "/perfil"});
+                                cookies.set('genero', respuesta.genero, {path: "/perfil"});
+                                cookies.set('email', respuesta.email, {path: "/perfil"});
+                                cookies.set('telefono', respuesta.telefono, {path: "/perfil"});
+                                cookies.set('paisorigen', respuesta.paisorigen, {path: "/perfil"});
+                                cookies.set('password', respuesta.password, {path: "/perfil"});
+                                cookies.set('tipouser', respuesta.tipouser, {path: "/perfil"});
+                                cookies.set('img', respuesta.img, {path: "/perfil"});
+                                alert(`Bienvenido ${respuesta.nombre} ${respuesta.apellido}`);
+                                window.location.href="./perfil";
+
+                                cambiarCorreo({campo: '', valido: null});
+                                cambiarContrasenia({campo: '', valido: null});
+                                cambiarFormularioValido(true);
+
+                                setUpList(!upList);
+                        }else{
+                            alert('El usuario o la contraseña no son correctos');
+                            cambiarFormularioValido(false);
+                        }
+                    })
+                
+            }
+    }
+    ////////////////////////
 
     const expresiones = {
 		correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 		contrasenia: /^.{4,12}$/
 	}
 
-    let iniciarSesion = async(e)=>{
-        e.preventDefault();
+    // let iniciarSesion = async(e)=>{
+    //     e.preventDefault();
 
-        await axios.get(url,{params: {email:email.campo, contrasenia: contrasenia.campo}})
-        .then(response=>{
-            return response.data;})
+    //     await axios.get(url,{params: {email:email.campo, password: password.campo}})
+    //     .then(response=>{
+    //         return response.data;})
 
-        .then(response=>{
-            if( email.valido === 'true' &&
-                contrasenia.valido === 'true'&&
-                response.length>0){
+    //     .then(response=>{
+    //         if( email.valido === 'true' &&
+    //             password.valido === 'true'&&
+    //             response.length>0){
 
-                var respuesta=response[0];
-                cookies.set('_id', respuesta._id, {path: "/perfil"});
-                cookies.set('tipodoc', respuesta.tipodoc, {path: "/perfil"});
-                cookies.set('numdoc', respuesta.numdoc, {path: "/perfil"});
-                cookies.set('nombre', respuesta.nombre, {path: "/perfil"});
-                cookies.set('apellido', respuesta.apellido, {path: "/perfil"});
-                cookies.set('fnacimiento', respuesta.fnacimiento, {path: "/perfil"});
-                cookies.set('genero', respuesta.genero, {path: "/perfil"});
-                cookies.set('email', respuesta.email, {path: "/perfil"});
-                cookies.set('telefono', respuesta.telefono, {path: "/perfil"});
-                cookies.set('paisorigen', respuesta.paisorigen, {path: "/perfil"});
-                cookies.set('password', respuesta.password, {path: "/perfil"});
-                cookies.set('tipouser', respuesta.tipouser, {path: "/perfil"});
-                cookies.set('img', respuesta.img, {path: "/perfil"});
-                alert(`Bienvenido ${respuesta.nombre} ${respuesta.apellido}`);
-                window.location.href="./perfil";
+    //             var respuesta=response[0];
+    //             cookies.set('_id', respuesta._id, {path: "/perfil"});
+    //             cookies.set('tipodoc', respuesta.tipodoc, {path: "/perfil"});
+    //             cookies.set('numdoc', respuesta.numdoc, {path: "/perfil"});
+    //             cookies.set('nombre', respuesta.nombre, {path: "/perfil"});
+    //             cookies.set('apellido', respuesta.apellido, {path: "/perfil"});
+    //             cookies.set('fnacimiento', respuesta.fnacimiento, {path: "/perfil"});
+    //             cookies.set('genero', respuesta.genero, {path: "/perfil"});
+    //             cookies.set('email', respuesta.email, {path: "/perfil"});
+    //             cookies.set('telefono', respuesta.telefono, {path: "/perfil"});
+    //             cookies.set('paisorigen', respuesta.paisorigen, {path: "/perfil"});
+    //             cookies.set('password', respuesta.password, {path: "/perfil"});
+    //             cookies.set('tipouser', respuesta.tipouser, {path: "/perfil"});
+    //             cookies.set('img', respuesta.img, {path: "/perfil"});
+    //             alert(`Bienvenido ${respuesta.nombre} ${respuesta.apellido}`);
+    //             window.location.href="./perfil";
 
-                cambiarEmail({campo: '', valido: null});
-                cambiarContrasenia({campo: '', valido: null});
-                cambiarFormularioValido(true);
+    //             cambiarEmail({campo: '', valido: null});
+    //             cambiarPassword({campo: '', valido: null});
+    //             cambiarFormularioValido(true);
 
-                setUpList(!upList);
-            } else{
-                alert('El usuario o la contraseña no son correctos');
-                cambiarFormularioValido(false);
-            }})
-    }
+    //             setUpList(!upList);
+    //         } else{
+    //             alert('El usuario o la contraseña no son correctos');
+    //             cambiarFormularioValido(false);
+    //         }})
+    // }
 
     useEffect(()=>{
         getData().then((response)=>{
@@ -96,16 +151,16 @@ const Login = () => {
             <div className='login-data'>
                 <img src={Icono} alt=''></img>
 
-                        <form action="" onSubmit={iniciarSesion}>
+                        <form action="" onSubmit={iniciarSesion1}>
 
                             <div className='input-grup'>
                                 <Input  
                                     className="input-fili" 
                                     label="Correo electrónico"
                                     tipo="email"
-                                    name="email"
-                                    estado={email}
-                                    cambiarEstado={cambiarEmail}
+                                    name="correo"
+                                    estado={correo}
+                                    cambiarEstado={cambiarCorreo}
                                     expresionRegular={expresiones.correo}
                                     leyendaError="El correo debe cumplir las características requeridas, ej: mail@mail.com"
                                 />
