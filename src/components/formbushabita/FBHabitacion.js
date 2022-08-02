@@ -1,13 +1,31 @@
 import "./FBhabitacion.css";
 import Input from '../inputsforms/Input';
 import {useState} from "react";
+// import ModalHabitaciones from '../modalhabitaciones/ModalHabitaciones';
 
 let FBHabitacion=()=>{
 
     const [fechaEntrada, cambiarFechaEntrada] = useState({campo: ''});
     const [fechaSalida, cambiarFechaSalida] = useState({campo: ''});
-    const [personasAdultas, cambiarPersonasAdultas] = useState({campo: ''});
-    const [personasNinios, cambiarPersonasNinios] = useState({campo: ''});
+    const [personasAdultas, cambiarPersonasAdultas] = useState('Cantidad');
+    const [personasNinios, cambiarPersonasNinios] = useState('Cantidad');
+
+    const capturaDatosAdultos = (e) => {
+        cambiarPersonasAdultas(e.target.value);
+    }
+
+    const capturaDatosNinios = (e) => {
+        cambiarPersonasNinios(e.target.value);
+    }
+
+    let fechaInicial=fechaEntrada.campo;
+    console.log(fechaInicial);
+    let fechaFinal=fechaSalida.campo;
+    console.log(fechaFinal);
+    let adultos=personasAdultas;
+    console.log(adultos);
+    let ninios=personasNinios;
+    console.log(ninios);
 
     return(
         <>
@@ -37,7 +55,8 @@ let FBHabitacion=()=>{
                             <select
                             name="personasAdultas"
                             estado={personasAdultas}
-                            cambiarEstado={cambiarPersonasAdultas}>
+                            cambiarEstado={cambiarPersonasAdultas}
+                            onChange={capturaDatosAdultos}>
                             <option value="" selected>Elija la cantidad</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -56,7 +75,8 @@ let FBHabitacion=()=>{
                             <select
                             name="personasNinios"
                             estado={personasNinios}
-                            cambiarEstado={cambiarPersonasNinios}>
+                            cambiarEstado={cambiarPersonasNinios}
+                            onChange={capturaDatosNinios}>
                             <option value="" selected>Elija la cantidad</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -72,10 +92,18 @@ let FBHabitacion=()=>{
                         </div>
                     </div>
                     <div className="section-button-form-room">
-                        <button type="submit" className="general-button">Búsqueda</button>
+                        <button className="general-button" disabled>Búsqueda</button>
                     </div>
                 </div>
             </form>
+            {/* {
+                <ModalHabitaciones
+                    let fechaI={fechaInicial}
+                    let fechaF={fechaFinal}
+                    let nAdultos={adultos}
+                    let nNinios={ninios}
+                />
+            } */}
         </>
     )
 }
