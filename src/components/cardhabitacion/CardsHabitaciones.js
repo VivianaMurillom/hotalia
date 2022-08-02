@@ -4,11 +4,13 @@ import ModalHabitaciones from "../modalhabitaciones/ModalHabitaciones.js";
 
 let CardsHabitaciones=(props)=>{
 
+    const urlImg="https://hoteliakuepa.herokuapp.com";
+
     return(
         <>
             <div class="cards-rooms-container">
                 <Card className="cards-rooms-general">
-                    <Card.Img variant="top" src={props.room12} className="cards-img-rooms"/>
+                    <Card.Img variant="top" src={urlImg+props.room12} className="cards-img-rooms"/>
                     <Card.Body>
                         <Card.Title className="cards-room-general-title">{props.room2}</Card.Title>
                         <Card.Text>

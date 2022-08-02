@@ -18,6 +18,8 @@ let Perfil=()=>{
 
     let nacimientoFecha=fecha.toLocaleDateString();
 
+    const urlImg="https://hoteliakuepa.herokuapp.com";
+
     return(
         <>
         <main>
@@ -31,7 +33,7 @@ let Perfil=()=>{
                 <div className="all-content-profile">
 
                 <section className="image-profile">
-                    <img src={cookies.get('img')} class="rounded-circle" alt="imagen de perfil" />
+                    <img src={urlImg+cookies.get('img')} class="rounded-circle" alt="imagen de perfil" />
                     <Link to="/cambiar-foto">Cambiar foto</Link>
                 </section>
 

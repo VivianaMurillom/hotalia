@@ -5,6 +5,7 @@ import Cookies from 'universal-cookie';
 const HeaderLogueo =()=>{
 
     const cookies = new Cookies();
+    const urlImg="https://hoteliakuepa.herokuapp.com";
 
     return (
         <>
@@ -15,7 +16,7 @@ const HeaderLogueo =()=>{
             </section>
             <section className='logueo-index'>
                 <div className='espacio-imagen'>
-                    <img src={cookies.get('img')} class="rounded-circle" alt="imagen perfil" />
+                    <img src={urlImg+cookies.get('img')} class="rounded-circle" alt="imagen perfil" />
                 </div>
                 <div className='espacio-datos'>
                     <p>{cookies.get('nombre')}</p><p>{cookies.get('apellido')}</p>
