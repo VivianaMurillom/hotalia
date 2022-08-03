@@ -18,9 +18,9 @@ const DashUser = () => {
         </label>
         <ul class="nav_menu-items">
                         <li><Link to='/perfil'><i class="fa-solid fa-user"></i>Perfil</Link></li>
-                        <li><Link to='/prueba'><i class="fa-solid fa-address-book"></i>Reservaciones</Link></li>
-                        <li><Link to='/prueba'><i class="fa-solid fa-door-closed"></i>Habitaciones</Link></li>
-                        <li><Link to='/' className='signup'>Cerrar sesión</Link></li>
+                        <li><Link to='/reservaciones'><i class="fa-solid fa-address-book"></i>Reservaciones</Link></li>
+                        <li><Link to='/habitaciones'><i class="fa-solid fa-door-closed"></i>Habitaciones</Link></li>
+                        <li><Link to='/' className='signup'><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar sesión</Link></li>
 
 
         </ul>

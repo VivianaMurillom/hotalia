@@ -16,6 +16,7 @@
     "json-server": "^0.17.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
+    "react-data-table-component": "^7.5.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
@@ -28,7 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "exe-api": "json-server --watch database.json --port 2000"
+    "exe-api": "json-server --watch database.json --port 4000"
   },
   "eslintConfig": {
     "extends": [

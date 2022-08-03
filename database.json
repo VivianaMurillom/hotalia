@@ -12,21 +12,43 @@
       "imagen": "",
       "telefono": "312312321",
       "paisorigen": "Colombia",
-      "password": "nose"
+      "password": "*******"
     },
     {
       "id": 2,
-      "nombre": "Daniela",
-      "apellido": "Ovalle",
-      "tipodoc": "cedila",
-      "numdoc": "232323",
-      "fnacimiento": "2022-07-20",
-      "genero": "femenino",
-      "email": "da@hotmail.com",
-      "imagen": "C:\\fakepath\\download-PhotoRoom (2).png",
-      "telefono": "32123122122",
-      "paisorigen": "Colombia",
-      "password": "34655555555"
+      "nombre": "Pepita",
+      "apellido": "Perez",
+      "tipodoc": "Cedula de Ciudadanía",
+      "numdoc": "12342222",
+      "fnacimiento": "2022-08-24",
+      "genero": "Femenino",
+      "email": "laureck@hotmail.com",
+      "imagen": "",
+      "telefono": "1231232112",
+      "paisorigen": "Francia",
+      "password": "677656576"
+    }
+  ],
+  "reservaciones": [
+    {
+      "id": 49,
+      "image": "https://images.unsplash.com/flagged/photo-1573168710865-2e4c680d921a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "fechaen": "2022-07-29",
+      "fechasal": "2022-07-30",
+      "adultos": "3",
+      "ninos": "4",
+      "nombre": "Habitacion 211",
+      "valor": 321000
+    },
+    {
+      "id": 22,
+      "image": "https://images.unsplash.com/photo-1570737209810-87a8e7245f88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "fechaen": "2022-07-29",
+      "fechasal": "2022-07-30",
+      "adultos": "3",
+      "ninos": "4",
+      "nombre": "Habitacion 210",
+      "valor": 321000
     }
   ]
 }

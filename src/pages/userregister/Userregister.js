@@ -25,7 +25,7 @@ const Userregister = () => {
         })
     }
 
-    const url="http://localhost:2000/huespedes";
+    const url="http://localhost:4000/huespedes";
 
 
     const handleSubmit=async(e)=>{
@@ -33,8 +33,7 @@ const Userregister = () => {
         const response=await axios.post(url,data);
         if(response.status===201){
             Swal.fire(
-                '¡Registrado exitoso!',
-                'success'
+  
             )
             navigate("/perfil");
         }else{
@@ -197,9 +196,10 @@ const Userregister = () => {
                                             <span className='details'>Confirmar contraseña</span>
                                             <input
                                                 type='password'
-                                                id='password2'
-                                                name='password2'
-                                                value='password2'
+                                                id='password'
+                                                name='password'
+                                                 value={data.password}
+                                                onChange={handleChange}
                                                 >
                                             </input>
 

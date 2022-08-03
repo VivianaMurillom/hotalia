@@ -1,85 +1,91 @@
 import { Link } from "react-router-dom";
-
-
+import Footer from "../../components/footer/Footer";
+import TextPerfil from "../../components/textperfil/TextPerfil";
 import "./Perfil.css";
-import axios from 'axios';
+
+import DashUser from '../../components/dashuser/DashUser';
 
 
+let Perfil=()=>{
 
-const Perfil=({huesped,handleOpen,setDataModal})=>{
+    const cookies =  cookies();
 
-    const url="http://localhost:2000/huespedes/1";
+    console.log('_id: '+ cookies.get('_id'));
+    console.log('nombre: '+cookies.get('nombre'));
+    console.log('apellido: '+cookies.get('apellido'));
 
-    const handleEdit=()=>{
-        handleOpen();
-        setDataModal(huesped)
-    }
+    let fecha= new Date(cookies.get('fnacimiento'));
+
+    let nacimientoFecha=fecha.toLocaleDateString();
+
+    const urlImg="https://hoteliakuepa.herokuapp.com";
+
     return(
         <>
         <main>
 
 
-            <div className="all-content-profile">
-                
+
+        <DashUser/>
+
+        <TextPerfil/>
+
+                <div className="all-content-profile">
+
                 <section className="image-profile">
-                    <img  alt="imagen perfil"/>
+                    <img src={urlImg+cookies.get('img')} class="rounded-circle" alt="imagen de perfil" />
                     <Link to="/cambiar-foto">Cambiar foto</Link>
                 </section>
 
-            
                 <section className="user-data-profile">
+
                     <div className="user-data-section">
                         <div className="data-content nombres">
                             <h6>Datos de</h6>
-                            <p>{huesped.nombre}</p>
-                        </div>
-                    </div>
-                    <div className="user-data-section">
-                        <div className="data-content nombres">
-                            <h6>Datos de</h6>
-                            <p>{huesped.apellido}</p>
+                            <p>{cookies.get('nombre')}</p><p>{cookies.get('apellido')}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>Tipo de documento de identidad</h6>
-                            <p>{huesped.tipodoc}</p>
+                            <p>{cookies.get('tipodoc')}</p>
                         </div>
                         <div className="data-content">
                             <h6>Número de documento de identidad</h6>
-                            <p>{huesped.numdoc}</p>
+                            <p>{cookies.get('_id')}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>Fecha de nacimiento</h6>
-                            <p>{huesped.fnacimiento}</p>
+                            <p>{nacimientoFecha}</p>
                         </div>
                         <div className="data-content">
                             <h6>Género</h6>
-                            <p>{huesped.genero}</p>
+                            <p>{cookies.get('genero')}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>Correo</h6>
-                            <p>{huesped.email}</p>
+                            <p>{cookies.get('email')}</p>
                         </div>
                         <div className="data-content">
                             <h6>Teléfono de contacto</h6>
-                            <p>{huesped.telefono}</p>
+                            <p>{cookies.get('telefono')}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
                         <div className="data-content">
                             <h6>País de origen</h6>
-                            <p>{huesped.pais}</p>
+                            <p>{cookies.get('paisorigen')}</p>
                         </div>
                     </div>
                     <div className="container-button">
-                        <button className="general-button" onClick={handleEdit}><Link to="/editar-perfil">Realizar cambios contacto</Link></button>
+                        <button className="general-button"><Link to="/editar-perfil">Realizar cambios contacto</Link></button>
                     </div>
                 </section>
+
 
                 <section className="profile-password">
                     <div>
@@ -91,8 +97,9 @@ const Perfil=({huesped,handleOpen,setDataModal})=>{
                     </div>
                 </section>
             </div>
+            
         </main>
-
+        <Footer/>
         </>
     )
 }
