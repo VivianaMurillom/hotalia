@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Hotelia Kuepa
+## Presentación
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React-App.png](https://i.postimg.cc/X72N0Z1K/React-App.png)](https://postimg.cc/4m9R63gn)
 
-## Available Scripts
+El proyecto académico de Kuepa Edutech para su etapa productiva busca reforzar los conocimientos aprendidos en la etapa lectiva. La programación front-end y las herramientas utilizadas para desarrollar aplicaciones web, también conocidas como HTML (lenguaje de marcado de hipertexto) o CSS (hojas de estilo en cascada) y el lenguaje de programación JavaScript (React JS). 
 
-In the project directory, you can run:
+En este tipo de programación, los navegadores web son las principales herramientas utilizadas para crear páginas web. Los desarrolladores front-end usan sus navegadores web para diseñar y desarrollar sitios web.
 
-### `npm start`
+Ahora bien, teniendo en cuenta la propuesta de desarrollo en este caso el Hotel Hotelia, se busca destacar las funcionalidades de un sitio web para un hotel conforme una lista de medidas de control de calidad en áreas estratégicas de la propiedad. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para empezar, presentamos funcionalidades de administrador de hotel en cual la persona registrada como administrador puede revisar y controlar la disponibilidad de habitaciones en el hotel, como huésped registrado tambien tiene la posibilidad de actualizar sus datos, revisar la disponibilidad de habitaciones en el hotel y hacer su respectiva reservación. Por último, pero no menos importante, presentado de una forma dínamica y amigable con el usuario.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prerequisitos de Instalación.
+A continuación se listan los comandos necesarios para clonar el repositorio
 
-### `npm run build`
+<br /> -https
+    <br /> https://github.com/VivianaMurillom/hotalia.git
+<br /> -ssh
+    <br /> git@github.com:VivianaMurillom/hotalia.git
+<br /> -CLI
+    <br /> gh repo clone VivianaMurillom/hotalia
+    
+## Instalación
+-npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Test
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-npm run build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Construido con
+<p align="left"> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> </p>
 
-### `npm run eject`
+## Contribuidoras
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Derly Cañon
+<p>Desarrollo de componentes y vistas para registrar, listar y modificar las habitaciones del hotel.</p>
+<a href="https://github.com/Derlycanon" target="_blank">
+<img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
+</a>  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Daniela Ovalle
+<p>Desarrollo de componentes y vistas para registrar, iniciar sesión de usuarios y búsqueda de habitaciones del hotel.</p>
+<a href="https://github.com/OvalleDa" target="_blank">
+<img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
+</a>  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br />
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Viviana Murillo
+<p>Desarrollo de componentes y vistas para actualización de datos de los usuarios y reserva de habitaciones del hotel.</p>
+<a href="https://github.com/VivianaMurillom" target="_blank">
+<img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
+</a>  
