@@ -1,23 +1,50 @@
-    <div className='indeeex'>
-      <header className='header-home'>
-          <section className='logo'>
-              <img src={Logo}></img>
-          </section>
-          <section className='buttons-index'>
-              <Link to ='/login' className='button-login'><i class="fa-solid fa-user"></i>Iniciar Sesión</Link>
-              <Link to='/registro' className='button-login'><i class="fa-solid fa-user-pen"></i>Registrarse</Link>
-          </section>
-      </header>
-      <body className='body-index'>
-          <section className='reservation-index'>
-              <Link to="/" className='botton-start'></Link>
-          </section>
+                    <Form.Group className="mb-3">
+                        <Form.Label>Tipo de Documento</Form.Label>
+                        <Form.Select 
+                        name="tipodoc"
+                        onChange={handleChangeModal}>
+                            <option value={dataModal.tipodoc}>{dataModal.tipodoc}</option>
+                            <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                            <option value="Cédula de extranjería">Cédula de extranjería</option>
+                        </Form.Select>
+                    </Form.Group>
 
-          <section className='info-index'>
-            <p className='info-c'>
-              CALIDEZ, ELEGANCIA Y COMODIDAD 
-            </p>
-            
-          </section>
-      </body>
-    </div>
+
+
+
+
+                           <div className="table-responsive">
+         <table className="table table-sm table-bordered">
+           <thead>
+             <tr>
+               <th>ID</th>
+               <th>Nombre</th>
+               <th>Teléfono</th>
+               <th>Nombre de Usuario</th>
+               <th>Correo</th>
+               <th>Sitio Web</th>
+               <th>Ciudad</th>
+               <th>Empresa</th>
+             </tr>
+           </thead>
+  
+           <tbody>
+             {usuarios && 
+             usuarios.map((usuario)=>(
+               <tr key={usuario.id}>
+                 <td>{usuario.id}</td>
+                 <td>{usuario.name}</td>
+                 <td>{usuario.phone}</td>
+                 <td>{usuario.username}</td>
+                 <td>{usuario.email}</td>
+                 <td>{usuario.website}</td>
+                 <td>{usuario.address.city}</td>
+                 <td>{usuario.company.name}</td>
+               </tr>
+             ))}
+           </tbody>
+  
+         </table>
+  
+       </div>

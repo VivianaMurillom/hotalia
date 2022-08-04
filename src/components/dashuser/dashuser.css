@@ -9,10 +9,10 @@ header {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    background-color: #157A8A;
+    background-color: black;
     position: block;
     top: 0;
-    z-index: 100;
+    z-index: 10000;
   }
   
  
@@ -69,7 +69,7 @@ header {
   .nav_menu-items li a.active,
   .nav_menu-items li  a:hover {
     color:#157A8A;
-    border: 3px solid #157A8A;
+    border: 3px solid #28535a;
     background-color: white;
     padding: 10px;
     border-radius: 6px;
@@ -102,7 +102,7 @@ header {
     nav {
       height: 100px;
       flex-direction: row;
-      background-color: var(--gris);
+      background-color: black;
       border-bottom: 2px solid #157A8A;
     }
   
@@ -142,6 +142,6 @@ header {
       text-decoration: none;
       font-size: 1.03rem;
       padding: 10px;
-      color: black;
+      color: rgb(255, 255, 255);
     }
   }

@@ -1,7 +1,0 @@
-/*Resolución de tablet*/
-@media screen and (min-width: 768px) {
-    .logueo-index{
-        display: flex;
-        padding: 1rem;
-    }
-}

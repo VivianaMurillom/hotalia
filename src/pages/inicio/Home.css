@@ -1,24 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 
-.homee{
-    background: url(https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80);
-    height: 100vh;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: 150vh;
 
 
-}
 
 .header-home{
+    background-color: black;
     display: flex;
-    background-color: var(--gris);
     color: white;
     text-align: center;
     justify-content: space-between;
-    flex-direction: column;
-}
+    font-family: 'Poppins', sans-serif;
+    
 
 .logo-home{
     margin: 1rem;
@@ -43,10 +36,10 @@
 .button-login{
     font-size: 10px;
     border-radius: 6px;
-    padding: 3px;
+    padding: 6px;
     cursor: pointer;
     margin: 20px 10px;
-   
+    margin-right: 30px;
     text-decoration: none;
     color: white;
     background-color: #337AB7;
@@ -56,35 +49,105 @@
     margin-right: 5px;
 }
 
-.body-home{
-    background-color: black;
-
-
+.body-index{
+    background-image: url(https://images.unsplash.com/photo-1515263487990-61b07816b324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
 }
 
-.aiuda{
-    background-color: black;
-}
-
-.aiuda h1{
+.reservation-index{
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
     color: white;
-    font-size: 3rem;
+    
 }
 
-.body-home h1, .body-home h3{
-    text-align: left;
-    margin-left: 20px;
-    height:0px;
-    /* font-size: 60px; */
-    margin-top: 150px;
+.botton-start{
+    text-decoration: none;
+    width: 250px;
+    height: 60px;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px; 
+        margin-bottom: 10px;   
+        padding: 7px;
+        
+}
+
+.botton-start::before{
+    content: "";
+    background-image: conic-gradient(
+        #157A8A 20deg,
+        transparent 120deg
+    );
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 7px;
+    animation: rotate 5s linear infinite;
+
+}
+
+.botton-start::after{
+    content: "Ver habitaciones";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #337AB7;
+    color: white;
+    font-size: larger;
+    width: 220px;
+    height: 45px;
+    font-size: 18px;
+    border-radius: 6px;
+    border-left: 20px solid #157A8A;
+
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
 }
 
 
 
+.reservation-images img{
+    width: 320px;
+}
+
+.reservation-images{
+    display: grid;
+    grid-template-columns: repeat(1,100%);
+    justify-items: flex-end;
+    margin-left: 0px;
+
+}
+
+.info-index p{
+
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px); 
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    border-left: 20px solid #157A8A;
+}
 
 
 @media screen and (min-width: 600px){
-    .reservation-imagees img{
+    .reservation-images img{
         width: 290px;
     }
     .button-login{
@@ -129,7 +192,7 @@
     }
 
 @media screen and (min-width: 1024px){
-    .reservation-imagees img{
+    .reservation-images img{
         width: 390px;
     }
 
@@ -144,7 +207,6 @@
 
     .button-login{
         font-size: 16px;
-        padding: 7px;
 
     }
 
