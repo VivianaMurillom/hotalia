@@ -9,17 +9,18 @@ import axios from "axios";
 
 let CambiarFoto=(userId)=>{
 
-  const url="https://hoteliakuepa.herokuapp.com/users/id";
+  const url="http://localhost:4000/huespedes";
 
   const cookies = new Cookies();
 
-  userId = cookies.get('_id');
+  userId = 1
 
   const [img, setImg] = useState(null);
 
   const tomarImagen=e=>{
     setImg(e);
-    console.log(e)
+    // console.log(e);
+    // $("input[name='img']").files[0];
   }
 
     console.log('_id: '+ cookies.get('_id'));
@@ -29,10 +30,24 @@ let CambiarFoto=(userId)=>{
   const subirImagen=async(e)=>{
     e.preventDefault();
 
-    const formato = new FormData();
-    formato.append('file', img);
+    let imgs = document.querySelector('[name="img"]').files[0];
 
-    console.log(formato.data);
+    var reader = new FileReader();
+    reader.readAsDataURL(imgs);
+    reader.onload = function(event) {
+      // The file's text will be printed here
+      console.log(event.target.result)
+      setImg(event.target.result)
+    };
+  
+    // reader.readAsText(imgs);
+  
+
+    // const formato = new FormData();
+    // formato.append('file', imgs);
+    // console.log(imgs);
+    // console.log(formato);
+
 
     await axios.put(`${url}/${userId}`,{
       id: userId,
@@ -47,12 +62,7 @@ let CambiarFoto=(userId)=>{
       paisorigen: cookies.get('paisorigen'),
       password: cookies.get('password'),
       tipouser: cookies.get('tipouser'),
-      img: formato}, 
-      {headers: {
-      'Content-Type':'multipart/form-data',
-      'Access-Control-Allow-Origin': 'http://localhost:3000',
-      'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-      'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'}})
+      img: document.querySelector('#img').getAttribute('src')})
     .then(response=>{
       console.log(response.data);
       Swal.fire(
@@ -60,8 +70,6 @@ let CambiarFoto=(userId)=>{
         'Ha cambiado su foto de perfil correctamente!',
         'success'
         )
-      var http = new XMLHttpRequest();
-      console.log(http.status);
     }).catch(error=>{
       console.log(error);
     })
@@ -75,7 +83,7 @@ let CambiarFoto=(userId)=>{
       <section className="change-picture">
           <h2>Cambiar foto</h2>
 
-          <img src={cookies.get('img')} class="rounded-circle" alt="imagen perfil" />
+          <img id='img' src={img} class="rounded-circle w-100 col-12 height-100" alt="imagen perfil" />
 
           <p>Solo se aceptan imágenes en formato jpg, jpeg o png.</p>
 
