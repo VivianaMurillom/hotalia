@@ -1,12 +1,10 @@
 import React from 'react'
 import '../userregister/userregister.css'
 import Logo from '../../img/logo2.png'
-
 import { useState } from "react";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {useNavigate} from 'react-router-dom'
-
 
 
 const Userregister = () => {
@@ -15,7 +13,7 @@ const Userregister = () => {
 
 
     const [data,setData]=useState({id:"",nombre:"",apellido:"",tipodoc:"",numdoc:"",fnacimiento:"",genero:"",
-    email:"", imagen:"", telefono:"", paisorigen:"", password:""});
+    email:"", imagen:"", telefono:"", paisorigen:"", password:"", password2:""});
 
     const handleChange=({target})=>{
 
@@ -53,7 +51,7 @@ const Userregister = () => {
                     <h1>¡Regístrate en Hotelia! <br></br>
                         Obtendrás muchos beneficios
                     </h1>
-                    <img src={Logo}></img>
+                    <img src={Logo} alt='Logo de Hotelia'></img>
                 </section>
                 <section className='registeru'>
                     <div className='login-data'>
@@ -196,9 +194,9 @@ const Userregister = () => {
                                             <span className='details'>Confirmar contraseña</span>
                                             <input
                                                 type='password'
-                                                id='password'
-                                                name='password'
-                                                 value={data.password}
+                                                id='password2'
+                                                name='password2'
+                                                 value={data.password2}
                                                 onChange={handleChange}
                                                 >
                                             </input>

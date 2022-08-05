@@ -4,7 +4,6 @@ import TextPerfil from "../../components/textperfil/TextPerfil";
 import "./Perfil.css";
 import Cookies from 'universal-cookie';
 import DashUser from '../../components/dashuser/DashUser';
-import HeaderLogueo from '../../components/headerlogueo/HeaderLogueo';
 
 let Perfil=()=>{
 
@@ -23,8 +22,6 @@ let Perfil=()=>{
     return(
         <>
         <main>
-
-        <HeaderLogueo/>
 
         <DashUser/>
 

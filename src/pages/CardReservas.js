@@ -1,9 +1,8 @@
 import React from 'react';
-import { Card, Button, Row } from 'react-bootstrap';
+import { Card} from 'react-bootstrap';
 import Swal from 'sweetalert2';
-import axios
-    from 'axios';
-import ListGroup from 'react-bootstrap/ListGroup';
+import axios from 'axios';
+// import ListGroup from 'react-bootstrap/ListGroup';
 
 
 function CardReservas({ reservacion, setUplist, upList, handleClose, handleOpen, setDataModal }) {

@@ -34,7 +34,6 @@ let ModalHabitaciones=(props)=>{
     }
 
     return(
-        <>
         <div className="modal fade modal-card-rooms" id={props.roomId} tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content">
@@ -96,7 +95,6 @@ let ModalHabitaciones=(props)=>{
                 </div>
             </div>
         </div>
-        </>
     )
 }
 
