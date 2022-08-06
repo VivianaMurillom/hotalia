@@ -1,39 +1,52 @@
 {
   "huespedes": [
     {
-      "id": 1,
-      "img": "[object FileList]"
-    },
-    {
-      "id": 5,
-      "nombre": "Nadia",
-      "apellido": "Murillo",
       "tipodoc": "Cédula de ciudadanía",
       "numdoc": "1234567893",
-      "fnacimiento": "2022-08-09",
+      "nombre": "Juana",
+      "apellido": "De Arco",
+      "fnacimiento": "2000-08-05",
       "genero": "Femenino",
-      "email": "kvivianamurillom@outlook.com",
-      "imagen": "",
-      "telefono": "1233891809",
+      "email": "juana@mail.com",
+      "telefono": "3165893657",
       "paisorigen": "Colombia",
-      "password": "Prueba12",
-      "password2": "Prueba12"
-    },
-    {
-      "_id": 1234567890,
-      "tipodoc": "Cédula de ciudadanía",
-      "numdoc": "1234567890",
-      "nombre": "Batman",
-      "apellido": "Murillo",
-      "fnacimiento": "2022-08-03",
-      "genero": "Femenino",
-      "email": "kvivianamurillom@outlook.com",
-      "telefono": "1233891809",
-      "paisorigen": "Colombia",
-      "password": "12345",
+      "password": "Prueba125*",
       "tipouser": "Huésped",
       "img": "",
-      "id": 6
+      "reservas": [],
+      "id": 1
+    },
+    {
+      "tipodoc": "Cédula de ciudadanía",
+      "numdoc": "1234567890",
+      "nombre": "Pepito",
+      "apellido": "Perez",
+      "fnacimiento": "2022-08-05",
+      "genero": "Masculino",
+      "email": "pepito@mail.com",
+      "telefono": "3169875698",
+      "paisorigen": "Colombia",
+      "password": "Prueba126*",
+      "tipouser": "Huésped",
+      "img": "",
+      "reservas": [],
+      "id": 2
+    },
+    {
+      "tipodoc": "Cédula de ciudadanía",
+      "numdoc": "1234567895",
+      "nombre": "Sabin",
+      "apellido": "Lopez",
+      "fnacimiento": "2022-08-04",
+      "genero": "Femenino",
+      "email": "sabin@mail.com",
+      "telefono": "3178965896",
+      "paisorigen": "Colombia",
+      "password": "Prueba127*",
+      "tipouser": "Huésped",
+      "img": "",
+      "reservas": [],
+      "id": 3
     }
   ],
   "habitaciones": []

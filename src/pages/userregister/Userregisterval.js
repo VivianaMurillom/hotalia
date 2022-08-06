@@ -4,7 +4,6 @@ import Logo from '../../img/logo2.png'
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom'
 import Input from '../../components/inputsforms/Input';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +12,6 @@ import { Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, Boton, 
 const Userregisterval = () => {
 
     const url = "http://localhost:4000/huespedes";
-    const navigate=useNavigate();
 
     const getData=async()=>{
     const response=axios.get(url);
@@ -38,7 +36,6 @@ const Userregisterval = () => {
         ) {
         
             const response=await axios.post(url,{
-                '_id': Number(numdoc.campo),
                 'tipodoc': tipodoc.campo,
                 'numdoc': numdoc.campo,
                 'nombre': nombre.campo,
@@ -50,8 +47,8 @@ const Userregisterval = () => {
                 'paisorigen': paisorigen.campo,
                 'password': password.campo,
                 'tipouser': 'Huésped',
-                'img':''
-                // 'reservas': []
+                'img':'',
+                'reservas': []
             });
         
             if(response.status===201){
@@ -71,9 +68,9 @@ const Userregisterval = () => {
 
                 Swal.fire(
                     '¡Usuario registrado correctamente!',
+                    'Bienvenido/a, por favor inicie sesión.',
                     'success'
                 )
-                navigate("/perfil");
             }
         } else {
             Swal.fire(

@@ -36,17 +36,6 @@ const Login = () => {
                 ){
                     let email=correo.campo;
                     let password=contrasenia.campo;
-
-                    // try {
-                    //     const response = await axios.get(url,
-                    //         JSON.stringify({ email, password }),
-                    //         {
-                    //             headers: { 'Content-Type': 'application/json', 'Content-Type': 'application/json' },
-                    //             withCredentials: true
-                    //         }
-                    //     );
-                    //     console.log(JSON.stringify(response?.data));
-                    // }
                    
                     await axios.get(url,{params: {email, password}})
                         .then(response=>{
@@ -56,7 +45,7 @@ const Login = () => {
                             if (response.length>0) {
 
                                 var respuesta=response[0];
-                                cookies.set('_id', respuesta._id, {path: "/perfil"});
+                                cookies.set('id', respuesta._id, {path: "/perfil"});
                                 cookies.set('tipodoc', respuesta.tipodoc, {path: "/perfil"});
                                 cookies.set('numdoc', respuesta.numdoc, {path: "/perfil"});
                                 cookies.set('nombre', respuesta.nombre, {path: "/perfil"});

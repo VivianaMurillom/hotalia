@@ -14,7 +14,7 @@ const Home = () => {
         </section>
         <section className='buttons-index'>
             <Link to ='/login' className='button-login'><i class="fa-solid fa-user"></i>Iniciar Sesión</Link>
-            <Link to='/registro' className='button-login'><i class="fa-solid fa-user-pen"></i>Registrarse</Link>
+            <Link to='/registro-validacion' className='button-login'><i class="fa-solid fa-user-pen"></i>Registrarse</Link>
         </section>
     </header>
     <body className='body-index'>
