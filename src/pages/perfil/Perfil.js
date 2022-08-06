@@ -21,10 +21,8 @@ let Perfil=()=>{
 
     return(
         <>
-        <main>
-
         <DashUser/>
-
+        <main>
         <TextPerfil/>
 
                 <div className="all-content-profile">

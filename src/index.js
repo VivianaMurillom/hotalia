@@ -11,6 +11,7 @@ import EditarPerfil from './pages/editarperfil/EditarPerfil';
 import EditarContrasena from './pages/editarcont/EditarContrasena';
 import CambiarFoto from './pages/cambiarfoto/CambiarFoto';
 import BuscarHabitacion from './pages/buscarhabita/BuscarHabitacion';
+import RegistroH from './pages/registroH/RegistroH';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -27,6 +28,7 @@ root.render(
         <Route path='/registro-validacion' element={<Userregisterval/>}/>
         <Route path ='/login' element ={<Login/>}/>
         <Route path='/reservaciones' element ={<Reservaciones />}/>
+        <Route path='/registro-habitacion' element ={<RegistroH />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
