@@ -19,7 +19,7 @@ let CambiarFoto=(userId)=>{
 
   const tomarImagen=e=>{
     setImg(e);
-    // console.log(e);
+    console.log(e);
     // $("input[name='img']").files[0];
   }
 

@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Userregister from './pages/userregister/Userregister';
 import Userregisterval from './pages/userregister/Userregisterval';
 import Home from './pages/inicio/Home'
 import Login from './pages/login/Login';
@@ -24,7 +23,6 @@ root.render(
         <Route path="/cambiar-foto" element={<CambiarFoto />} />
         <Route path="/buscar-habitacion" element={<BuscarHabitacion />} />
         <Route path='/' element ={<Home/>}/>
-        <Route path='/registro' element={<Userregister/>}/>
         <Route path='/registro-validacion' element={<Userregisterval/>}/>
         <Route path ='/login' element ={<Login/>}/>
         <Route path='/reservaciones' element ={<Reservaciones />}/>

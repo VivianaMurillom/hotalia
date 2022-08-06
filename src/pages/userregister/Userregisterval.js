@@ -7,7 +7,13 @@ import Swal from 'sweetalert2';
 import Input from '../../components/inputsforms/Input';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
-import { Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from '../../elements/Formularios';
+import { Formulario, 
+        Label, 
+        ContenedorTerminos, 
+        ContenedorBotonCentrado, 
+        Boton, MensajeExito, 
+        MensajeError } from '../../elements/Formularios';
+
 
 const Userregisterval = () => {
 

@@ -1,6 +1,7 @@
 {
   "huespedes": [
     {
+      "id": 1,
       "tipodoc": "Cédula de ciudadanía",
       "numdoc": "1234567893",
       "nombre": "Juana",
@@ -12,9 +13,7 @@
       "paisorigen": "Colombia",
       "password": "Prueba125*",
       "tipouser": "Huésped",
-      "img": "",
-      "reservas": [],
-      "id": 1
+      "img": "[object FileList]"
     },
     {
       "tipodoc": "Cédula de ciudadanía",
