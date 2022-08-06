@@ -12,7 +12,9 @@ import EditarContrasena from './pages/editarcont/EditarContrasena';
 import CambiarFoto from './pages/cambiarfoto/CambiarFoto';
 import BuscarHabitacion from './pages/buscarhabita/BuscarHabitacion';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
