@@ -13,7 +13,7 @@ let CambiarFoto=(userId)=>{
 
   const cookies = new Cookies();
 
-  userId = 1
+  userId = cookies.get('id');
 
   const [img, setImg] = useState(null);
 
@@ -23,7 +23,7 @@ let CambiarFoto=(userId)=>{
     // $("input[name='img']").files[0];
   }
 
-    console.log('_id: '+ cookies.get('_id'));
+    console.log('id: '+ cookies.get('id'));
     console.log('nombre: '+cookies.get('nombre'));
     console.log('apellido: '+cookies.get('apellido'));
 
@@ -39,15 +39,6 @@ let CambiarFoto=(userId)=>{
       console.log(event.target.result)
       setImg(event.target.result)
     };
-  
-    // reader.readAsText(imgs);
-  
-
-    // const formato = new FormData();
-    // formato.append('file', imgs);
-    // console.log(imgs);
-    // console.log(formato);
-
 
     await axios.put(`${url}/${userId}`,{
       id: userId,
@@ -83,7 +74,9 @@ let CambiarFoto=(userId)=>{
       <section className="change-picture">
           <h2>Cambiar foto</h2>
 
-          <img id='img' src={img} class="rounded-circle w-100 col-12 height-100" alt="imagen perfil" />
+          <div className="w-100 col-12 height-100">
+            <img id='img' src={img} className="rounded-circle" alt="imagen perfil" />
+          </div>
 
           <p>Solo se aceptan imágenes en formato jpg, jpeg o png.</p>
 

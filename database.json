@@ -4,14 +4,14 @@
       "id": 1,
       "tipodoc": "Cédula de ciudadanía",
       "numdoc": "1234567893",
-      "nombre": "Juana",
-      "apellido": "De Arco",
-      "fnacimiento": "2000-08-05",
+      "nombre": "Ana",
+      "apellido": "Murillo",
+      "fnacimiento": "2022-08-08",
       "genero": "Femenino",
-      "email": "juana@mail.com",
-      "telefono": "3165893657",
+      "email": "ana@mail.com",
+      "telefono": "3109387987",
       "paisorigen": "Colombia",
-      "password": "Prueba125*",
+      "password": "Prueba1",
       "tipouser": "Huésped",
       "img": "[object FileList]"
     },
@@ -46,6 +46,22 @@
       "img": "",
       "reservas": [],
       "id": 3
+    },
+    {
+      "tipodoc": "Cédula de ciudadanía",
+      "numdoc": "1234567893",
+      "nombre": "Ana",
+      "apellido": "Murillo",
+      "fnacimiento": "2022-08-08",
+      "genero": "Femenino",
+      "email": "ana@mail.com",
+      "telefono": "3109387987",
+      "paisorigen": "Colombia",
+      "password": "Prueba1",
+      "tipouser": "Huésped",
+      "img": "",
+      "reservas": [],
+      "id": 4
     }
   ],
   "habitaciones": []
