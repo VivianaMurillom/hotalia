@@ -17,10 +17,28 @@ let CambiarFoto=(userId)=>{
 
   const [img, setImg] = useState(null);
 
-  const tomarImagen=e=>{
-    setImg(e);
-    console.log(e);
-    // $("input[name='img']").files[0];
+  const tomarImagen=()=>{
+    
+    // const [file]=e.target.files; 
+
+    const isNameOfOneImageRegEx = /.(jpe?g|png)$/i;
+
+    const reader = new FileReader();
+
+    let imgs = document.querySelector('[name="img"]').files[0];
+
+    const isValidType = isNameOfOneImageRegEx.test(imgs.name);
+
+    if(!isValidType) {
+      alert("Sólo puedes subir imágenes en los formatos indicados.");
+    }
+
+		reader.onloadend = () => {
+			setImg(reader.result)
+		}
+		reader.readAsDataURL(imgs)
+
+    console.log(imgs)
   }
 
     console.log('id: '+ cookies.get('id'));
@@ -30,15 +48,7 @@ let CambiarFoto=(userId)=>{
   const subirImagen=async(e)=>{
     e.preventDefault();
 
-    let imgs = document.querySelector('[name="img"]').files[0];
-
-    var reader = new FileReader();
-    reader.readAsDataURL(imgs);
-    reader.onload = function(event) {
-      // The file's text will be printed here
-      console.log(event.target.result)
-      setImg(event.target.result)
-    };
+    if(!img) return alert('Debes seleccionar una nueva imagen');
 
     await axios.put(`${url}/${userId}`,{
       id: userId,
@@ -53,7 +63,7 @@ let CambiarFoto=(userId)=>{
       paisorigen: cookies.get('paisorigen'),
       password: cookies.get('password'),
       tipouser: cookies.get('tipouser'),
-      img: document.querySelector('#img').getAttribute('src')})
+      img: img})
     .then(response=>{
       console.log(response.data);
       Swal.fire(
@@ -75,7 +85,7 @@ let CambiarFoto=(userId)=>{
           <h2>Cambiar foto</h2>
 
           <div className="w-100 col-12 height-100">
-            <img id='img' src={img} className="rounded-circle" alt="imagen perfil" />
+            <img id='img' src={img} className="img-fluid mt-2 rounded-circle" alt="imagen perfil" />
           </div>
 
           <p>Solo se aceptan imágenes en formato jpg, jpeg o png.</p>
