@@ -10,7 +10,7 @@ import Cookies from 'universal-cookie';
 
 let Formperfil=(userId)=>{
 
-    const url="http://localhost:4000/huespedes";
+    const url="http://localhost:4000/users";
     
     const cookies = new Cookies();
 
@@ -68,6 +68,9 @@ let Formperfil=(userId)=>{
                     )
         
                     setUpList(!upList); 
+
+                    cookies.set('email', response.email, {path: "/perfil"});
+                    cookies.set('telefono', response.telefono, {path: "/perfil"});
                 }
 
         } else{
@@ -99,7 +102,8 @@ let Formperfil=(userId)=>{
                         estado={email}
                         cambiarEstado={cambiarEmail}
                         expresionRegular={expresiones.correo}
-                        leyendaError="El correo debe cumplir las características requeridas, ej: mail@mail.com"/>
+                        leyendaError="El correo debe cumplir las características requeridas, ej: mail@mail.com"
+                        placeholder={cookies.get('email')}/>
                     </div>
                     <div className="form-sections-profile">
                         <Input
@@ -110,7 +114,7 @@ let Formperfil=(userId)=>{
                         cambiarEstado={cambiarTelefono}
                         expresionRegular={expresiones.telefono}
                         leyendaError="El telefono solo puede contener numeros entre 7 y 14 dígitos."
-                        />
+                        placeholder={cookies.get('telefono')}/>
                     </div>
                 </div>
                 {formularioValido===false && <MensajeError>

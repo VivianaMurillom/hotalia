@@ -62,6 +62,22 @@
       "img": "",
       "reservas": [],
       "id": 4
+    },
+    {
+      "tipodoc": "Cédula de ciudadanía",
+      "numdoc": "1234567890",
+      "nombre": "Mario Alberto Kenpes",
+      "apellido": "Murillo",
+      "fnacimiento": "Yepes Caicedo",
+      "genero": "Masaculino",
+      "email": "marioyepes@gmail.com",
+      "telefono": "marioyepes@gmail.com",
+      "paisorigen": "Colombia",
+      "password": "Prueba1",
+      "tipouser": "Administrador",
+      "img": "",
+      "reservas": [],
+      "id": 5
     }
   ],
   "habitaciones": []

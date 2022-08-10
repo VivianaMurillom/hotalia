@@ -17,7 +17,7 @@ import { Formulario,
 
 const Userregisterval = () => {
 
-    const url = "http://localhost:4000/huespedes";
+    const url = "http://localhost:4000/users";
 
     const getData=async()=>{
     const response=axios.get(url);
@@ -42,6 +42,7 @@ const Userregisterval = () => {
         ) {
         
             const response=await axios.post(url,{
+                '_id':Number(numdoc.campo),
                 'tipodoc': tipodoc.campo,
                 'numdoc': numdoc.campo,
                 'nombre': nombre.campo,
@@ -57,7 +58,7 @@ const Userregisterval = () => {
                 'reservas': []
             });
         
-            if(response.status===201){
+            if(response.status===200){
                 cambiarFormularioValido(true);
                 cambiarNombre({ campo: '', valido: null });
                 cambiarApellido({ campo: '', valido: null });

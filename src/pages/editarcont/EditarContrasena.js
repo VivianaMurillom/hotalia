@@ -12,7 +12,7 @@ import axios from "axios";
 
 let EditarContrasena=(userId,userPassword)=>{
 
-    const url="https://hoteliakuepa.herokuapp.com/users";
+    const url="http://localhost:4000/users";
 
     const cookies = new Cookies();
 
@@ -90,6 +90,23 @@ let EditarContrasena=(userId,userPassword)=>{
                         'Su contraseña ha sido actualizada correctamente!',
                         'success'
                     )
+
+                    // Cierre de sesión usuario
+                    cookies.remove('_id', {path: "/login"});
+                    cookies.remove('tipodoc', {path: "/login"});
+                    cookies.remove('numdoc', {path: "/login"});
+                    cookies.remove('nombre', {path: "/login"});
+                    cookies.remove('apellido', {path: "/login"});
+                    cookies.remove('fnacimiento', {path: "/login"});
+                    cookies.remove('genero', {path: "/login"});
+                    cookies.remove('email', {path: "/login"});
+                    cookies.remove('telefono', {path: "/login"});
+                    cookies.remove('password', {path: "/login"});
+                    cookies.remove('tipouser', {path: "/login"});
+                    cookies.remove('img', {path: "/login"});
+                    
+                    window.location.href='./login';
+                    
                 }
         } else{
             cambiarFormularioValido(false);

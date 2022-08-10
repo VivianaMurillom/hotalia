@@ -12,7 +12,7 @@ import {MensajeError} from "../../elements/Formularios";
 
 const Login = () => {
 
-    const url="http://localhost:4000/huespedes";
+    const url="http://localhost:4000/users";
 
     const getData=async()=>{
         const response=axios.get(url);
@@ -45,7 +45,7 @@ const Login = () => {
                             if (response.length>0) {
 
                                 var respuesta=response[0];
-                                cookies.set('id', respuesta.id, {path: "/perfil"});
+                                cookies.set('_id', respuesta._id, {path: "/perfil"});
                                 cookies.set('tipodoc', respuesta.tipodoc, {path: "/perfil"});
                                 cookies.set('numdoc', respuesta.numdoc, {path: "/perfil"});
                                 cookies.set('nombre', respuesta.nombre, {path: "/perfil"});

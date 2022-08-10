@@ -9,7 +9,7 @@ let Perfil=()=>{
 
     const cookies = new Cookies();
 
-    console.log('id: '+ cookies.get('id'));
+    console.log('_id: '+ cookies.get('_id'));
     console.log('nombre: '+cookies.get('nombre'));
     console.log('apellido: '+cookies.get('apellido'));
 
@@ -47,7 +47,7 @@ let Perfil=()=>{
                         </div>
                         <div className="data-content">
                             <h6>Número de documento de identidad</h6>
-                            <p>{cookies.get('numdoc')}</p>
+                            <p>{cookies.get('_id')}</p>
                         </div>
                     </div>
                     <div className="user-data-section">
