@@ -32,16 +32,7 @@ let CambiarFoto=(userId)=>{
   const subirImagen=async(e)=>{
     e.preventDefault();
 
-    // if(!img) return alert('Debes seleccionar una nueva imagen');
-
-    console.log(file); //Hook no se deja asignar 
-
-    console.log(document.querySelector('[name="img"]').files);
-
-    console.log(document.getElementById('img').files);
-
-    // console.log(file);
-    console.log(file)
+    if(!file) return alert('Debes seleccionar una nueva imagen');
 
     let imgs = { 'lastModified': file.lastModified, 'name': file.name, 'originalname': file.name, 'filename': file.name, 'size': file.size, 'type': file.type, 'webkitRelativePath': file.webkitRelativePath};
     console.log(imgs);
