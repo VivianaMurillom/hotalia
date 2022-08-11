@@ -4,6 +4,7 @@ import TextPerfil from "../../components/textperfil/TextPerfil";
 import "./Perfil.css";
 import Cookies from 'universal-cookie';
 import DashUser from '../../components/dashuser/DashUser';
+import noImagen from '../../img/Foto-sin-imagen.jpg';
 
 let Perfil=()=>{
 
@@ -17,7 +18,19 @@ let Perfil=()=>{
 
     let nacimientoFecha=fecha.toLocaleDateString();
 
-    let imagenPerfil = cookies.get('img');
+    let imagenPerfil='/static/media/Foto-sin-imagen.94960487527507d8774f.jpg';
+
+    console.log(cookies.get('img'));
+
+    console.log(imagenPerfil==={});
+
+    // if (imagenPerfil===null) {
+    //     imagenPerfil='/static/media/Foto-sin-imagen.94960487527507d8774f.jpg';
+    //     return
+    // }
+
+    console.log(imagenPerfil);
+    console.log(noImagen)
 
     return(
         <>
@@ -28,7 +41,7 @@ let Perfil=()=>{
                 <div className="all-content-profile">
 
                 <section className="image-profile">
-                    <img src={cookies.get('img')} class="rounded-circle" alt="imagen de perfil" />
+                    <img src={imagenPerfil} class="rounded-circle" alt="imagen de perfil" />
                     <Link to="/cambiar-foto">Cambiar foto</Link>
                 </section>
 

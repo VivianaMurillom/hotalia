@@ -5,65 +5,48 @@ import Swal from "sweetalert2";
 import {useState} from "react";
 import Cookies from 'universal-cookie';
 import axios from "axios";
+import noImagen from '../../img/Foto-sin-imagen.jpg';
 
 
 let CambiarFoto=(userId)=>{
 
-  const url="http://localhost:4000/huespedes";
+  const url="http://localhost:4000/users";
 
   const cookies = new Cookies();
 
-  userId = cookies.get('id');
+  userId = cookies.get('_id');
 
-  const [img, setImg] = useState(null);
+  const [file, setFile] = useState(null);
 
-  const tomarImagen=()=>{
-    
-    // const [file]=e.target.files; 
-
-    const isNameOfOneImageRegEx = /.(jpe?g|png)$/i;
-
-    const reader = new FileReader();
-
-    let imgs = document.querySelector('[name="img"]').files[0];
-
-    const isValidType = isNameOfOneImageRegEx.test(imgs.name);
-
-    if(!isValidType) {
-      alert("Sólo puedes subir imágenes en los formatos indicados.");
-    }
-
-		reader.onloadend = () => {
-			setImg(reader.result)
-		}
-		reader.readAsDataURL(imgs)
-
-    console.log(imgs)
+  const tomarImagen=(e)=>{
+    setFile(e.target.files[0]);
   }
 
-    console.log('id: '+ cookies.get('id'));
+  console.log(file)
+
+    console.log('_id: '+ cookies.get('_id'));
     console.log('nombre: '+cookies.get('nombre'));
     console.log('apellido: '+cookies.get('apellido'));
+
 
   const subirImagen=async(e)=>{
     e.preventDefault();
 
-    if(!img) return alert('Debes seleccionar una nueva imagen');
+    // if(!img) return alert('Debes seleccionar una nueva imagen');
 
-    await axios.put(`${url}/${userId}`,{
-      id: userId,
-      tipodoc: cookies.get('tipodoc'),
-      numdoc: cookies.get('numdoc'),
-      nombre: cookies.get('nombre'),
-      apellido: cookies.get('apellido'),
-      fnacimiento: cookies.get('fnacimiento'),
-      genero: cookies.get('genero'),
-      email:cookies.get('email'),
-      telefono:cookies.get('telefono'),
-      paisorigen: cookies.get('paisorigen'),
-      password: cookies.get('password'),
-      tipouser: cookies.get('tipouser'),
-      img: img})
+    console.log(file); //Hook no se deja asignar 
+
+    console.log(document.querySelector('[name="img"]').files);
+
+    console.log(document.getElementById('img').files);
+
+    // console.log(file);
+    console.log(file)
+
+    let imgs = { 'lastModified': file.lastModified, 'name': file.name, 'originalname': file.name, 'filename': file.name, 'size': file.size, 'type': file.type, 'webkitRelativePath': file.webkitRelativePath};
+    console.log(imgs);
+    
+    await axios.put(`${url}/${userId}`,{img:imgs})
     .then(response=>{
       console.log(response.data);
       Swal.fire(
@@ -74,6 +57,9 @@ let CambiarFoto=(userId)=>{
     }).catch(error=>{
       console.log(error);
     })
+
+    document.getElementById('img').value= null;
+    setFile(null)
   }
 
     return(
@@ -84,19 +70,25 @@ let CambiarFoto=(userId)=>{
       <section className="change-picture">
           <h2>Cambiar foto</h2>
 
+          {/* id='img' src={img}  */}
+
           <div className="w-100 col-12 height-100">
-            <img id='img' src={img} className="img-fluid mt-2 rounded-circle" alt="imagen perfil" />
+            <img src={noImagen} className="img-fluid mt-2 rounded-circle" alt="imagen perfil" />
           </div>
 
           <p>Solo se aceptan imágenes en formato jpg, jpeg o png.</p>
 
-          <form action="" onSubmit={subirImagen}>
+          {/* action={`/${url}`} */}
+
+          <form encType="multipart/form-data" method="post" onSubmit={subirImagen}>
             <div className="container-image-file">
               <input 
               type="file" 
+              id="img"
               name="img"
               accept="image/jpeg,image/jpg,image/png"
-              onChange={(e)=>tomarImagen(e.target.files)}/>
+              onChange={tomarImagen}
+              />
             </div>
             <div className="container-button">
               <button className="general-button" type="submit">Subir foto</button>
