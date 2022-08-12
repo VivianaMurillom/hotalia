@@ -40,12 +40,6 @@ const Userregisterval = () => {
             telefono.valido === 'true' &&
             terminos
         ) {
-
-            let imagenDefault='';
-
-            if (!imagen) {
-                imagenDefault='/static/media/Foto-sin-imagen.94960487527507d8774f.jpg';
-            }
         
             const response=await axios.post(url,{
                 '_id':Number(numdoc.campo),
@@ -60,7 +54,7 @@ const Userregisterval = () => {
                 'paisorigen': paisorigen.campo,
                 'password': password.campo,
                 'tipouser': 'Huésped',
-                'img': imagenDefault,
+                'img': '',
                 'reservas': []
             });
         
@@ -98,7 +92,6 @@ const Userregisterval = () => {
     const [apellido, cambiarApellido] = useState({ campo: '', valido: null });
     const [tipodoc, cambiarTipoDoc] = useState({ campo: '', valido: null });
     const [numdoc, cambiarNumDoc] = useState({ campo: '', valido: null });
-    const [imagen, cambiarImagen] = useState({ campo: '', valido: null });
     const [fnacimiento, cambiarFNacimiento] = useState({ campo: '', valido: null });
     const [genero, cambiarGenero] = useState({ campo: '', valido: null });
     const [paisorigen, cambiarPaisOrigen] = useState({ campo: '', valido: null });
@@ -215,13 +208,11 @@ const Userregisterval = () => {
                                 expresionRegular={expresiones.nombre}
                                 leyendaError="El género sólo puede contener letras."
                             />
-                            {/* <Input
+                            <Input
                                 label="Foto (opcional)"
                                 tipo="file"
-                                name="imagen"
-                                estado={imagen}
-                                cambiarEstado={cambiarImagen}
-                            /> */}
+                                name="img"
+                            />
                             <Input
                                 label="País de origen"
                                 tipo="text"
