@@ -49,3 +49,11 @@
     margin-top: 1rem;
     color: var(--rosado);
 }
+
+/*Resolución de tablet*/
+@media screen and (min-width: 768px) {
+    .change-picture img{
+        margin: 1rem auto;
+        max-width: 300px;
+    }
+}

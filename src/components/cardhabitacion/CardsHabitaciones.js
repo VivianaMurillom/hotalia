@@ -8,7 +8,7 @@ let CardsHabitaciones=(props)=>{
 
     return(
         <>
-            <div class="cards-rooms-container">
+            <div className="cards-rooms-container">
                 <Card className="cards-rooms-general">
                     <Card.Img variant="top" src={urlImg+props.room12} className="cards-img-rooms"/>
                     <Card.Body>

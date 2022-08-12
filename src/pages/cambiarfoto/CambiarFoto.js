@@ -2,7 +2,6 @@ import TextPerfil from "../../components/textperfil/TextPerfil";
 import Footer from "../../components/footer/Footer";
 import "./Cambiarfoto.css";
 import Swal from "sweetalert2";
-import {useState} from "react";
 import Cookies from 'universal-cookie';
 import axios from "axios";
 import noImagen from '../../img/Foto-sin-imagen.jpg';
@@ -23,11 +22,15 @@ let CambiarFoto=(userId)=>{
   const subirImagen=async(e)=>{
     e.preventDefault();
 
-    let img = document.getElementById('img').value;
+    const img = document.getElementById('img').value;
+    let imgfile = document.getElementById('img').files[0];
 
     if(!img) return alert('Debes seleccionar una nueva imagen');
+
+    let formData = new FormData();
+        formData.append('img', imgfile);
     
-    await axios.put(`${url}/${userId}`,{img:img})
+    await axios.put(`${url}/${userId}`,formData)
     .then(response=>{
       console.log(response.data);
       Swal.fire(
@@ -53,7 +56,7 @@ let CambiarFoto=(userId)=>{
           {/* id='img' src={img}  */}
 
           <div className="w-100 col-12 height-100">
-            <img src={noImagen} className="img-fluid mt-2 rounded-circle" alt="imagen perfil" />
+            <img src={noImagen} className="d-flex justify-content-center img-fluid mt-2 rounded-circle" alt="imagen perfil" />
           </div>
 
           <p>Solo se aceptan imágenes en formato jpg, jpeg o png.</p>

@@ -52,29 +52,29 @@ let ModalHabitaciones=(props)=>{
                         <div className="modal-aditionals-container">
                             <h5>En esta habitación usted tiene la posibilidad de solicitar:</h5>
                             <div className="aditionals-options">
-                                <i class="fa-solid fa-wifi fa-3x"></i>
+                                <i className="fa-solid fa-wifi fa-3x"></i>
                                 <p>Wifi</p>
-                                <i class="fa-solid fa-toggle-on fa-3x"></i>
+                                <i className="fa-solid fa-toggle-on fa-3x"></i>
                             </div>
                             <div className="aditionals-options">
-                                <i class="fa-solid fa-tv fa-3x"></i>
+                                <i className="fa-solid fa-tv fa-3x"></i>
                                 <p>Tv</p>
-                                <i class="fa-solid fa-toggle-on fa-3x"></i>
+                                <i className="fa-solid fa-toggle-on fa-3x"></i>
                             </div>
                             <div className="aditionals-options">
-                                <i class="fa-solid fa-toilet fa-3x"></i>
+                                <i className="fa-solid fa-toilet fa-3x"></i>
                                 <p>Baño</p>
                                 <i class="fa-solid fa-toggle-on fa-3x"></i>
                             </div>
                             <div className="aditionals-options">
-                                <i class="fa-solid fa-martini-glass-citrus fa-3x"></i>
+                                <i className="fa-solid fa-martini-glass-citrus fa-3x"></i>
                                 <p>Refrigerador</p>
-                                <i class="fa-solid fa-toggle-off fa-3x"></i>
+                                <i className="fa-solid fa-toggle-off fa-3x"></i>
                             </div>
                             <div className="aditionals-options">
-                                <i class="fa-solid fa-key fa-3x"></i>
+                                <i className="fa-solid fa-key fa-3x"></i>
                                 <p>Caja fuerte</p>
-                                <i class="fa-solid fa-toggle-off fa-3x"></i>
+                                <i className="fa-solid fa-toggle-off fa-3x"></i>
                             </div>
                         </div>
                         <div className="modal-price-content">

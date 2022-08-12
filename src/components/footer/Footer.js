@@ -20,9 +20,9 @@ let Footer=()=>{
             <div className="footer-social">
                 <h3>Encuentranos tambien en: </h3>
                 <div className="social-media">
-                    <i class="fa-brands fa-facebook-square fa-3x"></i>
-                    <i class="fa-brands fa-twitter-square fa-3x"></i>
-                    <i class="fa-brands fa-instagram-square fa-3x"></i>
+                    <i className="fa-brands fa-facebook-square fa-3x"></i>
+                    <i className="fa-brands fa-twitter-square fa-3x"></i>
+                    <i className="fa-brands fa-instagram-square fa-3x"></i>
                 </div>
             </div>
 

@@ -38,10 +38,10 @@ const DashUser = (userId) => {
         <label for="check" className="bar-btn">
           <i className="fa-solid fa-bars"></i>
         </label>
-        <ul class="nav_menu-items">
-          <li><Link to='/perfil'><i class="fa-solid fa-user"></i>Perfil</Link></li>
-          <li><Link to='/reservaciones'><i class="fa-solid fa-address-book"></i>Reservaciones</Link></li>
-          <li><Link to='/habitaciones'><i class="fa-solid fa-door-closed"></i>Habitaciones</Link></li>
+        <ul className="nav_menu-items">
+          <li><Link to='/perfil'><i className="fa-solid fa-user"></i>Perfil</Link></li>
+          <li><Link to='/reservaciones'><i className="fa-solid fa-address-book"></i>Reservaciones</Link></li>
+          <li><Link to='/habitaciones'><i className="fa-solid fa-door-closed"></i>Habitaciones</Link></li>
           <li><button className='signup' onClick={cerrarSesion}>Cerrar sesión</button></li>
         </ul>
       </nav>
