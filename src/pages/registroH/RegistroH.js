@@ -24,7 +24,7 @@ const RegistroH = () => {
 		}
 	
 	const [nombre, cambiarNombre] = useState({campo: '', valido: null});
-	// const [numero, cambiarNumero] = useState({campo: '', valido: null});
+	const [numero, cambiarNumero] = useState({campo: '', valido: null});
 	const [descripcion, cambiarDescripcion] = useState({campo: '', valido: null});
 	const [cantcamas, cambiarCantcamas] = useState({campo: '', valido: null});
 	const [precio, cambiarPrecio] = useState({campo: '', valido: null});
@@ -45,7 +45,7 @@ const RegistroH = () => {
 	const expresiones = {
 		
 		nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-		numero: /^\d{1,5}$/, // 1 a 5 numeros.
+		numero: /^\d{1,3}$/, // 1 a 3 numeros.
 		descripcion: /^[a-zA-ZÀ-ÿ\s]{1,200}$/, // Letras y espacios, pueden llevar acentos.
 		cantcamas: /^\d{1}$/, // 1 numeros.
 		precio: /^\d{1,7}$/, // 1 a 7 numeros.
@@ -59,56 +59,65 @@ const RegistroH = () => {
 
 	const onChangeWifi = (e) => {
 		cambiarWifi(e.target.checked);
+	}
 
-		if (e.target.checked) {
-			wifi.campo='si'
-		} else{
-			wifi.campo='no'
-		}
+	let wifiEstado='';
+	if (wifi) {
+		wifiEstado='Si';
+	} else {
+		wifiEstado='No';
 	}
 
 	const onChangeTv = (e) => {
 		cambiarTv(e.target.checked);
+	}
 
-		if (e.target.checked) {
-			tv.campo='si'
-		} else{
-			tv.campo='no'
-		}
+	let estadoTv='';
+	if (tv) {
+		estadoTv='Si';
+	} else {
+		estadoTv='No';
 	}
 	
 	const onChangeBano = (e) => {
 		cambiarBano(e.target.checked);
+	}
 
-		if (e.target.checked) {
-			bano.campo='si'
-		} else{
-			bano.campo='no'
-		}
+	let estadoBano='';
+	if (bano) {
+		estadoBano='Si';
+	} else {
+		estadoBano='No';
 	}
 
 	const onChangeCaja = (e) => {
 		cambiarCaja(e.target.checked);
+	}
 
-		if (e.target.checked) {
-			caja.campo='si'
-		} else{
-			caja.campo='no'
-		}
+	let estadoCaja='';
+	if (caja) {
+		estadoCaja='Si';
+	} else {
+		estadoCaja='No';
 	}
 
 	const onChangeNevera = (e) => {
 		cambiarNevera(e.target.checked);
-
-		if (e.target.checked) {
-			nevera.campo='si'
-		} else{
-			nevera.campo='no'
-		}
 	}
 
-	let suma=(adultos, ninos)=>{
-		let capacidad = adultos+ninos;
+	let estadoNevera='';
+	if (nevera) {
+		estadoNevera='Si';
+	} else {
+		estadoNevera='No';
+	}
+
+	let suma=(adultosN, ninosN)=>{
+
+		adultosN=parseInt(adultos.campo);
+		ninosN=parseInt(ninos.campo);
+
+		let capacidad = adultosN+ninosN;
 		return capacidad;
 	}
 
@@ -117,25 +126,25 @@ const RegistroH = () => {
 
 		if(
 			nombre.valido === 'true' &&
-			// numero.valido === 'true' &&
+			numero.valido === 'true' &&
 			descripcion.valido === 'true' &&
 			cantcamas.valido === 'true' &&
 			precio.valido === 'true' &&
 			adultos.valido === 'true' &&
-			ninos.valido === 'true' &&
-			wifi
+			ninos.valido === 'true'
 			
 		){
 			const response=await axios.post(url,{
+				'_id':Number(numero.campo),
                 'nombrehab': nombre.campo,
-                'capacidad': Number(),
+                'capacidad': Number(suma()),
 				'camas': cantcamas.campo,
 				'descripcion': descripcion.campo,
-				'wifi': '',
-				'tv': '',
-				'banio': '',
-				'cajafuerte': '',
-				'nevera': '',
+				'wifi': wifiEstado,
+				'tv': estadoTv,
+				'banio': estadoBano,
+				'cajafuerte': estadoCaja,
+				'nevera': estadoNevera,
 				'valornoche': Number(precio.campo),
 				'img': '',
 				'estado': '',
@@ -145,7 +154,7 @@ const RegistroH = () => {
 			if(response.status===201){
 				cambiarFormularioValido(true);
 				cambiarNombre({campo: '', valido: null});
-				// cambiarNumero({campo: '', valido: null});
+				cambiarNumero({campo: '', valido: null});
 				cambiarDescripcion({campo: '', valido: null});
 				cambiarCantcamas({campo: '', valido: null});
 				cambiarPrecio({campo: '', valido: null});
@@ -159,6 +168,8 @@ const RegistroH = () => {
                     'A continuación se dirigirá al listado de habitaciones',
                     'success'
                 )
+
+				setUpList(!upList); 
 			}
 
 
@@ -179,12 +190,18 @@ const RegistroH = () => {
         })
     },[upList]);
 
+	console.log(numero.campo);
 	console.log(nombre.campo);
 	console.log(suma());
 	console.log(cantcamas.campo);
 	console.log(descripcion.campo);
-	console.log(wifi.campo);
-	console.log(tv.campo);
+	console.log(wifiEstado);
+	console.log(estadoTv);
+	console.log(estadoBano);
+	console.log(estadoCaja);
+	console.log(estadoNevera);
+	console.log(precio.campo);
+	console.log(estado);
 
 	return (
 		<>
@@ -202,16 +219,16 @@ const RegistroH = () => {
 					expresionRegular={expresiones.nombre}
 					leyendaError="El nombre tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo."
 				/>
-				{/* <Input
+				<Input
 					estado={numero}
 					cambiarEstado={cambiarNumero}
-					tipo="text"
+					tipo="number"
 					label="Número de la habitación"
 					placeholder=""
-					name="**"
-					leyendaError="El número solo puede contener numeros y el maximo son 14 dígitos."
+					name="numero"
+					leyendaError="El número solo puede contener numeros y el maximo son 3 dígitos."
 					expresionRegular={expresiones.numero}
-				/> */}
+				/>
 				<Input
 					label="Descripción de la habitación"
 					tipo="text"
