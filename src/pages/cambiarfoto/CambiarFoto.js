@@ -16,28 +16,18 @@ let CambiarFoto=(userId)=>{
 
   userId = cookies.get('_id');
 
-  const [file, setFile] = useState(null);
-
-  const tomarImagen=(e)=>{
-    setFile(e.target.files[0]);
-  }
-
-  console.log(file)
-
     console.log('_id: '+ cookies.get('_id'));
     console.log('nombre: '+cookies.get('nombre'));
     console.log('apellido: '+cookies.get('apellido'));
 
-
   const subirImagen=async(e)=>{
     e.preventDefault();
 
-    if(!file) return alert('Debes seleccionar una nueva imagen');
+    let img = document.getElementById('img').value;
 
-    let imgs = { 'lastModified': file.lastModified, 'name': file.name, 'originalname': file.name, 'filename': file.name, 'size': file.size, 'type': file.type, 'webkitRelativePath': file.webkitRelativePath};
-    console.log(imgs);
+    if(!img) return alert('Debes seleccionar una nueva imagen');
     
-    await axios.put(`${url}/${userId}`,{img:imgs})
+    await axios.put(`${url}/${userId}`,{img:img})
     .then(response=>{
       console.log(response.data);
       Swal.fire(
@@ -50,7 +40,6 @@ let CambiarFoto=(userId)=>{
     })
 
     document.getElementById('img').value= null;
-    setFile(null)
   }
 
     return(
@@ -71,14 +60,13 @@ let CambiarFoto=(userId)=>{
 
           {/* action={`/${url}`} */}
 
-          <form encType="multipart/form-data" method="post" onSubmit={subirImagen}>
+          <form action={`/${userId}`} encType="multipart/form-data" method="post" onSubmit={subirImagen}>
             <div className="container-image-file">
               <input 
               type="file" 
               id="img"
               name="img"
               accept="image/jpeg,image/jpg,image/png"
-              onChange={tomarImagen}
               />
             </div>
             <div className="container-button">
