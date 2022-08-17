@@ -4,12 +4,13 @@ import "./Cambiarfoto.css";
 import Swal from "sweetalert2";
 import Cookies from 'universal-cookie';
 import axios from "axios";
-import noImagen from '../../img/Foto-sin-imagen.jpg';
 
 
 let CambiarFoto=(userId)=>{
 
   const url="http://localhost:4000/users";
+
+  let imagenRuta='http://localhost:4000';
 
   const cookies = new Cookies();
 
@@ -25,10 +26,15 @@ let CambiarFoto=(userId)=>{
     const img = document.getElementById('img').value;
     let imgfile = document.getElementById('img').files[0];
 
+    console.log(img);
+    console.log(imgfile);
+
     if(!img) return alert('Debes seleccionar una nueva imagen');
 
     let formData = new FormData();
         formData.append('img', imgfile);
+
+        console.log(formData)
     
     await axios.put(`${url}/${userId}`,formData)
     .then(response=>{
@@ -53,15 +59,11 @@ let CambiarFoto=(userId)=>{
       <section className="change-picture">
           <h2>Cambiar foto</h2>
 
-          {/* id='img' src={img}  */}
-
           <div className="w-100 col-12 height-100">
-            <img src={noImagen} className="d-flex justify-content-center img-fluid mt-2 rounded-circle" alt="imagen perfil" />
+            <img src={imagenRuta+cookies.get('img')} className="d-flex justify-content-center img-fluid mt-2 rounded-circle" alt="imagen perfil" />
           </div>
 
           <p>Solo se aceptan imágenes en formato jpg, jpeg o png.</p>
-
-          {/* action={`/${url}`} */}
 
           <form action={`/${userId}`} encType="multipart/form-data" method="post" onSubmit={subirImagen}>
             <div className="container-image-file">

@@ -26,7 +26,6 @@ const Userregisterval = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         if (
             nombre.valido === 'true' &&
             apellido.valido === 'true' &&
@@ -40,7 +39,6 @@ const Userregisterval = () => {
             telefono.valido === 'true' &&
             terminos
         ) {
-        
             const response=await axios.post(url,{
                 '_id':Number(numdoc.campo),
                 'tipodoc': tipodoc.campo,
@@ -78,6 +76,29 @@ const Userregisterval = () => {
                     'Bienvenido/a, por favor inicie sesión.',
                     'success'
                 )
+
+                const img = document.getElementById('img').value;
+                let imgfile = document.getElementById('img').files[0];
+        
+                console.log(img);
+                console.log(imgfile);
+
+                if(img) {
+                let formData = new FormData();
+                formData.append('img', imgfile);
+    
+                console.log(formData);
+
+                const urlImg="http://localhost:4000/users";
+
+                await axios.put(`${urlImg}/${numdoc.campo}`,formData)
+                .then(response=>{
+                console.log(response.data);
+                    setUpList(!upList); 
+                }).catch(error=>{
+                console.log(error);
+                })
+                }
             }
         } else {
             Swal.fire(
@@ -151,7 +172,7 @@ const Userregisterval = () => {
                 <section className='registeru'>
                     <div className='login-data'>
 
-                        <Formulario action="" onSubmit={handleSubmit}>
+                        <Formulario action="/" encType="multipart/form-data" method="post" onSubmit={handleSubmit}>
                             <Input
                                 label="Nombre"
                                 tipo="text"
@@ -208,11 +229,17 @@ const Userregisterval = () => {
                                 expresionRegular={expresiones.nombre}
                                 leyendaError="El género sólo puede contener letras."
                             />
-                            <Input
+                            <label>Foto (opcional)</label>
+                            <input 
+                            type='file' 
+                            name='img' 
+                            id='img'
+                            accept="image/jpeg,image/jpg,image/png"/>
+                            {/* <Input
                                 label="Foto (opcional)"
                                 tipo="file"
                                 name="img"
-                            />
+                            /> */}
                             <Input
                                 label="País de origen"
                                 tipo="text"
