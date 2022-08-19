@@ -230,17 +230,16 @@ const Userregisterval = () => {
                                 expresionRegular={expresiones.nombre}
                                 leyendaError="El género sólo puede contener letras."
                             />
-                            <label>Foto (opcional)</label>
-                            <input 
-                            type='file' 
-                            name='img' 
-                            id='img'
-                            accept="image/jpeg,image/jpg,image/png"/>
-                            {/* <Input
-                                label="Foto (opcional)"
-                                tipo="file"
-                                name="img"
-                            /> */}
+                            
+                            <div className='input-optional-img'>
+                                <label className='label-input-img'>Foto (opcional)</label>
+                                <input 
+                                type='file' 
+                                name='img' 
+                                id='img'
+                                accept="image/jpeg,image/jpg,image/png"/>
+                            </div>
+                           
                             <Input
                                 label="País de origen"
                                 tipo="text"

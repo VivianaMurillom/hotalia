@@ -156,6 +156,14 @@
 
   }
 
+  .input-optional-img{
+    width: 100%;
+  }
+
+  .input-optional-img input{
+    max-width: 200px;
+  }
+
 
   @media screen and (min-width: 500px){
     .btn-grup-login{
