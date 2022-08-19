@@ -13,6 +13,7 @@ import { Formulario,
         ContenedorBotonCentrado, 
         Boton, MensajeExito, 
         MensajeError } from '../../elements/Formularios';
+import md5 from 'md5';
 
 
 const Userregisterval = () => {
@@ -50,7 +51,7 @@ const Userregisterval = () => {
                 'email': correo.campo,
                 'telefono': telefono.campo,
                 'paisorigen': paisorigen.campo,
-                'password': password.campo,
+                'password': md5(password.campo),
                 'tipouser': 'Huésped',
                 'img': '',
                 'reservas': []

@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 import Cookies from 'universal-cookie';
 import axios from "axios";
+import md5 from 'md5';
 
 let EditarContrasena=(userId,userPassword)=>{
 
@@ -54,11 +55,15 @@ let EditarContrasena=(userId,userPassword)=>{
     const changePassword=async(e)=>{
         e.preventDefault();
 
+        let validarContraseña=md5(contraseniaActual.campo);
+
         if (
-            userPassword===contraseniaActual.campo &&
+            userPassword===validarContraseña &&
             contraseniaActual.valido === 'true' &&
             contrasenianueva.valido === 'true' &&
             contraseniaNueva2.valido === 'true') {
+
+                let contrasenaNuevaFinal=md5(contrasenianueva);
 
                 const response=await axios.put(`${url}/${userId}`,{
                     id: userId,
@@ -71,7 +76,7 @@ let EditarContrasena=(userId,userPassword)=>{
                     email:cookies.get('email'),
                     telefono:cookies.get('telefono'),
                     paisorigen: cookies.get('paisorigen'),
-                    password: contrasenianueva.campo,
+                    password: contrasenaNuevaFinal,
                     tipouser: cookies.get('tipouser'),
                     img:cookies.get('img')
                 });

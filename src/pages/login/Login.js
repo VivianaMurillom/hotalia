@@ -9,6 +9,7 @@ import axios from "axios";
 import {useState, useEffect} from "react";
 import Cookies from 'universal-cookie';
 import {MensajeError} from "../../elements/Formularios";
+import md5 from 'md5';
 
 const Login = () => {
 
@@ -35,7 +36,7 @@ const Login = () => {
                 contrasenia.valido === 'true'
                 ){
                     let email=correo.campo;
-                    let password=contrasenia.campo;
+                    let password=md5(contrasenia.campo);
                    
                     await axios.get(url,{params: {email, password}})
                         .then(response=>{
@@ -80,46 +81,6 @@ const Login = () => {
 		correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 		contrasenia: /^.{4,12}$/
 	}
-
-    // let iniciarSesion = async(e)=>{
-    //     e.preventDefault();
-
-    //     await axios.get(url,{params: {email:email.campo, password: password.campo}})
-    //     .then(response=>{
-    //         return response.data;})
-
-    //     .then(response=>{
-    //         if( email.valido === 'true' &&
-    //             password.valido === 'true'&&
-    //             response.length>0){
-
-    //             var respuesta=response[0];
-    //             cookies.set('_id', respuesta._id, {path: "/perfil"});
-    //             cookies.set('tipodoc', respuesta.tipodoc, {path: "/perfil"});
-    //             cookies.set('numdoc', respuesta.numdoc, {path: "/perfil"});
-    //             cookies.set('nombre', respuesta.nombre, {path: "/perfil"});
-    //             cookies.set('apellido', respuesta.apellido, {path: "/perfil"});
-    //             cookies.set('fnacimiento', respuesta.fnacimiento, {path: "/perfil"});
-    //             cookies.set('genero', respuesta.genero, {path: "/perfil"});
-    //             cookies.set('email', respuesta.email, {path: "/perfil"});
-    //             cookies.set('telefono', respuesta.telefono, {path: "/perfil"});
-    //             cookies.set('paisorigen', respuesta.paisorigen, {path: "/perfil"});
-    //             cookies.set('password', respuesta.password, {path: "/perfil"});
-    //             cookies.set('tipouser', respuesta.tipouser, {path: "/perfil"});
-    //             cookies.set('img', respuesta.img, {path: "/perfil"});
-    //             alert(`Bienvenido ${respuesta.nombre} ${respuesta.apellido}`);
-    //             window.location.href="./perfil";
-
-    //             cambiarEmail({campo: '', valido: null});
-    //             cambiarPassword({campo: '', valido: null});
-    //             cambiarFormularioValido(true);
-
-    //             setUpList(!upList);
-    //         } else{
-    //             alert('El usuario o la contraseña no son correctos');
-    //             cambiarFormularioValido(false);
-    //         }})
-    // }
 
     useEffect(()=>{
         getData().then((response)=>{
