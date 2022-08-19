@@ -19,7 +19,7 @@ const Home = () => {
     </header>
     <body className='body-index'>
         <section className='reservation-index'>
-            <Link to="/" className='botton-start'></Link>
+            <Link to="/buscar-habitacion" className='botton-start'></Link>
         </section>
         <section className='reservation-images'>
             <img src={Rooms} alt='Logo de Hotelia'></img>        

@@ -24,11 +24,6 @@ main {
 	background-color: #33333315;
 }
 
-.opcional{
-	display: grid;
-	grid-template-columns: auto;
-}
-
 .estado, .imagenes{
 	font-family: 'Raleway', sans-serif;
 	font-weight:900;
@@ -36,4 +31,43 @@ main {
 	height: 45px;
 	border-radius: 8px;
 	border: 2px solid;
+}
+
+.container-input-img{
+	position: relative;
+	z-index: 90;
+}
+
+.label-input-img{
+	display: block;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	padding: 10px;
+	min-height: 40px;
+	cursor: pointer;
+}
+
+.container-input-img select{
+	width: 100%;
+}
+
+.opcional{
+	background-color: var(--azul-rey);
+	border: 2px solid var(--azul-rey);
+	display: flex;
+	flex-direction: column;
+	padding: .5rem;
+	position: relative;
+	z-index: 90;
+}
+
+.container-inputs{
+	background-color: white;
+	display: flex;
+	padding: .5rem;
+}
+
+.container-inputs input{
+	background-color: brown;
+	margin: .5rem;
 }

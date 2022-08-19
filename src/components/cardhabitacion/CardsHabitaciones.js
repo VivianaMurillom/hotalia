@@ -4,7 +4,7 @@ import ModalHabitaciones from "../modalhabitaciones/ModalHabitaciones.js";
 
 let CardsHabitaciones=(props)=>{
 
-    const urlImg="https://hoteliakuepa.herokuapp.com";
+    const urlImg="http://localhost:4000";
 
     return(
         <>

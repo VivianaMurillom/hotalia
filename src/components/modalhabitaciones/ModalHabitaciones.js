@@ -11,7 +11,7 @@ let ModalHabitaciones=(props)=>{
     console.log('apellido: '+cookies.get('apellido'));
     console.log('correo '+ cookies.get('email'));
 
-    const urlImg="https://hoteliakuepa.herokuapp.com";
+    const urlImg="http://localhost:4000";
 
     const reservarAhora= ()=>{
         Swal.fire({

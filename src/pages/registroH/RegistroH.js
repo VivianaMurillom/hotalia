@@ -30,13 +30,12 @@ const RegistroH = () => {
 	const [precio, cambiarPrecio] = useState({campo: '', valido: null});
 	const [adultos, cambiarAdultos] = useState({campo: '', valido: null});
 	const [ninos, cambiarNinos] = useState({campo: '', valido: null});
-	// const [img, cambiarImg] = useState({campo: '', valido: null});
 	const [wifi, cambiarWifi] = useState(false, {campo: ''});
 	const [tv, cambiarTv] = useState(false, {campo: ''});
 	const [bano, cambiarBano] = useState(false, {campo: ''});
 	const [caja, cambiarCaja] = useState(false, {campo: ''});
 	const [nevera, cambiarNevera] = useState(false, {campo: ''});
-	const [estado, cambiarEstado] = useState('Cantidad');
+	const [estadoSelect, cambiarEstadoSelect] = useState('Cantidad');
 	const [list,setList]=useState([]);
 	const [upList, setUpList]=useState(false);
 
@@ -54,7 +53,7 @@ const RegistroH = () => {
 	}
 
 	const capturaDatosEstado = (e) => {
-        cambiarEstado(e.target.value);
+        cambiarEstadoSelect(e.target.value);
     }
 
 	const onChangeWifi = (e) => {
@@ -147,11 +146,11 @@ const RegistroH = () => {
 				'nevera': estadoNevera,
 				'valornoche': Number(precio.campo),
 				'img': '',
-				'estado': '',
+				'estado': estadoSelect,
 				'reservas': []
             });
 
-			if(response.status===201){
+			if(response.status===200){
 				cambiarFormularioValido(true);
 				cambiarNombre({campo: '', valido: null});
 				cambiarNumero({campo: '', valido: null});
@@ -162,6 +161,34 @@ const RegistroH = () => {
 				cambiarNinos({campo: '', valido: null});
 
 				setUpList(!upList); 
+
+				const img = document.getElementById('img').value;
+                let imgfile = document.getElementById('img').files[0];
+
+                console.log(img);
+                console.log(imgfile);
+
+                if(!img) {
+
+					alert('Recuerda agregar una imagen de la habitación');
+				} else {
+
+					let formData = new FormData();
+					formData.append('img', imgfile);
+
+					console.log(formData);
+
+					const urlImg="http://localhost:4000/habitaciones";
+
+					await axios.put(`${urlImg}/${numero.campo}`,formData)
+					.then(response=>{
+					console.log(response.data);
+						setUpList(!upList); 
+					}).catch(error=>{
+					console.log(error);
+					})
+				}
+
 
 				Swal.fire(
                     '¡La habitación se ha registrado correctamente!',
@@ -189,19 +216,6 @@ const RegistroH = () => {
             setList(response.data);
         })
     },[upList]);
-
-	console.log(numero.campo);
-	console.log(nombre.campo);
-	console.log(suma());
-	console.log(cantcamas.campo);
-	console.log(descripcion.campo);
-	console.log(wifiEstado);
-	console.log(estadoTv);
-	console.log(estadoBano);
-	console.log(estadoCaja);
-	console.log(estadoNevera);
-	console.log(precio.campo);
-	console.log(estado);
 
 	return (
 		<>
@@ -235,7 +249,7 @@ const RegistroH = () => {
 					name="descripcion"
 					estado={descripcion}
 					cambiarEstado={cambiarDescripcion}
-					leyendaError="La descripción tiene que ser de 10 a 40 dígitos y solo puede contener numeros y letras."
+					leyendaError="La descripción tiene que ser de 10 a 200 dígitos y solo puede contener numeros y letras."
 					expresionRegular={expresiones.descripcion}
 				/>
 				<Input
@@ -274,33 +288,34 @@ const RegistroH = () => {
 					leyendaError="El número solo puede contener números y el maximo es 1 dígito."
 					expresionRegular={expresiones.ninos}
 				/>
-				{/* <Input
-					estado={img}
-					className="Imagenes"
-					cambiarEstado={cambiarImg}
-					tipo="file"
-          			label="Vista previa"
-					placeholder=""
-					name="img"
-					leyendaError="La imagén debe estar adjunta"
-				/> */}
-
-			<Label htmlFor='estado'>Estado de la habitación</Label>
-			<select 
-			className='estado'
-			id='estado'
-			name="estado"
-			estado={estado}
-			cambiarEstado={cambiarEstado}
-			onChange={capturaDatosEstado}>
-				<option value="" selected>Estado</option>
-				<option value="Disponible">Disponible</option>
-				<option value="No disponible">No Disponible</option>
-				<option value="En mantenimiento">En Mantenimiento</option>
-			</select>
+				<div className='container-input-img'>
+					<label className='label-input-img'>Foto de habitación</label>
+					<input 
+					type='file' 
+					name='img' 
+					id='img'
+					accept="image/jpeg,image/jpg,image/png"/>
+				</div>
+				
+				<div className='container-input-img'>
+					<Label htmlFor='estado'>Estado de la habitación</Label>
+					<select 
+					className='estado'
+					id='estado'
+					name="estado"
+					estado={estadoSelect}
+					cambiarEstado={cambiarEstadoSelect}
+					onChange={capturaDatosEstado}>
+						<option value="" selected>Estado</option>
+						<option value="Disponible">Disponible</option>
+						<option value="No disponible">No Disponible</option>
+						<option value="En mantenimiento">En Mantenimiento</option>
+					</select>
+				</div>
 
 			<div className='opcional'>
-				<ContenedorTerminos>  
+				<p>En este espacio se indica la disponibilidad de los ítems en la habitación, lo que seleccione aparecerá como disponible:</p>
+				<div className='container-inputs'>  
 					<Label>WiFi
 					<input 
 						className='check'
@@ -311,9 +326,7 @@ const RegistroH = () => {
 						onChange={onChangeWifi}
 					/>
 					</Label>
-				</ContenedorTerminos>
 
-				<ContenedorTerminos>  
 					<Label>TV
 					<input 
 						className='check'
@@ -324,9 +337,7 @@ const RegistroH = () => {
 						onChange={onChangeTv}
 					/>
 					</Label>
-				</ContenedorTerminos>
 
-				<ContenedorTerminos>  
 					<Label>Baño
 					<input 
 						className='check'
@@ -337,9 +348,7 @@ const RegistroH = () => {
 						onChange={onChangeBano}
 					/>
 					</Label>
-				</ContenedorTerminos>
 
-				<ContenedorTerminos>  
 					<Label>Caja Fuerte
 					<input 
 						className='check'
@@ -350,9 +359,7 @@ const RegistroH = () => {
 						onChange={onChangeCaja}
 					/>
 					</Label>
-				</ContenedorTerminos>
 
-				<ContenedorTerminos>  
 					<Label>Nevera
 					<input 
 						className='check'
@@ -363,7 +370,7 @@ const RegistroH = () => {
 						onChange={onChangeNevera}
 					/>
 					</Label>
-				</ContenedorTerminos>
+				</div>
 			</div>
 
 				{formularioValido === false && <MensajeError>

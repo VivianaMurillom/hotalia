@@ -8,7 +8,7 @@ import axios from "axios";
 
 let BuscarHabitacion=()=>{
 
-    const url="https://hoteliakuepa.herokuapp.com/habitaciones";
+    const url="http://localhost:4000/habitaciones";
 
     const getData=async()=>{
         const response=axios.get(url);
