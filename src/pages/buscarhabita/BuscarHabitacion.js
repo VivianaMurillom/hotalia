@@ -28,7 +28,6 @@ let BuscarHabitacion=()=>{
 
     return(
         <>
-        <DashUser/>
         <section className="section-search-room">
             <h1>Búsqueda de habitación</h1>
             <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
